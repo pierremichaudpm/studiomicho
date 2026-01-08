@@ -166,7 +166,7 @@ section {
     }
 
     .scroll-indicator {
-        bottom: calc(8rem + 10px) !important;
+        bottom: calc(8rem + 20px) !important;
         font-size: 3rem !important;
     }
 
