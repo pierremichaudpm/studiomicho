@@ -141,18 +141,33 @@ section {
 @media (max-width: 968px) {
     body {
         padding-left: 0;
+        padding-top: 80px;
     }
 
     .brand {
-        position: relative !important;
-        writing-mode: horizontal-tb !important;
-        transform: none !important;
-        left: auto !important;
-        top: auto !important;
-        font-size: 1.5rem !important;
+        position: absolute !important;
+        writing-mode: vertical-rl !important;
+        transform: rotate(180deg) !important;
+        left: 1rem !important;
+        top: 1rem !important;
+        font-size: 1.2rem !important;
         display: block;
-        text-align: center;
-        margin: 2rem auto;
+        text-align: left;
+        margin: 0;
+        letter-spacing: 0.2rem;
+    }
+
+    .hero {
+        padding-top: 2rem !important;
+    }
+
+    .terminal {
+        margin-top: -3rem;
+    }
+
+    .scroll-indicator {
+        bottom: 4rem !important;
+        font-size: 4rem !important;
     }
 
     .terminal {
