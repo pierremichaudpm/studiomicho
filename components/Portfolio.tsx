@@ -2,6 +2,23 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+// Hook to detect mobile screen
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 968);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  return isMobile;
+};
+
 interface BrowserProps {
   name: string;
   description: string;
@@ -25,6 +42,11 @@ const Browser: React.FC<BrowserProps> = ({
 }) => {
   const [isRevealed, setIsRevealed] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+
+  // Use mobile image if available
+  const finalImageUrl =
+    isMobile && imageUrl ? imageUrl.replace(/\/([^/]+)\./, "/m-$1.") : imageUrl;
 
   useEffect(() => {
     const element = ref.current;
@@ -143,8 +165,8 @@ const Browser: React.FC<BrowserProps> = ({
           className="browser-content"
           style={{
             height: "560px",
-            background: imageUrl
-              ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${imageUrl}) center/cover no-repeat`
+            background: finalImageUrl
+              ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${finalImageUrl}) center/cover no-repeat`
               : color === "cyan"
                 ? "linear-gradient(135deg, rgba(0, 245, 255, 0.15), transparent)"
                 : color === "magenta"
@@ -171,7 +193,7 @@ const Browser: React.FC<BrowserProps> = ({
             }
           }}
         >
-          {!imageUrl && (
+          {!finalImageUrl && (
             <div
               style={{
                 position: "absolute",
@@ -184,7 +206,7 @@ const Browser: React.FC<BrowserProps> = ({
               SCREENSHOT ICI
             </div>
           )}
-          {projectUrl && imageUrl && (
+          {projectUrl && finalImageUrl && (
             <div
               style={{
                 background: "rgba(0, 0, 0, 0.9)",

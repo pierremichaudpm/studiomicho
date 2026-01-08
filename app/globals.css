@@ -147,11 +147,15 @@ section {
     }
 
     .brand {
+        position: relative !important;
         writing-mode: horizontal-tb !important;
-        transform: translateX(-50%) !important;
-        left: 50% !important;
-        top: 2rem !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
         font-size: 1.5rem !important;
+        display: block;
+        text-align: center;
+        margin: 2rem auto;
     }
 
     .terminal {
