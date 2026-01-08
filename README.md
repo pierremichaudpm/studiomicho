@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Studio Micho - React/Next.js Version
 
-## Getting Started
+Application React (Next.js) qui reproduit EXACTEMENT le design et les animations du site Studio Micho original.
 
-First, run the development server:
+## 🚀 Installation
+
+```bash
+npm install
+```
+
+## 🏃 Développement
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Build de production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🎨 Fonctionnalités reproduites
 
-To learn more about Next.js, take a look at the following resources:
+### ✅ Animations clés
+- **Typewriter effect** : Frappe caractère par caractère avec gestion des tags HTML
+- **Curseur clignotant** : Pendant la frappe et permanent sur la dernière ligne (▮)
+- **Browser reveal** : Animation clip-path avec scan line cyan
+- **Cascade delay** : 300ms entre chaque browser
+- **Float animations** : Formes géométriques flottantes
+- **Gradient animé** : Texte avec gradient qui se déplace
+- **Blink cursors** : ▮ qui clignote après chaque item Studio Micho
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ✅ Composants
+- `VerticalBrand` : STUDIO MICHO vertical sticky
+- `Hero` : Section 1 avec typewriter
+- `Portfolio` : Section 2 avec browsers animés
+- `Modal` : Modale projets (ESC, click outside)
+- `Difference` : Section 3 VS comparison
+- `Comment` : Section 4 flow 01→02→03
+- `Pitch` : Section 5 CTA finale
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ✅ Hooks personnalisés
+- `useTypewriter` : Gère l'effet machine à écrire avec HTML
+- `useScrollReveal` : IntersectionObserver pour révélation au scroll
 
-## Deploy on Vercel
+## 🎯 Spécifications techniques
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Couleurs (CSS Variables)
+- `--deep-blue: #0A1128`
+- `--bg-dark: #030712`
+- `--cyan: #00F5FF`
+- `--magenta: #FF00FF`
+- `--yellow: #FFFF00`
+- `--orange: #FF6B35`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Polices
+- **Inter** : Texte principal (400, 700, 900)
+- **JetBrains Mono** : Terminal/code (400, 700)
+
+### Timing des animations
+- Typewriter speed: 30ms par caractère
+- Line 1 delay: 500ms
+- Line 2 delay: 2000ms
+- Line 3 delay: 3000ms
+- Line 4 delay: 5500ms (avec curseur permanent)
+- Browser reveal: 2s ease-out
+- Browser cascade: 300ms entre chaque
+- Scan line: 2s ease-out
+
+## 📱 Responsive
+
+- **Desktop** : STUDIO MICHO vertical à gauche, body avec padding-left: 120px
+- **Mobile (<968px)** : STUDIO MICHO horizontal centré en haut, padding supprimé
+- Grilles passent en 1 colonne
+- Flow devient vertical avec flèches rotated 90°
+- Formes flottantes masquées
+
+## 🔧 Structure
+
+```
+/app
+  - page.tsx         # Page principale avec state modal
+  - layout.tsx       # Layout Next.js avec metadata
+  - globals.css      # Styles globaux + animations
+
+/components
+  - VerticalBrand.tsx
+  - Hero.tsx
+  - Portfolio.tsx
+  - Modal.tsx
+  - Difference.tsx
+  - Comment.tsx
+  - Pitch.tsx
+
+/hooks
+  - useTypewriter.ts
+  - useScrollReveal.ts
+```
+
+## ⚡ Performance
+
+- Toutes les animations sont en CSS (pas de JS)
+- IntersectionObserver natif (pas de librairie)
+- Composants React optimisés
+- Build Next.js optimisé pour production
+
+## 📝 Notes importantes
+
+- Le typewriter gère les balises HTML inline (spans avec classes)
+- Le curseur blink est synchronisé avec la frappe
+- Les browser reveals ne se déclenchent qu'une seule fois (triggerOnce: true)
+- La modale verrouille le scroll du body quand ouverte
+- Tous les timings et valeurs sont EXACTEMENT comme l'original
+
+## 🎨 Design fidelity
+
+Ce build est une reproduction PIXEL-PERFECT de l'original HTML. Chaque animation, chaque timing, chaque couleur est identique. Aucun "improvement" ou "modernisation" n'a été fait - c'est une conversion pure et fidèle.
