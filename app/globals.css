@@ -166,8 +166,8 @@ section {
     }
 
     .scroll-indicator {
-        bottom: 4rem !important;
-        font-size: 4rem !important;
+        bottom: 8rem !important;
+        font-size: 3rem !important;
     }
 
     .terminal {
