@@ -20,7 +20,7 @@ const VerticalBrand: React.FC = () => {
         transition: 'color 0.3s ease',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.color = 'var(--cyan)';
+        e.currentTarget.style.color = '#4A90E2';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.color = 'var(--white)';

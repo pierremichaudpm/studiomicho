@@ -6,15 +6,17 @@
     box-sizing: border-box;
 }
 
-:root {
-    --deep-blue: #0a1128;
-    --bg-dark: #030712;
-    --cyan: #00f5ff;
-    --magenta: #ff00ff;
-    --yellow: #ffff00;
-    --orange: #ff6b35;
-    --white: #ffffff;
-    --gray: #9ca3af;
+@layer base {
+    :root {
+        --deep-blue: #0a1128;
+        --bg-dark: #030712;
+        --cyan: #00d4e0 !important;
+        --magenta: #e600e6 !important;
+        --yellow: #ffd700 !important;
+        --orange: #ff8c52 !important;
+        --white: #ffffff;
+        --gray: #9ca3af;
+    }
 }
 
 body {
@@ -126,12 +128,7 @@ section {
 }
 
 .gradient-text {
-    background: linear-gradient(
-        90deg,
-        var(--cyan),
-        var(--magenta),
-        var(--yellow)
-    );
+    background: linear-gradient(90deg, #00d4e0, #e600e6, #ffd700);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;

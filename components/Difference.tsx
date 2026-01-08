@@ -21,7 +21,7 @@ const Difference: React.FC = () => {
           width: "400px",
           height: "400px",
           borderRadius: "50%",
-          background: "var(--cyan)",
+          background: "#4A90E2",
           opacity: 0.2,
           left: "-10%",
           top: "20%",
@@ -35,7 +35,7 @@ const Difference: React.FC = () => {
           position: "absolute",
           width: "350px",
           height: "350px",
-          background: "var(--magenta)",
+          background: "#9B59B6",
           opacity: 0.2,
           right: "-5%",
           bottom: "10%",
@@ -175,7 +175,7 @@ const Difference: React.FC = () => {
                 marginBottom: "3rem",
                 textTransform: "uppercase",
                 background:
-                  "linear-gradient(135deg, var(--cyan), var(--magenta))",
+                  "linear-gradient(135deg, #4A90E2, #9B59B6)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -197,7 +197,7 @@ const Difference: React.FC = () => {
               3-4 semaines
               <span
                 style={{
-                  color: "var(--cyan)",
+                  color: "#4A90E2",
                   animation: "blink 1s infinite",
                 }}
               >
@@ -219,7 +219,7 @@ const Difference: React.FC = () => {
               Tarifs boutique
               <span
                 style={{
-                  color: "var(--cyan)",
+                  color: "#4A90E2",
                   animation: "blink 1s infinite",
                 }}
               >
@@ -241,7 +241,7 @@ const Difference: React.FC = () => {
               Un expert (25+ ans)
               <span
                 style={{
-                  color: "var(--cyan)",
+                  color: "#4A90E2",
                   animation: "blink 1s infinite",
                 }}
               >
@@ -263,7 +263,7 @@ const Difference: React.FC = () => {
               Produit fonctionnel
               <span
                 style={{
-                  color: "var(--cyan)",
+                  color: "#4A90E2",
                   animation: "blink 1s infinite",
                 }}
               >
@@ -285,7 +285,7 @@ const Difference: React.FC = () => {
               Déployé & en ligne
               <span
                 style={{
-                  color: "var(--cyan)",
+                  color: "#4A90E2",
                   animation: "blink 1s infinite",
                 }}
               >

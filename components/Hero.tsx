@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
           left: "50%",
           transform: "translateX(-50%)",
           fontSize: "3rem",
-          color: "var(--cyan)",
+          color: "#4A90E2",
           animation: "bounce 2s infinite",
           zIndex: 10,
         }}

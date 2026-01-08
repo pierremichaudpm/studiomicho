@@ -72,9 +72,9 @@ const Browser: React.FC<BrowserProps> = ({
   }, [delay]);
 
   const colorMap = {
-    cyan: "var(--cyan)",
-    magenta: "var(--magenta)",
-    yellow: "var(--yellow)",
+    cyan: "#4A90E2",
+    magenta: "#9B59B6",
+    yellow: "#F39C12",
   };
 
   const borderColor = colorMap[color];
@@ -312,7 +312,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           width: "250px",
           height: "250px",
           borderRadius: "50%",
-          background: "var(--orange)",
+          background: "#E74C3C",
           opacity: 0.2,
           right: "5%",
           top: "10%",
@@ -325,7 +325,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           position: "absolute",
           width: "300px",
           height: "300px",
-          background: "var(--cyan)",
+          background: "#4A90E2",
           opacity: 0.15,
           left: "3%",
           bottom: "15%",
@@ -406,8 +406,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             marginTop: "6rem",
             padding: "1.5rem 4rem",
             background: "transparent",
-            border: "3px solid var(--cyan)",
-            color: "var(--cyan)",
+            border: "3px solid #4A90E2",
+            color: "#4A90E2",
             fontSize: "1.5rem",
             fontWeight: 900,
             textTransform: "uppercase",
@@ -425,7 +425,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             if (before) before.style.left = "0";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = "var(--cyan)";
+            e.currentTarget.style.color = "#4A90E2";
             const before = e.currentTarget.querySelector(
               ".btn-before",
             ) as HTMLDivElement;
@@ -441,7 +441,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
               left: "-100%",
               width: "100%",
               height: "100%",
-              background: "var(--cyan)",
+              background: "#4A90E2",
               transition: "left 0.3s ease",
               zIndex: -1,
             }}

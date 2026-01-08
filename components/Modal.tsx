@@ -97,7 +97,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           top: '2rem',
           right: '2rem',
           fontSize: '4rem',
-          color: 'var(--cyan)',
+          color: '#4A90E2',
           background: 'none',
           border: 'none',
           cursor: 'pointer',
@@ -106,11 +106,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           transition: 'all 0.3s ease',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.color = 'var(--magenta)';
+          e.currentTarget.style.color = '#9B59B6';
           e.currentTarget.style.transform = 'rotate(90deg)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.color = 'var(--cyan)';
+          e.currentTarget.style.color = '#4A90E2';
           e.currentTarget.style.transform = 'rotate(0deg)';
         }}
       >
@@ -133,7 +133,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             fontWeight: 900,
             marginBottom: '4rem',
             textAlign: 'center',
-            background: 'linear-gradient(90deg, var(--cyan), var(--magenta), var(--yellow))',
+            background: 'linear-gradient(90deg, #4A90E2, #9B59B6, #F39C12)',
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -163,7 +163,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-10px)';
-                e.currentTarget.style.borderColor = 'var(--cyan)';
+                e.currentTarget.style.borderColor = '#4A90E2';
                 e.currentTarget.style.boxShadow = '0 20px 60px rgba(0, 245, 255, 0.3)';
               }}
               onMouseLeave={(e) => {
@@ -199,7 +199,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     fontSize: '1.8rem',
                     fontWeight: 900,
                     marginBottom: '1rem',
-                    color: 'var(--cyan)',
+                    color: '#4A90E2',
                   }}
                 >
                   {project.title}
@@ -228,8 +228,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                       className="project-card-tag"
                       style={{
                         background: 'rgba(0, 245, 255, 0.1)',
-                        border: '1px solid var(--cyan)',
-                        color: 'var(--cyan)',
+                        border: '1px solid #4A90E2',
+                        color: '#4A90E2',
                         padding: '0.25rem 0.75rem',
                         fontSize: '0.8rem',
                         fontWeight: 700,

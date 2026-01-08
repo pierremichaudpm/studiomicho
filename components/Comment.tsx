@@ -20,7 +20,7 @@ const Comment: React.FC = () => {
           width: "300px",
           height: "300px",
           borderRadius: "50%",
-          background: "var(--orange)",
+          background: "#E74C3C",
           opacity: 0.15,
           right: "-5%",
           top: "10%",
@@ -33,7 +33,7 @@ const Comment: React.FC = () => {
           position: "absolute",
           width: "250px",
           height: "250px",
-          background: "var(--cyan)",
+          background: "#4A90E2",
           opacity: 0.15,
           left: "-3%",
           bottom: "5%",
@@ -95,7 +95,7 @@ const Comment: React.FC = () => {
                 lineHeight: 0.8,
                 opacity: 0.3,
                 marginBottom: "1rem",
-                color: "var(--cyan)",
+                color: "#4A90E2",
               }}
             >
               01
@@ -107,7 +107,7 @@ const Comment: React.FC = () => {
                 fontWeight: 900,
                 marginBottom: "1rem",
                 textTransform: "uppercase",
-                color: "var(--cyan)",
+                color: "#4A90E2",
               }}
             >
               Expérience
@@ -130,7 +130,7 @@ const Comment: React.FC = () => {
             className="flow-arrow"
             style={{
               fontSize: "clamp(3rem, 8vw, 8rem)",
-              color: "var(--orange)",
+              color: "#E74C3C",
               opacity: 0.5,
               flexShrink: 0,
             }}
@@ -157,7 +157,7 @@ const Comment: React.FC = () => {
                 lineHeight: 0.8,
                 opacity: 0.3,
                 marginBottom: "1rem",
-                color: "var(--magenta)",
+                color: "#9B59B6",
               }}
             >
               02
@@ -169,7 +169,7 @@ const Comment: React.FC = () => {
                 fontWeight: 900,
                 marginBottom: "1rem",
                 textTransform: "uppercase",
-                color: "var(--magenta)",
+                color: "#9B59B6",
               }}
             >
               Vélocité
@@ -191,7 +191,7 @@ const Comment: React.FC = () => {
             className="flow-arrow"
             style={{
               fontSize: "clamp(3rem, 8vw, 8rem)",
-              color: "var(--orange)",
+              color: "#E74C3C",
               opacity: 0.5,
               flexShrink: 0,
             }}
@@ -218,7 +218,7 @@ const Comment: React.FC = () => {
                 lineHeight: 0.8,
                 opacity: 0.3,
                 marginBottom: "1rem",
-                color: "var(--yellow)",
+                color: "#F39C12",
               }}
             >
               03
@@ -230,7 +230,7 @@ const Comment: React.FC = () => {
                 fontWeight: 900,
                 marginBottom: "1rem",
                 textTransform: "uppercase",
-                color: "var(--yellow)",
+                color: "#F39C12",
               }}
             >
               Exécution
