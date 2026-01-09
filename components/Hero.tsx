@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
   });
 
   const line2 = useTypewriter({
-    text: '> Approche personnalisée. <span class="gradient-text">Contact direct</span>. Livraison rapide.',
+    text: '> Approche <span class="gradient-text">personnalisée</span>. Contact <span class="gradient-text">direct</span>. Livraison <span class="gradient-text">rapide</span>.',
     speed: 30,
     delay: 2000,
     showCursor: true,
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
   const line3 = useTypewriter({
     text: ">",
     speed: 30,
-    delay: 3500,
+    delay: 3000,
     showCursor: true,
     permanentCursor: false,
   });
