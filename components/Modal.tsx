@@ -20,21 +20,21 @@ const projects: Project[] = [
     description:
       "Firme d'ingénierie — Site corporatif avec gestion RFP IA. 3 semaines, conception à déploiement.",
     tags: ["Solo", "IA", "3 Semaines"],
-    color: "#4A90E2", // cyan
+    color: "#4A90E2",
   },
   {
     name: "GPCQM",
     description:
       "PWA Grands Prix Cyclistes. Application spectateurs live. Milliers d'usagers en temps réel.",
     tags: ["PWA", "Live", "Production"],
-    color: "#9B59B6", // magenta
+    color: "#9B59B6",
   },
   {
     name: "GROUPE TONIC",
     description:
       "Site corporatif complet. Construction solo avec IA. Livraison express en temps record.",
     tags: ["Corporate", "Express", "Déployé"],
-    color: "#F39C12", // yellow
+    color: "#F39C12",
   },
 ];
 
@@ -161,30 +161,30 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 className="browser-window"
                 style={{
                   background: "rgba(20, 20, 20, 0.9)",
-                  border: `2px solid ${project.color}`,
-                  borderRadius: "0.5rem",
+                  border: `3px solid ${project.color}`,
+                  borderRadius: "1rem",
                   overflow: "hidden",
-                  boxShadow: `0 10px 30px ${project.color.replace(")", ", 0.15)").replace("rgb", "rgba")}`,
+                  boxShadow: `0 20px 60px ${project.color.replace(")", ", 0.3)").replace("rgb", "rgba")}`,
                   position: "relative",
-                  height: "180px",
+                  height: "300px",
                 }}
               >
                 <div
                   className="browser-bar"
                   style={{
-                    height: "25px",
-                    background: "rgba(30, 30, 30, 0.9)",
+                    height: "40px",
+                    background: "rgba(40, 40, 40, 0.95)",
                     display: "flex",
                     alignItems: "center",
-                    padding: "0 0.6rem",
-                    gap: "0.3rem",
+                    padding: "0 1rem",
+                    gap: "0.5rem",
                   }}
                 >
                   <div
                     className="browser-dot dot-red"
                     style={{
-                      width: "10px",
-                      height: "10px",
+                      width: "12px",
+                      height: "12px",
                       borderRadius: "50%",
                       background: "#FF5F56",
                     }}
@@ -192,8 +192,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   <div
                     className="browser-dot dot-yellow"
                     style={{
-                      width: "10px",
-                      height: "10px",
+                      width: "12px",
+                      height: "12px",
                       borderRadius: "50%",
                       background: "#FFBD2E",
                     }}
@@ -201,8 +201,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   <div
                     className="browser-dot dot-green"
                     style={{
-                      width: "10px",
-                      height: "10px",
+                      width: "12px",
+                      height: "12px",
                       borderRadius: "50%",
                       background: "#27C93F",
                     }}
@@ -211,21 +211,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-content"
                   style={{
-                    height: "155px",
-                    background: `linear-gradient(135deg, ${project.color.replace(")", ", 0.08)").replace("rgb", "rgba")}, transparent)`,
+                    height: "260px",
+                    background: `linear-gradient(135deg, ${project.color.replace(")", ", 0.15)").replace("rgb", "rgba")}, transparent)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "1rem",
+                    padding: "2rem",
                     position: "relative",
                   }}
                 >
                   <div
                     style={{
                       position: "absolute",
-                      fontSize: "1.2rem",
+                      fontSize: "2rem",
                       fontWeight: 900,
-                      opacity: 0.1,
+                      opacity: 0.2,
                     }}
                   >
                     SCREENSHOT
@@ -244,10 +244,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-name"
                   style={{
-                    fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+                    fontSize: "clamp(2rem, 4vw, 3rem)",
                     fontWeight: 900,
                     lineHeight: 0.9,
-                    marginBottom: "0.6rem",
+                    marginBottom: "0.8rem",
                     color: project.color,
                   }}
                 >
@@ -256,9 +256,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-desc"
                   style={{
-                    fontSize: "0.95rem",
+                    fontSize: "1rem",
                     color: "var(--gray)",
-                    marginBottom: "0.8rem",
+                    marginBottom: "1rem",
                     lineHeight: 1.4,
                   }}
                 >
@@ -268,7 +268,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   className="browser-tags"
                   style={{
                     display: "flex",
-                    gap: "0.5rem",
+                    gap: "0.6rem",
                     justifyContent: "flex-start",
                     flexWrap: "wrap",
                   }}
@@ -278,11 +278,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                       key={tagIndex}
                       className="browser-tag"
                       style={{
-                        background: "rgba(255, 255, 255, 0.05)",
-                        border: "1px solid rgba(255, 255, 255, 0.2)",
-                        padding: "0.25rem 0.8rem",
-                        fontWeight: 700,
-                        fontSize: "0.75rem",
+                        background: "rgba(255, 255, 255, 0.1)",
+                        border: "2px solid var(--white)",
+                        padding: "0.5rem 1.5rem",
+                        fontWeight: 900,
+                        fontSize: "0.9rem",
                         textTransform: "uppercase",
                       }}
                     >
