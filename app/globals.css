@@ -222,11 +222,11 @@ section {
 /* Modal browser responsive styles */
 @media (max-width: 968px) {
     .modal-browser .browser-window {
-        height: 600px !important;
+        height: 360px !important;
     }
 
     .modal-browser .browser-content {
-        height: 560px !important;
+        height: 335px !important;
     }
 
     .modal-browser .browser-info {

@@ -166,25 +166,25 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   overflow: "hidden",
                   boxShadow: `0 25px 80px ${project.color.replace(")", ", 0.4)").replace("rgb", "rgba")}`,
                   position: "relative",
-                  height: "600px",
+                  height: "360px",
                 }}
               >
                 <div
                   className="browser-bar"
                   style={{
-                    height: "40px",
+                    height: "25px",
                     background: "rgba(40, 40, 40, 0.95)",
                     display: "flex",
                     alignItems: "center",
-                    padding: "0 1rem",
-                    gap: "0.5rem",
+                    padding: "0 0.8rem",
+                    gap: "0.4rem",
                   }}
                 >
                   <div
                     className="browser-dot dot-red"
                     style={{
-                      width: "12px",
-                      height: "12px",
+                      width: "10px",
+                      height: "10px",
                       borderRadius: "50%",
                       background: "#FF5F56",
                     }}
@@ -192,8 +192,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   <div
                     className="browser-dot dot-yellow"
                     style={{
-                      width: "12px",
-                      height: "12px",
+                      width: "10px",
+                      height: "10px",
                       borderRadius: "50%",
                       background: "#FFBD2E",
                     }}
@@ -201,8 +201,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   <div
                     className="browser-dot dot-green"
                     style={{
-                      width: "12px",
-                      height: "12px",
+                      width: "10px",
+                      height: "10px",
                       borderRadius: "50%",
                       background: "#27C93F",
                     }}
@@ -211,19 +211,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-content"
                   style={{
-                    height: "560px",
+                    height: "335px",
                     background: `linear-gradient(135deg, ${project.color.replace(")", ", 0.15)").replace("rgb", "rgba")}, transparent)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "2rem",
+                    padding: "1.5rem",
                     position: "relative",
                   }}
                 >
                   <div
                     style={{
                       position: "absolute",
-                      fontSize: "3rem",
+                      fontSize: "2rem",
                       fontWeight: 900,
                       opacity: 0.15,
                     }}
