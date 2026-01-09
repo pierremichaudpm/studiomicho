@@ -5,7 +5,7 @@ import React from "react";
 const Advantage: React.FC = () => {
   const advantages = [
     {
-      title: "Contact direct avec le créateur",
+      title: "Contact direct",
       description:
         "Vous travaillez directement avec moi, du concept au déploiement. Pas d'intermédiaires, pas de téléphone arabe.",
     },
@@ -22,7 +22,7 @@ const Advantage: React.FC = () => {
     {
       title: "Expertise complète",
       description:
-        "25 ans d'expérience produit (Radio-Canada Olympics) + maîtrise des outils IA modernes. Le meilleur des deux mondes.",
+        "25 ans d'expérience, journaliste et chef de produit numérique (Radio-Canada Olympiques) + maîtrise des outils IA modernes. Le meilleur des deux mondes.",
     },
     {
       title: "Tarifs boutique",
