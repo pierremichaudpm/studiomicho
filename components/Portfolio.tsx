@@ -91,6 +91,7 @@ const Browser: React.FC<BrowserProps> = ({
         transform: `skewY(${skew}deg)`,
         opacity: isRevealed ? 1 : 0,
         animation: isRevealed ? "smoothReveal 2s ease-out forwards" : "none",
+        filter: `drop-shadow(0 0 60px ${borderColor}80)`,
       }}
     >
       <div
@@ -99,7 +100,6 @@ const Browser: React.FC<BrowserProps> = ({
           background: "rgba(20, 20, 20, 0.9)",
           border: `3px solid ${borderColor}`,
           borderRadius: "1rem",
-          boxShadow: `0 0 80px ${borderColor}66`,
           position: "relative",
         }}
       >
