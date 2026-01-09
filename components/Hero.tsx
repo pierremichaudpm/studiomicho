@@ -5,7 +5,7 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 
 const Hero: React.FC = () => {
   const line1 = useTypewriter({
-    text: "> J'imagine et construis des produits numériques à vélocité IA",
+    text: '> J\'imagine et construis des produits numériques à <span class="gradient-text">vélocité IA</span>',
     speed: 30,
     delay: 500,
     showCursor: true,
@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
   });
 
   const line2 = useTypewriter({
-    text: "> Approche personnalisée. Contact direct. Livraison rapide.",
+    text: '> Approche personnalisée. <span class="gradient-text">Contact direct</span>. Livraison rapide.',
     speed: 30,
     delay: 2000,
     showCursor: true,

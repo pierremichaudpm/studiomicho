@@ -74,18 +74,6 @@ const Pitch: React.FC = () => {
           JE LIVRE.
         </h1>
 
-        <p
-          className="pitch-sub"
-          style={{
-            fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
-            color: "var(--gray)",
-            marginBottom: "4rem",
-          }}
-        >
-          Produits numériques qui livrent. Pas de transferts. Pas de délais.
-          Juste des résultats.
-        </p>
-
         <a
           href="mailto:pmicho@pm.me"
           className="pitch-cta"
@@ -102,6 +90,7 @@ const Pitch: React.FC = () => {
             transition: "all 0.3s ease",
             position: "relative",
             overflow: "hidden",
+            marginTop: "2rem",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = "scale(1.05)";
