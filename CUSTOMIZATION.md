@@ -195,7 +195,7 @@ Répétez pour 02 et 03.
 
 ### Email du CTA
 ```typescript
-<a href="mailto:pierre@studiomicho.com">  {/* ← Changez l'email */}
+<a href="mailto:pmicho@pm.me">  {/* ← Changez l'email */}
   Parlons-en  {/* ← Changez le texte du bouton */}
 </a>
 ```
