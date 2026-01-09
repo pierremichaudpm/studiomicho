@@ -45,10 +45,10 @@ section {
 /* ANIMATIONS */
 @keyframes blink {
     0%,
-    50% {
+    49% {
         opacity: 1;
     }
-    51%,
+    50%,
     100% {
         opacity: 0;
     }
@@ -123,8 +123,10 @@ section {
 
 /* UTILITY CLASSES */
 .cursor-blink {
-    display: inline;
-    animation: blink 1s infinite;
+    display: inline-block;
+    color: var(--cyan);
+    font-weight: 900;
+    animation: blink 0.7s infinite;
 }
 
 .gradient-text {
