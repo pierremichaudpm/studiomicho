@@ -164,9 +164,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   border: `3px solid ${project.color}`,
                   borderRadius: "1rem",
                   overflow: "hidden",
-                  boxShadow: `0 20px 60px ${project.color.replace(")", ", 0.3)").replace("rgb", "rgba")}`,
+                  boxShadow: `0 25px 80px ${project.color.replace(")", ", 0.4)").replace("rgb", "rgba")}`,
                   position: "relative",
-                  height: "300px",
+                  height: "400px",
                 }}
               >
                 <div
@@ -211,21 +211,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-content"
                   style={{
-                    height: "260px",
+                    height: "360px",
                     background: `linear-gradient(135deg, ${project.color.replace(")", ", 0.15)").replace("rgb", "rgba")}, transparent)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "2rem",
+                    padding: "3rem",
                     position: "relative",
                   }}
                 >
                   <div
                     style={{
                       position: "absolute",
-                      fontSize: "2rem",
+                      fontSize: "2.5rem",
                       fontWeight: 900,
-                      opacity: 0.2,
+                      opacity: 0.15,
                     }}
                   >
                     SCREENSHOT
