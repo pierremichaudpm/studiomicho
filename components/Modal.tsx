@@ -97,8 +97,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         background: "rgba(0, 0, 0, 0.95)",
         zIndex: 2000,
         overflowY: "auto",
-        padding: "4rem 2rem",
-        alignItems: "center",
+        padding: "5rem 2rem 3rem 2rem",
+        alignItems: "flex-start",
         justifyContent: "center",
       }}
     >
@@ -137,6 +137,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           width: "100%",
           position: "relative",
           animation: "modalSlideIn 0.5s ease-out",
+          marginTop: "0",
         }}
       >
         <h2
@@ -144,7 +145,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           style={{
             fontSize: "clamp(3rem, 8vw, 8rem)",
             fontWeight: 900,
-            marginBottom: "4rem",
+            marginBottom: "3rem",
             textAlign: "center",
             background: "linear-gradient(90deg, #4A90E2, #9B59B6, #F39C12)",
             WebkitBackgroundClip: "text",
@@ -163,6 +164,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             gap: "3rem",
             maxWidth: "1200px",
             margin: "0 auto",
+            paddingTop: "0",
           }}
         >
           {projects.map((project, index) => (
