@@ -211,10 +211,30 @@ section {
 
     .projects-grid {
         grid-template-columns: 1fr !important;
+        gap: 3rem !important;
     }
 
     .modal-close {
         font-size: 3rem !important;
+    }
+}
+
+/* Modal browser responsive styles */
+@media (max-width: 968px) {
+    .modal-browser .browser-window {
+        height: 180px !important;
+    }
+
+    .modal-browser .browser-content {
+        height: 150px !important;
+    }
+
+    .modal-browser .browser-info {
+        text-align: center !important;
+    }
+
+    .modal-browser .browser-tags {
+        justify-content: center !important;
     }
 }
 
