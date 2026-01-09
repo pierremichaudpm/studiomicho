@@ -61,7 +61,7 @@ const Browser: React.FC<BrowserProps> = ({
           observer.unobserve(element);
         }
       },
-      { threshold: 0.8 },
+      { threshold: 0.1 },
     );
 
     observer.observe(element);
