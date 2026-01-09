@@ -41,9 +41,8 @@ const Advantage: React.FC = () => {
         position: "relative",
       }}
     >
-      {/* Floating shapes */}
+      {/* Floating shapes - matching site style */}
       <div
-        className="shape-circle"
         style={{
           position: "absolute",
           width: "400px",
@@ -58,7 +57,6 @@ const Advantage: React.FC = () => {
         }}
       />
       <div
-        className="shape-square"
         style={{
           position: "absolute",
           width: "350px",
@@ -94,15 +92,27 @@ const Advantage: React.FC = () => {
         >
           L'
           <br />
-          <span className="gradient-text">avantage</span>
+          <span
+            className="gradient-text"
+            style={{
+              background: "linear-gradient(90deg, #4A90E2, #9B59B6, #F39C12)",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              animation: "gradientShift 5s linear infinite",
+            }}
+          >
+            avantage
+          </span>
         </h2>
 
         <div
-          className="advantages-grid"
+          className="advantages-list"
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "3rem",
+            gap: "4rem",
             position: "relative",
           }}
         >
@@ -111,59 +121,88 @@ const Advantage: React.FC = () => {
               key={index}
               className="advantage-item"
               style={{
-                background: "rgba(20, 20, 20, 0.7)",
-                border: "2px solid rgba(255, 255, 255, 0.1)",
-                borderRadius: "1rem",
-                padding: "2.5rem",
                 position: "relative",
-                overflow: "hidden",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#4A90E2";
-                e.currentTarget.style.boxShadow =
-                  "0 20px 60px rgba(0, 245, 255, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                e.currentTarget.style.boxShadow = "none";
+                paddingLeft: "3rem",
               }}
             >
+              {/* Animated line indicator - matching site's terminal style */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  top: "0.5rem",
+                  width: "2rem",
+                  height: "2px",
+                  background: "#4A90E2",
+                  opacity: 0.7,
+                }}
+              />
+
+              {/* Blinking cursor before title */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "0.5rem",
+                  top: "0.3rem",
+                  color: "#4A90E2",
+                  animation: "blink 1s infinite",
+                  fontSize: "1.5rem",
+                  fontWeight: 900,
+                }}
+              >
+                ▮
+              </div>
+
               <div
                 className="advantage-title"
                 style={{
-                  fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+                  fontSize: "clamp(2rem, 4vw, 3rem)",
                   fontWeight: 900,
                   marginBottom: "1rem",
                   color: "#4A90E2",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1rem",
+                  lineHeight: 1.2,
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
                 }}
               >
                 {advantage.title}
-                <span
-                  style={{
-                    color: "#4A90E2",
-                    animation: "blink 1s infinite",
-                    fontSize: "1.5rem",
-                  }}
-                >
-                  ▮
-                </span>
               </div>
+
               <div
                 className="advantage-description"
                 style={{
-                  fontSize: "clamp(1.1rem, 1.8vw, 1.5rem)",
+                  fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
                   color: "var(--white)",
                   lineHeight: 1.6,
+                  fontWeight: 400,
+                  opacity: 0.9,
+                  maxWidth: "900px",
                 }}
               >
                 {advantage.description}
               </div>
+
+              {/* Subtle animated underline on hover */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-1rem",
+                  left: "3rem",
+                  width: "100px",
+                  height: "2px",
+                  background: "linear-gradient(90deg, #4A90E2, transparent)",
+                  opacity: 0,
+                  transition: "opacity 0.3s ease, width 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = "1";
+                  e.currentTarget.style.width = "200px";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = "0";
+                  e.currentTarget.style.width = "100px";
+                }}
+              />
             </div>
           ))}
         </div>
