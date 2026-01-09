@@ -99,7 +99,7 @@ const Browser: React.FC<BrowserProps> = ({
           background: "rgba(20, 20, 20, 0.9)",
           border: `3px solid ${borderColor}`,
           borderRadius: "1rem",
-          boxShadow: `0 0 80px ${borderColor}4D`,
+          boxShadow: `0 0 80px ${borderColor}66`,
           position: "relative",
         }}
       >
@@ -129,6 +129,7 @@ const Browser: React.FC<BrowserProps> = ({
             alignItems: "center",
             padding: "0 1rem",
             gap: "0.5rem",
+            borderRadius: "1rem 1rem 0 0",
           }}
         >
           <div
