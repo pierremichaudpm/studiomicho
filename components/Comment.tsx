@@ -110,7 +110,7 @@ const Comment: React.FC = () => {
                 color: "#4A90E2",
               }}
             >
-              Expérience
+              IA comme co-pilote
             </div>
             <div
               className="flow-desc"
@@ -120,8 +120,7 @@ const Comment: React.FC = () => {
                 fontWeight: 600,
               }}
             >
-              25 ans Radio-Canada: journaliste, chef de produit numérique, Jeux
-              olympiques.
+              Claude, ChatGPT, Cursor. IA intégrée à chaque étape du processus.
             </div>
           </div>
 
@@ -172,7 +171,7 @@ const Comment: React.FC = () => {
                 color: "#9B59B6",
               }}
             >
-              Vélocité
+              Itérations rapides
             </div>
             <div
               className="flow-desc"
@@ -182,7 +181,7 @@ const Comment: React.FC = () => {
                 fontWeight: 600,
               }}
             >
-              Outils IA (Claude, ChatGPT, Cursor). Vitesse multipliée 5-10x.
+              Ajustements en temps réel. Feedback intégré immédiatement.
             </div>
           </div>
 
@@ -233,7 +232,7 @@ const Comment: React.FC = () => {
                 color: "#F39C12",
               }}
             >
-              Exécution
+              Zéro handoff
             </div>
             <div
               className="flow-desc"
@@ -243,7 +242,8 @@ const Comment: React.FC = () => {
                 fontWeight: 600,
               }}
             >
-              Produit déployé. Pas un plan. Une solution qui marche.
+              Une personne = zéro friction. Du concept au déploiement sans
+              transfert.
             </div>
           </div>
         </div>
