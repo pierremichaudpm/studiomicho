@@ -9,6 +9,7 @@ interface Project {
   color: string;
   imageUrl?: string;
   mobileImageUrl?: string;
+  url?: string;
 }
 
 interface ModalProps {
@@ -24,6 +25,7 @@ const projects: Project[] = [
     color: "#4A90E2",
     imageUrl: "/images/aquamedias-screenshot.png",
     mobileImageUrl: "/images/m-aquamedias-screenshot.png",
+    url: "https://aquamedias.netlify.app/",
   },
   {
     name: "Grands Prix Cyclistes",
@@ -32,6 +34,7 @@ const projects: Project[] = [
     color: "#9B59B6",
     imageUrl: "/images/grandsprixcyclistes-screenshot.png",
     mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.png",
+    url: "https://www.gpcqm-mtl.ca/",
   },
   {
     name: "Jaxa Gomme Balloune",
@@ -40,6 +43,7 @@ const projects: Project[] = [
     color: "#F39C12",
     imageUrl: "/images/jaxagomme-screenshot.png",
     mobileImageUrl: "/images/m-jaxagomme-screenshot.png",
+    url: "https://jaxaprod.netlify.app/",
   },
   {
     name: "Jean Harvey",
@@ -48,6 +52,7 @@ const projects: Project[] = [
     color: "#4A90E2",
     imageUrl: "/images/jeanharvey-screenshot.png",
     mobileImageUrl: "/images/m-jeanharvey-screenshot.png",
+    url: "https://jeanharvey.ca/",
   },
   {
     name: "Studio 76",
@@ -56,6 +61,7 @@ const projects: Project[] = [
     color: "#9B59B6",
     imageUrl: "/images/studio76-screenshot.png",
     mobileImageUrl: "/images/m-studio76-screenshot.png",
+    url: "https://www.studio-76.ca/",
   },
   {
     name: "La Maison LeRoy",
@@ -64,6 +70,7 @@ const projects: Project[] = [
     color: "#F39C12",
     imageUrl: "/images/maisonleroy-screenshot.png",
     mobileImageUrl: "/images/m-maisonleroy-screenshot.png",
+    url: "https://maisonleroy.info/",
   },
 ];
 
@@ -254,7 +261,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     }}
                   />
                 </div>
-                <div
+                <a
+                  href={project.url || "#"}
+                  target={project.url ? "_blank" : undefined}
+                  rel={project.url ? "noopener noreferrer" : undefined}
                   className="browser-content"
                   style={{
                     height: "335px",
@@ -271,6 +281,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     justifyContent: "flex-end",
                     padding: "1.5rem",
                     position: "relative",
+                    cursor: project.url ? "pointer" : "default",
+                    textDecoration: "none",
                   }}
                 >
                   {!project.imageUrl &&
@@ -286,7 +298,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         SCREENSHOT
                       </div>
                     )}
-                </div>
+                </a>
               </div>
 
               <div
