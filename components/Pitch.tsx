@@ -74,58 +74,106 @@ const Pitch: React.FC = () => {
           JE LIVRE.
         </h1>
 
-        <a
-          href="mailto:pmicho@pm.me"
-          className="pitch-cta"
+        <div
           style={{
-            display: "inline-block",
-            background: "#4A90E2",
-            color: "var(--bg-dark)",
-            padding: "2rem 5rem",
-            fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
-            fontWeight: 900,
-            textDecoration: "none",
-            textTransform: "uppercase",
-            letterSpacing: "3px",
-            transition: "all 0.3s ease",
-            position: "relative",
-            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "3rem",
             marginTop: "2rem",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "scale(1.05)";
-            e.currentTarget.style.boxShadow =
-              "0 20px 60px rgba(255, 0, 255, 0.5)";
-            const before = e.currentTarget.querySelector(
-              ".cta-before",
-            ) as HTMLDivElement;
-            if (before) before.style.left = "0";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-            e.currentTarget.style.boxShadow = "none";
-            const before = e.currentTarget.querySelector(
-              ".cta-before",
-            ) as HTMLDivElement;
-            if (before) before.style.left = "-100%";
+            flexWrap: "wrap",
           }}
         >
-          <div
-            className="cta-before"
+          <a
+            href="mailto:pmicho@pm.me"
             style={{
-              content: "",
-              position: "absolute",
-              top: 0,
-              left: "-100%",
-              width: "100%",
-              height: "100%",
-              background: "#9B59B6",
-              transition: "left 0.3s ease",
-              zIndex: -1,
+              fontSize: "1.2rem",
+              color: "var(--cyan)",
+              textDecoration: "none",
+              fontWeight: 700,
+              transition: "all 0.3s ease",
             }}
-          />
-          Parlons-en
-        </a>
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#9B59B6";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "var(--cyan)";
+            }}
+          >
+            pmicho@pm.me
+          </a>
+
+          <a
+            href="mailto:pmicho@pm.me"
+            className="pitch-cta"
+            style={{
+              display: "inline-block",
+              background: "#4A90E2",
+              color: "var(--bg-dark)",
+              padding: "2rem 5rem",
+              fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+              fontWeight: 900,
+              textDecoration: "none",
+              textTransform: "uppercase",
+              letterSpacing: "3px",
+              transition: "all 0.3s ease",
+              position: "relative",
+              overflow: "hidden",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+              e.currentTarget.style.boxShadow =
+                "0 20px 60px rgba(255, 0, 255, 0.5)";
+              const before = e.currentTarget.querySelector(
+                ".cta-before",
+              ) as HTMLDivElement;
+              if (before) before.style.left = "0";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "none";
+              const before = e.currentTarget.querySelector(
+                ".cta-before",
+              ) as HTMLDivElement;
+              if (before) before.style.left = "-100%";
+            }}
+          >
+            <div
+              className="cta-before"
+              style={{
+                content: "",
+                position: "absolute",
+                top: 0,
+                left: "-100%",
+                width: "100%",
+                height: "100%",
+                background: "#9B59B6",
+                transition: "left 0.3s ease",
+                zIndex: -1,
+              }}
+            />
+            Parlons-en
+          </a>
+
+          <a
+            href="tel:+15149159370"
+            style={{
+              fontSize: "1.2rem",
+              color: "var(--cyan)",
+              textDecoration: "none",
+              fontWeight: 700,
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#9B59B6";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "var(--cyan)";
+            }}
+          >
+            +1 514-915-9370
+          </a>
+        </div>
       </div>
     </section>
   );
