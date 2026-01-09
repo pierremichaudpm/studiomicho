@@ -136,7 +136,7 @@ const Advantage: React.FC = () => {
                   textTransform: "uppercase",
                   letterSpacing: "1px",
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "baseline",
                   gap: "0.5rem",
                 }}
               >
@@ -147,6 +147,7 @@ const Advantage: React.FC = () => {
                     animation: "blink 1s infinite",
                     fontSize: "1.5rem",
                     fontWeight: 900,
+                    lineHeight: 1,
                   }}
                 >
                   ▮
