@@ -182,7 +182,6 @@ const Browser: React.FC<BrowserProps> = ({
             cursor: projectUrl ? "pointer" : "default",
             transition: "transform 0.3s ease",
             textDecoration: "none",
-            overflow: "hidden",
           }}
           onMouseEnter={(e) => {
             if (projectUrl) {
