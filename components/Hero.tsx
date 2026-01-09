@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
   });
 
   const line2 = useTypewriter({
-    text: ">",
+    text: "> Approche personnalisée. Contact direct. Livraison rapide.",
     speed: 30,
     delay: 2000,
     showCursor: true,
@@ -21,17 +21,17 @@ const Hero: React.FC = () => {
   });
 
   const line3 = useTypewriter({
-    text: '> La plupart <span class="gradient-text">parlent</span> de transformation numérique.',
+    text: ">",
     speed: 30,
-    delay: 3000,
+    delay: 3500,
     showCursor: true,
     permanentCursor: false,
   });
 
   const line4 = useTypewriter({
-    text: '> Je <span class="gradient-text">livre des produits qui fonctionnent</span>.',
+    text: '> Des produits qui <span class="gradient-text">fonctionnent vraiment</span>.',
     speed: 30,
-    delay: 5500,
+    delay: 5000,
     showCursor: true,
     permanentCursor: true,
   });
