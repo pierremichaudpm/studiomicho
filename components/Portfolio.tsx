@@ -100,7 +100,7 @@ const Browser: React.FC<BrowserProps> = ({
           border: `3px solid ${borderColor}`,
           borderRadius: "1rem",
           overflow: "hidden",
-          boxShadow: `0 30px 80px ${borderColor}4D`,
+          boxShadow: `0 0 80px ${borderColor}4D`,
           position: "relative",
         }}
       >
