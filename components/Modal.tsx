@@ -144,8 +144,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "4rem",
-            maxWidth: "1400px",
+            gap: "3rem",
+            maxWidth: "1200px",
             margin: "0 auto",
           }}
         >
@@ -162,22 +162,22 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 style={{
                   background: "rgba(20, 20, 20, 0.9)",
                   border: `2px solid ${project.color}`,
-                  borderRadius: "0.8rem",
+                  borderRadius: "0.5rem",
                   overflow: "hidden",
-                  boxShadow: `0 15px 40px ${project.color.replace(")", ", 0.2)").replace("rgb", "rgba")}`,
+                  boxShadow: `0 10px 30px ${project.color.replace(")", ", 0.15)").replace("rgb", "rgba")}`,
                   position: "relative",
-                  height: "200px",
+                  height: "180px",
                 }}
               >
                 <div
                   className="browser-bar"
                   style={{
-                    height: "30px",
-                    background: "rgba(40, 40, 40, 0.95)",
+                    height: "25px",
+                    background: "rgba(30, 30, 30, 0.9)",
                     display: "flex",
                     alignItems: "center",
-                    padding: "0 0.8rem",
-                    gap: "0.4rem",
+                    padding: "0 0.6rem",
+                    gap: "0.3rem",
                   }}
                 >
                   <div
@@ -211,21 +211,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-content"
                   style={{
-                    height: "170px",
-                    background: `linear-gradient(135deg, ${project.color.replace(")", ", 0.12)").replace("rgb", "rgba")}, transparent)`,
+                    height: "155px",
+                    background: `linear-gradient(135deg, ${project.color.replace(")", ", 0.08)").replace("rgb", "rgba")}, transparent)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "1.5rem",
+                    padding: "1rem",
                     position: "relative",
                   }}
                 >
                   <div
                     style={{
                       position: "absolute",
-                      fontSize: "1.5rem",
+                      fontSize: "1.2rem",
                       fontWeight: 900,
-                      opacity: 0.15,
+                      opacity: 0.1,
                     }}
                   >
                     SCREENSHOT
@@ -244,10 +244,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-name"
                   style={{
-                    fontSize: "clamp(2rem, 4vw, 3rem)",
+                    fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
                     fontWeight: 900,
                     lineHeight: 0.9,
-                    marginBottom: "0.8rem",
+                    marginBottom: "0.6rem",
                     color: project.color,
                   }}
                 >
@@ -256,9 +256,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div
                   className="browser-desc"
                   style={{
-                    fontSize: "1rem",
+                    fontSize: "0.95rem",
                     color: "var(--gray)",
-                    marginBottom: "1rem",
+                    marginBottom: "0.8rem",
                     lineHeight: 1.4,
                   }}
                 >
@@ -268,7 +268,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   className="browser-tags"
                   style={{
                     display: "flex",
-                    gap: "0.6rem",
+                    gap: "0.5rem",
                     justifyContent: "flex-start",
                     flexWrap: "wrap",
                   }}
@@ -278,11 +278,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                       key={tagIndex}
                       className="browser-tag"
                       style={{
-                        background: "rgba(255, 255, 255, 0.08)",
-                        border: "1px solid rgba(255, 255, 255, 0.3)",
-                        padding: "0.3rem 1rem",
+                        background: "rgba(255, 255, 255, 0.05)",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        padding: "0.25rem 0.8rem",
                         fontWeight: 700,
-                        fontSize: "0.8rem",
+                        fontSize: "0.75rem",
                         textTransform: "uppercase",
                       }}
                     >
