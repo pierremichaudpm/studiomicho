@@ -7,6 +7,7 @@ interface Project {
   description: string;
   tags: string[];
   color: string;
+  imageUrl?: string;
 }
 
 interface ModalProps {
@@ -21,6 +22,7 @@ const projects: Project[] = [
       "Firme d'ingénierie — Site corporatif avec gestion RFP IA. 3 semaines, conception à déploiement.",
     tags: ["Solo", "IA", "3 Semaines"],
     color: "#4A90E2",
+    imageUrl: "/images/op2-screenshot.png",
   },
   {
     name: "GPCQM",
@@ -28,6 +30,7 @@ const projects: Project[] = [
       "PWA Grands Prix Cyclistes. Application spectateurs live. Milliers d'usagers en temps réel.",
     tags: ["PWA", "Live", "Production"],
     color: "#9B59B6",
+    imageUrl: "/images/gpcqm-screenshot.png",
   },
   {
     name: "GROUPE TONIC",
@@ -35,6 +38,7 @@ const projects: Project[] = [
       "Site corporatif complet. Construction solo avec IA. Livraison express en temps record.",
     tags: ["Corporate", "Express", "Déployé"],
     color: "#F39C12",
+    imageUrl: "/images/groupe-tonic-screenshot.png",
   },
 ];
 
@@ -212,24 +216,32 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   className="browser-content"
                   style={{
                     height: "335px",
-                    background: `linear-gradient(135deg, ${project.color.replace(")", ", 0.15)").replace("rgb", "rgba")}, transparent)`,
+                    background: project.imageUrl
+                      ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${project.imageUrl}) center/cover no-repeat`
+                      : project.color === "#4A90E2"
+                        ? "linear-gradient(135deg, rgba(0, 245, 255, 0.15), transparent)"
+                        : project.color === "#9B59B6"
+                          ? "linear-gradient(135deg, rgba(255, 0, 255, 0.15), transparent)"
+                          : "linear-gradient(135deg, rgba(255, 255, 0, 0.15), transparent)",
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    alignItems: "flex-end",
+                    justifyContent: "flex-end",
                     padding: "1.5rem",
                     position: "relative",
                   }}
                 >
-                  <div
-                    style={{
-                      position: "absolute",
-                      fontSize: "2rem",
-                      fontWeight: 900,
-                      opacity: 0.15,
-                    }}
-                  >
-                    SCREENSHOT
-                  </div>
+                  {!project.imageUrl && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        fontSize: "2rem",
+                        fontWeight: 900,
+                        opacity: 0.15,
+                      }}
+                    >
+                      SCREENSHOT
+                    </div>
+                  )}
                 </div>
               </div>
 
