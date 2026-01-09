@@ -122,37 +122,9 @@ const Advantage: React.FC = () => {
               className="advantage-item"
               style={{
                 position: "relative",
-                paddingLeft: "3rem",
+                paddingLeft: "0",
               }}
             >
-              {/* Animated line indicator - matching site's terminal style */}
-              <div
-                style={{
-                  position: "absolute",
-                  left: 0,
-                  top: "0.5rem",
-                  width: "2rem",
-                  height: "2px",
-                  background: "#4A90E2",
-                  opacity: 0.7,
-                }}
-              />
-
-              {/* Blinking cursor before title */}
-              <div
-                style={{
-                  position: "absolute",
-                  left: "0.5rem",
-                  top: "0.3rem",
-                  color: "#4A90E2",
-                  animation: "blink 1s infinite",
-                  fontSize: "1.5rem",
-                  fontWeight: 900,
-                }}
-              >
-                ▮
-              </div>
-
               <div
                 className="advantage-title"
                 style={{
@@ -163,9 +135,22 @@ const Advantage: React.FC = () => {
                   lineHeight: 1.2,
                   textTransform: "uppercase",
                   letterSpacing: "1px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
                 }}
               >
                 {advantage.title}
+                <span
+                  style={{
+                    color: "#4A90E2",
+                    animation: "blink 1s infinite",
+                    fontSize: "1.5rem",
+                    fontWeight: 900,
+                  }}
+                >
+                  ▮
+                </span>
               </div>
 
               <div
@@ -187,7 +172,7 @@ const Advantage: React.FC = () => {
                 style={{
                   position: "absolute",
                   bottom: "-1rem",
-                  left: "3rem",
+                  left: "0",
                   width: "100px",
                   height: "2px",
                   background: "linear-gradient(90deg, #4A90E2, transparent)",
