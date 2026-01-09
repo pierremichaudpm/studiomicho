@@ -99,7 +99,6 @@ const Browser: React.FC<BrowserProps> = ({
           background: "rgba(20, 20, 20, 0.9)",
           border: `3px solid ${borderColor}`,
           borderRadius: "1rem",
-          overflow: "hidden",
           boxShadow: `0 0 80px ${borderColor}4D`,
           position: "relative",
         }}
@@ -165,6 +164,8 @@ const Browser: React.FC<BrowserProps> = ({
           className="browser-content"
           style={{
             height: "560px",
+            overflow: "hidden",
+            borderRadius: "0 0 1rem 1rem",
             background: finalImageUrl
               ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${finalImageUrl}) center/cover no-repeat`
               : color === "cyan"

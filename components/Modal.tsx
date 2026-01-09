@@ -217,7 +217,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   border: `3px solid ${project.color}`,
                   borderRadius: "1rem",
                   overflow: "hidden",
-                  boxShadow: `0 25px 80px ${project.color}4D`,
+                  boxShadow: `0 25px 80px ${project.color}1A`,
                   position: "relative",
                   height: "360px",
                 }}
