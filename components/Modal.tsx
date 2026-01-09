@@ -8,6 +8,7 @@ interface Project {
   tags: string[];
   color: string;
   imageUrl?: string;
+  mobileImageUrl?: string;
 }
 
 interface ModalProps {
@@ -21,36 +22,48 @@ const projects: Project[] = [
     description: "Images sous-marines",
     tags: ["En construction", "Prototype"],
     color: "#4A90E2",
+    imageUrl: "/images/aquamedias-screenshot.png",
+    mobileImageUrl: "/images/m-aquamedias-screenshot.png",
   },
   {
     name: "Grands Prix Cyclistes",
     description: "PWA spectateurs",
     tags: ["PWA", "3 semaines"],
     color: "#9B59B6",
+    imageUrl: "/images/grandsprixcyclistes-screenshot.png",
+    mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.png",
   },
   {
     name: "Jaxa Production",
     description: "Contenus immersifs",
     tags: ["Immersif", "Prototype"],
     color: "#F39C12",
+    imageUrl: "/images/jaxa-screenshot.png",
+    mobileImageUrl: "/images/m-jaxa-screenshot.png",
   },
   {
     name: "Jean Harvey",
     description: "Page comédien",
     tags: ["Portfolio", "Site vitrine"],
     color: "#4A90E2",
+    imageUrl: "/images/jeanharvey-screenshot.png",
+    mobileImageUrl: "/images/m-jeanharvey-screenshot.png",
   },
   {
     name: "Studio 76",
     description: "Production télé",
     tags: ["Corporate", "Production TV"],
     color: "#9B59B6",
+    imageUrl: "/images/studio76-screenshot.png",
+    mobileImageUrl: "/images/m-studio76-screenshot.png",
   },
   {
     name: "La Maison LeRoy",
     description: "Location Provence",
     tags: ["Tourisme"],
     color: "#F39C12",
+    imageUrl: "/images/maisonleroy-screenshot.png",
+    mobileImageUrl: "/images/mp-maisonleroy-screenshot.png",
   },
 ];
 
