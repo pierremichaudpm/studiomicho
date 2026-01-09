@@ -17,28 +17,40 @@ interface ModalProps {
 
 const projects: Project[] = [
   {
-    name: "OP2",
-    description:
-      "Firme d'ingénierie — Site corporatif avec gestion RFP IA. 3 semaines, conception à déploiement.",
-    tags: ["Solo", "IA", "3 Semaines"],
+    name: "Aquamedias",
+    description: "Images sous-marines",
+    tags: ["En construction", "Prototype"],
     color: "#4A90E2",
-    imageUrl: "/images/op2-screenshot.png",
   },
   {
-    name: "GPCQM",
-    description:
-      "PWA Grands Prix Cyclistes. Application spectateurs live. Milliers d'usagers en temps réel.",
-    tags: ["PWA", "Live", "Production"],
+    name: "Grands Prix Cyclistes",
+    description: "PWA spectateurs",
+    tags: ["PWA", "3 semaines"],
     color: "#9B59B6",
-    imageUrl: "/images/gpcqm-screenshot.png",
   },
   {
-    name: "GROUPE TONIC",
-    description:
-      "Site corporatif complet. Construction solo avec IA. Livraison express en temps record.",
-    tags: ["Corporate", "Express", "Déployé"],
+    name: "Jaxa Production",
+    description: "Contenus immersifs",
+    tags: ["Immersif", "Prototype"],
     color: "#F39C12",
-    imageUrl: "/images/groupe-tonic-screenshot.png",
+  },
+  {
+    name: "Jean Harvey",
+    description: "Page comédien",
+    tags: ["Portfolio", "Site vitrine"],
+    color: "#4A90E2",
+  },
+  {
+    name: "Studio 76",
+    description: "Production télé",
+    tags: ["Corporate", "Production TV"],
+    color: "#9B59B6",
+  },
+  {
+    name: "La Maison LeRoy",
+    description: "Location Provence",
+    tags: ["Tourisme"],
+    color: "#F39C12",
   },
 ];
 
