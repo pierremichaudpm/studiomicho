@@ -227,9 +227,6 @@ section {
 
     .modal-browser .browser-content {
         height: 475px !important;
-        background-size: contain !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
     }
 
     .modal-browser .browser-info {

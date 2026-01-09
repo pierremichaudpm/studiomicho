@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Project {
   name: string;
@@ -34,12 +34,12 @@ const projects: Project[] = [
     mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.png",
   },
   {
-    name: "Jaxa Production",
+    name: "Jaxa Gomme Balloune",
     description: "Contenus immersifs",
     tags: ["Immersif", "Prototype"],
     color: "#F39C12",
-    imageUrl: "/images/jaxa-screenshot.png",
-    mobileImageUrl: "/images/m-jaxa-screenshot.png",
+    imageUrl: "/images/jaxagomme-screenshot.png",
+    mobileImageUrl: "/images/m-jaxagomme-screenshot.png",
   },
   {
     name: "Jean Harvey",
@@ -63,11 +63,13 @@ const projects: Project[] = [
     tags: ["Tourisme"],
     color: "#F39C12",
     imageUrl: "/images/maisonleroy-screenshot.png",
-    mobileImageUrl: "/images/mp-maisonleroy-screenshot.png",
+    mobileImageUrl: "/images/m-maisonleroy-screenshot.png",
   },
 ];
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -87,6 +89,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 968);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   if (!isOpen) return null;
 
@@ -243,13 +258,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   className="browser-content"
                   style={{
                     height: "335px",
-                    background: project.imageUrl
-                      ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${project.imageUrl}) center/cover no-repeat`
-                      : project.color === "#4A90E2"
-                        ? "linear-gradient(135deg, rgba(0, 245, 255, 0.15), transparent)"
-                        : project.color === "#9B59B6"
-                          ? "linear-gradient(135deg, rgba(255, 0, 255, 0.15), transparent)"
-                          : "linear-gradient(135deg, rgba(255, 255, 0, 0.15), transparent)",
+                    background:
+                      (project.mobileImageUrl && isMobile) || project.imageUrl
+                        ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${project.mobileImageUrl && isMobile ? project.mobileImageUrl : project.imageUrl}) center/cover no-repeat`
+                        : project.color === "#4A90E2"
+                          ? "linear-gradient(135deg, rgba(0, 245, 255, 0.15), transparent)"
+                          : project.color === "#9B59B6"
+                            ? "linear-gradient(135deg, rgba(255, 0, 255, 0.15), transparent)"
+                            : "linear-gradient(135deg, rgba(255, 255, 0, 0.15), transparent)",
                     display: "flex",
                     alignItems: "flex-end",
                     justifyContent: "flex-end",
@@ -257,18 +273,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     position: "relative",
                   }}
                 >
-                  {!project.imageUrl && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        fontSize: "2rem",
-                        fontWeight: 900,
-                        opacity: 0.15,
-                      }}
-                    >
-                      SCREENSHOT
-                    </div>
-                  )}
+                  {!project.imageUrl &&
+                    !(project.mobileImageUrl && isMobile) && (
+                      <div
+                        style={{
+                          position: "absolute",
+                          fontSize: "2rem",
+                          fontWeight: 900,
+                          opacity: 0.15,
+                        }}
+                      >
+                        SCREENSHOT
+                      </div>
+                    )}
                 </div>
               </div>
 
