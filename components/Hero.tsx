@@ -13,29 +13,29 @@ const Hero: React.FC = () => {
     permanentCursor: false,
   });
 
-  // Line 2: 94 chars (with HTML) × 35ms = 3290ms, starts 2950 + 400 = 3350ms, ends 6640ms
+  // Line 2: 94 chars (with HTML) × 18ms = 1692ms, starts 2950 + 400 = 3350ms, ends 5042ms
   const line2 = useTypewriter({
     text: '> Approche personnalisée. Contact direct. Livraison <span class="gradient-text">rapide</span>.',
-    speed: 35,
+    speed: 18,
     delay: 3350,
     showCursor: true,
     permanentCursor: false,
   });
 
-  // Line 3: 1 char × 60ms = 60ms, starts 6640 + 350 = 6990ms, ends 7050ms
+  // Line 3: 1 char × 60ms = 60ms, starts 5042 + 350 = 5392ms, ends 5452ms
   const line3 = useTypewriter({
     text: ">",
     speed: 60,
-    delay: 6990,
+    delay: 5392,
     showCursor: true,
     permanentCursor: false,
   });
 
-  // Line 4: 76 chars (with HTML) × 23ms = 1748ms, starts 7050 + 500 = 7550ms
+  // Line 4: 76 chars (with HTML) × 23ms = 1748ms, starts 5452 + 500 = 5952ms
   const line4 = useTypewriter({
     text: '> Des produits qui <span class="gradient-text">fonctionnent vraiment</span>.',
     speed: 23,
-    delay: 7550,
+    delay: 5952,
     showCursor: true,
     permanentCursor: true,
   });
