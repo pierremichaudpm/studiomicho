@@ -5,7 +5,7 @@ import VerticalBrand from "@/components/VerticalBrand";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
 import Modal from "@/components/Modal";
-import Difference from "@/components/Difference";
+import Advantage from "@/components/Advantage";
 import Comment from "@/components/Comment";
 import Pitch from "@/components/Pitch";
 
@@ -20,7 +20,7 @@ export default function Home() {
       <VerticalBrand />
       <Hero />
       <Portfolio onOpenModal={openModal} />
-      <Difference />
+      <Advantage />
       <Comment />
       <Pitch />
       <Modal isOpen={isModalOpen} onClose={closeModal} />
