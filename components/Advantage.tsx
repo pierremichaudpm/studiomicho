@@ -135,7 +135,8 @@ const Advantage: React.FC = () => {
                   lineHeight: 1.2,
                   textTransform: "uppercase",
                   letterSpacing: "1px",
-                  whiteSpace: "nowrap",
+                  wordWrap: "break-word",
+                  overflowWrap: "break-word",
                 }}
               >
                 {advantage.title}
