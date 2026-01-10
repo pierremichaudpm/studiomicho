@@ -4,16 +4,16 @@ import React from "react";
 import { useTypewriter } from "@/hooks/useTypewriter";
 
 const Hero: React.FC = () => {
-  // Line 1: 98 chars (with HTML) × 25ms = 2450ms, ends at 2950ms
+  // Line 1: 99 chars (with HTML) × 25ms = 2475ms, ends at 2975ms
   const line1 = useTypewriter({
-    text: '> J\'imagine et construis des produits numériques à <span class="gradient-text">vélocité IA</span>.',
+    text: '> On imagine et construit des produits numériques à <span class="gradient-text">vélocité IA</span>.',
     speed: 25,
     delay: 500,
     showCursor: true,
     permanentCursor: false,
   });
 
-  // Line 2: 94 chars (with HTML) × 18ms = 1692ms, starts 2950 + 400 = 3350ms, ends 5042ms
+  // Line 2: 94 chars (with HTML) × 18ms = 1692ms, starts 2975 + 375 = 3350ms, ends 5042ms
   const line2 = useTypewriter({
     text: '> Approche personnalisée. Contact direct. Livraison <span class="gradient-text">rapide</span>.',
     speed: 18,

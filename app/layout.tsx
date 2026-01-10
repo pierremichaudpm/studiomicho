@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Studio Micho — Produits Numériques Qui Livrent",
   description:
-    "J'imagine et construis des produits numériques à vélocité IA. Produits qui fonctionnent, pas juste des plans.",
+    "On imagine et construit des produits numériques à vélocité IA. Produits qui fonctionnent, pas juste des plans.",
 };
 
 export default function RootLayout({
