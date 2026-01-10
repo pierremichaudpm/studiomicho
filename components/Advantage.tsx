@@ -90,7 +90,7 @@ const Advantage: React.FC = () => {
             lineHeight: 0.9,
           }}
         >
-          L'
+          L&apos;
           <br />
           <span
             className="gradient-text"
@@ -136,20 +136,12 @@ const Advantage: React.FC = () => {
                   textTransform: "uppercase",
                   letterSpacing: "1px",
                   display: "flex",
-                  alignItems: "flex-end",
+                  alignItems: "baseline",
                   gap: "0.5rem",
                 }}
               >
                 {advantage.title}
-                <span
-                  style={{
-                    color: "#4A90E2",
-                    animation: "blink 1s infinite",
-                    fontSize: "1.5rem",
-                    fontWeight: 900,
-                    lineHeight: 1,
-                  }}
-                >
+                <span className="cursor-blink" style={{ lineHeight: 1 }}>
                   ▮
                 </span>
               </div>

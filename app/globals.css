@@ -129,6 +129,27 @@ section {
     animation: blink 0.7s infinite;
 }
 
+.advantage-title {
+    display: flex;
+    align-items: baseline;
+}
+
+.advantage-title span {
+    color: #4a90e2;
+    animation: blink 1s infinite;
+    font-size: 1.5rem;
+    vertical-align: baseline;
+    align-self: baseline;
+}
+
+.vs-you .vs-item::after {
+    content: " ▮";
+    color: var(--cyan);
+    animation: blink 1s infinite;
+    vertical-align: baseline;
+    align-self: baseline;
+}
+
 .gradient-text {
     background: linear-gradient(90deg, #00d4e0, #e600e6, #ffd700);
     background-size: 200% auto;
@@ -218,6 +239,18 @@ section {
 
     .modal-close {
         font-size: 3rem !important;
+    }
+
+    .advantage-title span {
+        font-size: 0.75em;
+        vertical-align: baseline;
+        align-self: baseline;
+    }
+
+    .vs-you .vs-item::after {
+        font-size: 0.75em;
+        vertical-align: baseline;
+        align-self: baseline;
     }
 }
 
