@@ -129,17 +129,15 @@ section {
     animation: blink 0.7s infinite;
 }
 
-.advantage-title {
-    display: flex;
-    align-items: baseline;
-}
-
-.advantage-title span {
+.advantage-cursor {
     color: #4a90e2;
     animation: blink 1s infinite;
     font-size: 1.5rem;
     vertical-align: baseline;
-    align-self: baseline;
+    display: inline-block;
+    margin-left: 0.1rem;
+    position: relative;
+    top: -3px;
 }
 
 .vs-you .vs-item::after {
@@ -147,7 +145,6 @@ section {
     color: var(--cyan);
     animation: blink 1s infinite;
     vertical-align: baseline;
-    align-self: baseline;
 }
 
 .gradient-text {
@@ -241,16 +238,12 @@ section {
         font-size: 3rem !important;
     }
 
-    .advantage-title span {
-        font-size: 0.75em;
+    .advantage-cursor {
+        font-size: 1.2rem;
         vertical-align: baseline;
-        align-self: baseline;
-    }
-
-    .vs-you .vs-item::after {
-        font-size: 0.75em;
-        vertical-align: baseline;
-        align-self: baseline;
+        margin-left: 0.25rem;
+        position: relative;
+        top: 2px;
     }
 }
 

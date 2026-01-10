@@ -135,15 +135,11 @@ const Advantage: React.FC = () => {
                   lineHeight: 1.2,
                   textTransform: "uppercase",
                   letterSpacing: "1px",
-                  display: "flex",
-                  alignItems: "baseline",
-                  gap: "0.5rem",
+                  whiteSpace: "nowrap",
                 }}
               >
                 {advantage.title}
-                <span className="cursor-blink" style={{ lineHeight: 1 }}>
-                  ▮
-                </span>
+                <span className="advantage-cursor">▮</span>
               </div>
 
               <div
