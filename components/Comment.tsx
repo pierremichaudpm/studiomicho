@@ -232,7 +232,7 @@ const Comment: React.FC = () => {
                 color: "#F39C12",
               }}
             >
-              Zéro handoff
+              Zéro malentendu
             </div>
             <div
               className="flow-desc"
@@ -242,8 +242,8 @@ const Comment: React.FC = () => {
                 fontWeight: 600,
               }}
             >
-              Une personne = zéro friction. Du concept au déploiement sans
-              transfert.
+              Même personne qui écoute, conçoit et construit. Votre vision reste
+              intacte.
             </div>
           </div>
         </div>
