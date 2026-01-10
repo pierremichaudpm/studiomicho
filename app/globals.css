@@ -239,11 +239,11 @@ section {
     }
 
     .advantage-cursor {
-        font-size: 0.9em;
+        font-size: 0.72em;
         vertical-align: baseline;
         margin-left: 0.1rem;
         position: relative;
-        top: 1px;
+        top: -2px;
     }
 
     .advantage-title {
