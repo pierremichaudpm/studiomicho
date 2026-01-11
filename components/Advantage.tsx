@@ -7,7 +7,7 @@ const Advantage: React.FC = () => {
     {
       title: "Contact direct",
       description:
-        "Vous travaillez directement avec moi, du concept au déploiement. Pas d'intermédiaires, pas de téléphone arabe.",
+        "Pas d'intermédiaires. Vous travaillez directement avec moi, du concept au déploiement.",
     },
     {
       title: "Écoute personnalisée",
