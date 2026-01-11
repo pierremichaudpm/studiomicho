@@ -6,7 +6,7 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 const Hero: React.FC = () => {
   // Line 1: 99 chars (with HTML) × 25ms = 2475ms, ends at 2975ms
   const line1 = useTypewriter({
-    text: '> On imagine et construit des produits numériques à <span class="gradient-text">vélocité IA</span>.',
+    text: '> J\'imagine et construis des produits numériques à <span class="gradient-text">vélocité IA</span>.',
     speed: 25,
     delay: 500,
     showCursor: true,

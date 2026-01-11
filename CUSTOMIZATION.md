@@ -39,7 +39,7 @@ Les couleurs se mettent à jour automatiquement partout !
 ### Ligne 1
 ```typescript
 const line1 = useTypewriter({
-  text: "> On imagine et construit des produits numériques à vélocité IA",
+  text: "> J'imagine et construis des produits numériques à vélocité IA",
   //    ↑ Changez ce texte
   delay: 500,
 });
