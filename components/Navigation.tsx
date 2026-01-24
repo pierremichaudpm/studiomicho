@@ -27,12 +27,14 @@ const Navigation: React.FC = () => {
       <nav
         style={{
           position: "fixed",
-          top: "calc(26rem + 14px)",
+          top: "clamp(14rem, 26rem, 26rem + 14px)",
           left: "calc(2rem + 11px)",
           zIndex: 2000,
           display: "none",
           flexDirection: "column",
-          gap: "2rem",
+          gap: "clamp(1rem, 2vh, 2rem)",
+          maxHeight: "calc(100vh - 14rem - 2rem)",
+          justifyContent: "center",
         }}
         className="desktop-nav"
       >
@@ -47,9 +49,9 @@ const Navigation: React.FC = () => {
             style={{
               color: "var(--white)",
               textDecoration: "none",
-              fontSize: "0.8rem",
+              fontSize: "clamp(0.65rem, 0.8vw, 0.8rem)",
               fontWeight: 600,
-              letterSpacing: "0.2rem",
+              letterSpacing: "clamp(0.1rem, 0.2vw, 0.2rem)",
               transition: "all 0.3s ease",
               textTransform: "lowercase",
               opacity: 0.7,
@@ -135,13 +137,16 @@ const Navigation: React.FC = () => {
         <a
           href="#"
           style={{
-            fontSize: "1.5rem",
+            fontSize: "clamp(1rem, 3.5vw, 1.5rem)",
             fontWeight: 900,
             color: "var(--white)",
             textDecoration: "none",
             letterSpacing: "0.2rem",
             transition: "color 0.3s ease",
             marginLeft: "50px",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = "#4A90E2";
