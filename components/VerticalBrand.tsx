@@ -19,6 +19,7 @@ const VerticalBrand: React.FC = () => {
           writingMode: "vertical-rl",
           letterSpacing: "0.3rem",
           transition: "color 0.3s ease",
+          display: "none",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.color = "#4A90E2";
@@ -30,9 +31,6 @@ const VerticalBrand: React.FC = () => {
         STUDIO MICHO
       </a>
       <style jsx>{`
-        .vertical-brand {
-          display: none;
-        }
         @media (min-width: 969px) {
           .vertical-brand {
             display: block !important;
