@@ -42,6 +42,12 @@ section {
     overflow: hidden;
 }
 
+@media (min-width: 969px) {
+    section {
+        padding: clamp(6rem, 10vh, 8rem) 2rem;
+    }
+}
+
 /* ANIMATIONS */
 @keyframes blink {
     0%,
