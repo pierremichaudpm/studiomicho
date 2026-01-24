@@ -76,7 +76,7 @@ const Navigation: React.FC = () => {
         style={{
           position: "fixed",
           top: "2rem",
-          right: "2rem",
+          left: "2rem",
           zIndex: 2001,
           background: "transparent",
           border: "none",

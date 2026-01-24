@@ -110,6 +110,13 @@ const Services: React.FC = () => {
             alignItems: "start",
           }}
         >
+          <style jsx>{`
+            @media (max-width: 968px) {
+              .services-grid {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}</style>
           {services.map((service, index) => (
             <div
               key={index}
