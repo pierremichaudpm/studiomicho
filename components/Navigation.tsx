@@ -70,52 +70,67 @@ const Navigation: React.FC = () => {
         ))}
       </nav>
 
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
+      {/* Mobile Header Bar */}
+      <header
+        className="mobile-header"
         style={{
           position: "fixed",
-          top: "2rem",
-          left: "2rem",
-          zIndex: 2001,
-          background: "transparent",
-          border: "none",
-          cursor: "pointer",
-          padding: "0.5rem",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "70px",
+          background: "rgba(3, 7, 18, 0.95)",
+          backdropFilter: "blur(10px)",
+          zIndex: 2000,
           display: "none",
+          alignItems: "center",
+          padding: "0 2rem",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
         }}
-        className="mobile-menu-btn"
       >
-        <div
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
           style={{
-            width: "24px",
-            height: "2px",
-            background: "var(--white)",
-            marginBottom: "6px",
-            transition: "all 0.3s ease",
-            transform: isOpen ? "rotate(45deg) translateY(8px)" : "none",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: "0.5rem",
+            zIndex: 2001,
           }}
-        />
-        <div
-          style={{
-            width: "24px",
-            height: "2px",
-            background: "var(--white)",
-            marginBottom: "6px",
-            transition: "all 0.3s ease",
-            opacity: isOpen ? 0 : 1,
-          }}
-        />
-        <div
-          style={{
-            width: "24px",
-            height: "2px",
-            background: "var(--white)",
-            transition: "all 0.3s ease",
-            transform: isOpen ? "rotate(-45deg) translateY(-8px)" : "none",
-          }}
-        />
-      </button>
+          className="mobile-menu-btn"
+        >
+          <div
+            style={{
+              width: "24px",
+              height: "2px",
+              background: "var(--white)",
+              marginBottom: "6px",
+              transition: "all 0.3s ease",
+              transform: isOpen ? "rotate(45deg) translateY(8px)" : "none",
+            }}
+          />
+          <div
+            style={{
+              width: "24px",
+              height: "2px",
+              background: "var(--white)",
+              marginBottom: "6px",
+              transition: "all 0.3s ease",
+              opacity: isOpen ? 0 : 1,
+            }}
+          />
+          <div
+            style={{
+              width: "24px",
+              height: "2px",
+              background: "var(--white)",
+              transition: "all 0.3s ease",
+              transform: isOpen ? "rotate(-45deg) translateY(-8px)" : "none",
+            }}
+          />
+        </button>
+      </header>
 
       {/* Mobile Menu */}
       <div
@@ -172,12 +187,12 @@ const Navigation: React.FC = () => {
           .desktop-nav {
             display: none !important;
           }
-          .mobile-menu-btn {
-            display: block !important;
+          .mobile-header {
+            display: flex !important;
           }
         }
         @media (min-width: 969px) {
-          .mobile-menu-btn {
+          .mobile-header {
             display: none !important;
           }
         }
