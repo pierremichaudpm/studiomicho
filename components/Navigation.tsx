@@ -85,7 +85,9 @@ const Navigation: React.FC = () => {
           zIndex: 2000,
           display: "none",
           alignItems: "center",
+          justifyContent: "flex-start",
           padding: "0 2rem",
+          gap: "1.5rem",
         }}
       >
         {/* Mobile Menu Button */}
@@ -97,6 +99,7 @@ const Navigation: React.FC = () => {
             cursor: "pointer",
             padding: "0.5rem",
             zIndex: 2001,
+            flexShrink: 0,
           }}
           className="mobile-menu-btn"
         >
@@ -130,6 +133,27 @@ const Navigation: React.FC = () => {
             }}
           />
         </button>
+
+        {/* Studio Micho Title */}
+        <a
+          href="#"
+          style={{
+            fontSize: "1.5rem",
+            fontWeight: 900,
+            color: "var(--white)",
+            textDecoration: "none",
+            letterSpacing: "0.2rem",
+            transition: "color 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = "#4A90E2";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = "var(--white)";
+          }}
+        >
+          STUDIO MICHO
+        </a>
       </header>
 
       {/* Mobile Menu */}

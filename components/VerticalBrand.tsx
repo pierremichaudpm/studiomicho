@@ -32,7 +32,7 @@ const VerticalBrand: React.FC = () => {
       <style jsx>{`
         @media (max-width: 968px) {
           .vertical-brand {
-            top: 90px !important;
+            display: none !important;
           }
         }
       `}</style>
