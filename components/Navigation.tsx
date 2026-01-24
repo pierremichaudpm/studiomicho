@@ -79,10 +79,11 @@ const Navigation: React.FC = () => {
           left: 0,
           width: "100%",
           height: "70px",
-          background:
-            "linear-gradient(180deg, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.7) 70%, rgba(3, 7, 18, 0) 100%)",
+          background: isOpen
+            ? "rgba(3, 7, 18, 0.98)"
+            : "linear-gradient(180deg, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.7) 70%, rgba(3, 7, 18, 0) 100%)",
           backdropFilter: "blur(10px)",
-          zIndex: 2000,
+          zIndex: 2001,
           display: "none",
           alignItems: "center",
           justifyContent: "flex-start",
@@ -98,7 +99,6 @@ const Navigation: React.FC = () => {
             border: "none",
             cursor: "pointer",
             padding: "0.5rem",
-            zIndex: 2001,
             flexShrink: 0,
           }}
           className="mobile-menu-btn"
@@ -175,32 +175,6 @@ const Navigation: React.FC = () => {
         }}
         className="mobile-menu"
       >
-        {/* Studio Micho Title in Menu */}
-        <a
-          href="#"
-          onClick={() => setIsOpen(false)}
-          style={{
-            fontSize: "2rem",
-            fontWeight: 900,
-            color: "var(--white)",
-            textDecoration: "none",
-            letterSpacing: "0.2rem",
-            transition: "all 0.3s ease",
-            marginBottom: "2rem",
-            marginLeft: "25px",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#4A90E2";
-            e.currentTarget.style.transform = "translateX(-10px)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "var(--white)";
-            e.currentTarget.style.transform = "translateX(0)";
-          }}
-        >
-          STUDIO MICHO
-        </a>
-
         {menuItems.map((item) => (
           <a
             key={item.label}
