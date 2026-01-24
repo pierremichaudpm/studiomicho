@@ -110,7 +110,6 @@ const Navigation: React.FC = () => {
               background: "var(--white)",
               marginBottom: "6px",
               transition: "all 0.3s ease",
-              transform: isOpen ? "rotate(45deg) translateY(8px)" : "none",
             }}
           />
           <div
@@ -120,7 +119,6 @@ const Navigation: React.FC = () => {
               background: "var(--white)",
               marginBottom: "6px",
               transition: "all 0.3s ease",
-              opacity: isOpen ? 0 : 1,
             }}
           />
           <div
@@ -129,7 +127,6 @@ const Navigation: React.FC = () => {
               height: "2px",
               background: "var(--white)",
               transition: "all 0.3s ease",
-              transform: isOpen ? "rotate(-45deg) translateY(-8px)" : "none",
             }}
           />
         </button>
