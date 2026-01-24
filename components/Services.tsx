@@ -39,7 +39,6 @@ const Services: React.FC = () => {
       className="services-section"
       style={{
         minHeight: "100vh",
-        padding: "8rem 2rem",
         background:
           "linear-gradient(135deg, var(--deep-blue) 0%, var(--bg-dark) 100%)",
         flexDirection: "column",

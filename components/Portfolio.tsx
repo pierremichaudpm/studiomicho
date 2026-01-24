@@ -303,7 +303,6 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
         background: "var(--bg-dark)",
         flexDirection: "column",
         position: "relative",
-        paddingTop: "8rem",
       }}
     >
       {/* Floating shapes */}

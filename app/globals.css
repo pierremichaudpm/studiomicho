@@ -37,7 +37,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem 2rem;
+    padding: clamp(4rem, 8vh, 6rem) 2rem;
     position: relative;
     overflow: hidden;
 }
@@ -273,7 +273,6 @@ section {
 /* Services Section Styles */
 .services-section {
     min-height: 100vh;
-    padding: 8rem 2rem;
 }
 
 .services-container {
@@ -353,10 +352,6 @@ section {
 }
 
 @media (max-width: 968px) {
-    .services-section {
-        padding: 4rem 2rem;
-    }
-
     .services-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
