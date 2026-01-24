@@ -144,6 +144,7 @@ const Navigation: React.FC = () => {
             textDecoration: "none",
             letterSpacing: "0.2rem",
             transition: "color 0.3s ease",
+            marginLeft: "25px",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = "#4A90E2";
