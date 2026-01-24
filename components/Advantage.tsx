@@ -17,12 +17,12 @@ const Advantage: React.FC = () => {
     {
       title: "Rapidité d'exécution",
       description:
-        "3-4 semaines du brief au produit en ligne. Itérations rapides, ajustements en temps réel.",
+        "3-4 semaines du brief au produit en ligne. Campagnes marketing lancées rapidement.",
     },
     {
-      title: "Expertise complète",
+      title: "Expertise 360°",
       description:
-        "25 ans d'expérience, journaliste et chef de produit numérique (Radio-Canada Olympiques) + maîtrise des outils IA modernes. Le meilleur des deux mondes.",
+        "25 ans expérience contenu et produit (Radio-Canada - Olympiques) + maîtrise IA + marketing numérique. Construction + Marketing sous un toit.",
     },
     {
       title: "Tarifs boutique",
@@ -83,7 +83,7 @@ const Advantage: React.FC = () => {
         <h2
           className="advantage-header"
           style={{
-            fontSize: "clamp(4rem, 12vw, 15rem)",
+            fontSize: "clamp(3rem, 9vw, 11.25rem)",
             fontWeight: 900,
             marginBottom: "6rem",
             textAlign: "center",

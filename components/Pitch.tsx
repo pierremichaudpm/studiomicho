@@ -54,10 +54,10 @@ const Pitch: React.FC = () => {
         <h1
           className="pitch-statement"
           style={{
-            fontSize: "clamp(3rem, 10vw, 10rem)",
+            fontSize: "clamp(2.25rem, 7.5vw, 7.5rem)",
             fontWeight: 900,
             lineHeight: 1.2,
-            marginBottom: "4rem",
+            marginBottom: "2rem",
             background:
               "linear-gradient(90deg, #4A90E2, #9B59B6, #F39C12, #4A90E2)",
             backgroundSize: "200% auto",
@@ -71,7 +71,9 @@ const Pitch: React.FC = () => {
           <br />
           JE CONSTRUIS.
           <br />
-          JE LIVRE.
+          JE LANCE.
+          <br />
+          JE MESURE.
         </h1>
 
         <div

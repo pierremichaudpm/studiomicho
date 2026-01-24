@@ -4,38 +4,34 @@ import React from "react";
 import { useTypewriter } from "@/hooks/useTypewriter";
 
 const Hero: React.FC = () => {
-  // Line 1: 99 chars (with HTML) × 25ms = 2475ms, ends at 2975ms
   const line1 = useTypewriter({
-    text: '> J\'imagine et construis des produits numériques à <span class="gradient-text">vélocité IA</span>.',
+    text: '> J\'imagine, construis et optimise des <span class="gradient-text">produits</span> <span class="gradient-text">numériques</span>',
     speed: 25,
     delay: 500,
     showCursor: true,
     permanentCursor: false,
   });
 
-  // Line 2: 94 chars (with HTML) × 18ms = 1692ms, starts 2975 + 375 = 3350ms, ends 5042ms
   const line2 = useTypewriter({
-    text: '> Approche personnalisée. Contact direct. Livraison <span class="gradient-text">rapide</span>.',
-    speed: 18,
-    delay: 3350,
-    showCursor: true,
-    permanentCursor: false,
-  });
-
-  // Line 3: 1 char × 60ms = 60ms, starts 5042 + 350 = 5392ms, ends 5452ms
-  const line3 = useTypewriter({
     text: ">",
     speed: 60,
-    delay: 5392,
+    delay: 2000,
     showCursor: true,
     permanentCursor: false,
   });
 
-  // Line 4: 76 chars (with HTML) × 23ms = 1748ms, starts 5452 + 500 = 5952ms
-  const line4 = useTypewriter({
-    text: '> Des produits qui <span class="gradient-text">fonctionnent vraiment</span>.',
+  const line3 = useTypewriter({
+    text: '> <span class="gradient-text">Développement</span>. Contenu. <span class="gradient-text">Marketing</span>. Analytics.',
     speed: 23,
-    delay: 5952,
+    delay: 3000,
+    showCursor: true,
+    permanentCursor: false,
+  });
+
+  const line4 = useTypewriter({
+    text: '> Du concept aux <span class="gradient-text">résultats</span> en 3-4 semaines.',
+    speed: 23,
+    delay: 5500,
     showCursor: true,
     permanentCursor: true,
   });

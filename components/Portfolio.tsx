@@ -90,7 +90,7 @@ const Browser: React.FC<BrowserProps> = ({
         margin: "0 auto",
         transform: `skewY(${skew}deg)`,
         opacity: isRevealed ? 1 : 0,
-        animation: isRevealed ? "smoothReveal 2s ease-out forwards" : "none",
+        animation: isRevealed ? "smoothReveal 0.8s ease-out forwards" : "none",
         filter: `drop-shadow(0 0 60px ${borderColor}80)`,
       }}
     >
@@ -348,15 +348,28 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
         <h2
           className="proof-header"
           style={{
-            fontSize: "clamp(4rem, 12vw, 15rem)",
+            fontSize: "clamp(3rem, 9vw, 11.25rem)",
             fontWeight: 900,
-            marginBottom: "6rem",
+            marginBottom: "2rem",
             textAlign: "center",
             lineHeight: 0.9,
           }}
         >
-          <span className="gradient-text">Portfolio</span>
+          Projets <span className="gradient-text">livrés</span>
         </h2>
+        <p
+          className="proof-subtitle"
+          style={{
+            fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
+            textAlign: "center",
+            color: "var(--gray)",
+            marginBottom: "6rem",
+            maxWidth: "800px",
+            margin: "0 auto 6rem",
+          }}
+        >
+          Sites, apps et stratégies déployés. Résultats mesurables.
+        </p>
 
         <div
           className="browsers"
@@ -383,7 +396,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             tags={["Corporate", "CMS", "3 Semaines"]}
             color="magenta"
             skew={1}
-            delay={300}
+            delay={150}
             imageUrl="/images/tonic-screenshot.png"
             projectUrl="https://www.groupetonic.ca"
           />
@@ -394,7 +407,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             tags={["En construction", "Bold Design", "Immersif"]}
             color="yellow"
             skew={-1}
-            delay={600}
+            delay={300}
             imageUrl="/images/jaxa-screenshot.png"
             projectUrl="https://jaxanew.netlify.app/"
           />

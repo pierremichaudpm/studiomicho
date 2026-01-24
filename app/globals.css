@@ -270,6 +270,115 @@ section {
     }
 }
 
+/* Services Section Styles */
+.services-section {
+    min-height: 100vh;
+    padding: 8rem 2rem;
+}
+
+.services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.services-header {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.service-card {
+    background: rgba(20, 20, 20, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+.service-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.service-tags span {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    color: var(--gray);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card[data-color="cyan"]:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 20px 60px rgba(0, 212, 224, 0.3);
+}
+
+.service-card[data-color="magenta"]:hover {
+    border-color: var(--magenta);
+    box-shadow: 0 20px 60px rgba(230, 0, 230, 0.3);
+}
+
+.service-card[data-color="yellow"]:hover {
+    border-color: var(--yellow);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+}
+
+.service-card[data-color="orange"]:hover {
+    border-color: var(--orange);
+    box-shadow: 0 20px 60px rgba(255, 140, 82, 0.3);
+}
+
+@media (max-width: 968px) {
+    .services-section {
+        padding: 4rem 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .services-header {
+        font-size: 2.5rem;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-card p {
+        font-size: 1rem;
+    }
+}
+
 /* Remove Tailwind defaults that might interfere */
 @layer base {
     h1,

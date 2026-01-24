@@ -11,6 +11,7 @@ const Comment: React.FC = () => {
           "linear-gradient(135deg, var(--bg-dark) 0%, var(--deep-blue) 100%)",
         flexDirection: "column",
         position: "relative",
+        padding: "10rem 2rem",
       }}
     >
       {/* Floating shapes */}
@@ -55,34 +56,33 @@ const Comment: React.FC = () => {
         <h2
           className="sauce-header"
           style={{
-            fontSize: "clamp(4rem, 12vw, 15rem)",
+            fontSize: "clamp(3rem, 9vw, 11.25rem)",
             fontWeight: 900,
-            marginBottom: "6rem",
+            marginBottom: "8rem",
             textAlign: "center",
             lineHeight: 0.9,
           }}
         >
-          <span className="gradient-text">Comment</span>
+          Ma <span className="gradient-text">méthode</span>
         </h2>
 
         <div
           className="flow"
           style={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "clamp(1rem, 3vw, 2rem)",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            gap: "clamp(1.5rem, 3vw, 3rem)",
             position: "relative",
-            flexWrap: "wrap",
+            flexWrap: "nowrap",
           }}
         >
           {/* Flow Item 01 */}
           <div
             className="flow-item"
             style={{
-              flex: "1 1 250px",
-              minWidth: "250px",
-              maxWidth: "400px",
+              flex: "1",
+              minWidth: "0",
               textAlign: "center",
               position: "relative",
             }}
@@ -90,11 +90,11 @@ const Comment: React.FC = () => {
             <div
               className="flow-number"
               style={{
-                fontSize: "clamp(8rem, 20vw, 20rem)",
+                fontSize: "clamp(6rem, 12vw, 15rem)",
                 fontWeight: 900,
                 lineHeight: 0.8,
                 opacity: 0.3,
-                marginBottom: "1rem",
+                marginBottom: "2rem",
                 color: "#4A90E2",
               }}
             >
@@ -103,24 +103,27 @@ const Comment: React.FC = () => {
             <div
               className="flow-title"
               style={{
-                fontSize: "clamp(2rem, 5vw, 4rem)",
+                fontSize: "clamp(1.5rem, 3vw, 3rem)",
                 fontWeight: 900,
-                marginBottom: "1rem",
+                marginBottom: "1.5rem",
                 textTransform: "uppercase",
                 color: "#4A90E2",
+                lineHeight: 1.1,
               }}
             >
-              IA comme co-pilote
+              Écoute & Stratégie
             </div>
             <div
               className="flow-desc"
               style={{
-                fontSize: "clamp(1.1rem, 2vw, 1.5rem)",
+                fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
                 color: "var(--white)",
-                fontWeight: 600,
+                fontWeight: 400,
+                lineHeight: 1.5,
               }}
             >
-              Claude, ChatGPT, Cursor. IA intégrée à chaque étape du processus.
+              Comprendre vos objectifs business. Définir plan produit +
+              marketing intégré.
             </div>
           </div>
 
@@ -128,10 +131,12 @@ const Comment: React.FC = () => {
           <div
             className="flow-arrow"
             style={{
-              fontSize: "clamp(3rem, 8vw, 8rem)",
+              fontSize: "clamp(3rem, 6vw, 8rem)",
               color: "#E74C3C",
-              opacity: 0.5,
+              opacity: 0.6,
               flexShrink: 0,
+              fontWeight: 300,
+              alignSelf: "center",
             }}
           >
             →
@@ -141,9 +146,8 @@ const Comment: React.FC = () => {
           <div
             className="flow-item"
             style={{
-              flex: "1 1 250px",
-              minWidth: "250px",
-              maxWidth: "400px",
+              flex: "1",
+              minWidth: "0",
               textAlign: "center",
               position: "relative",
             }}
@@ -151,11 +155,11 @@ const Comment: React.FC = () => {
             <div
               className="flow-number"
               style={{
-                fontSize: "clamp(8rem, 20vw, 20rem)",
+                fontSize: "clamp(6rem, 12vw, 15rem)",
                 fontWeight: 900,
                 lineHeight: 0.8,
                 opacity: 0.3,
-                marginBottom: "1rem",
+                marginBottom: "2rem",
                 color: "#9B59B6",
               }}
             >
@@ -164,24 +168,27 @@ const Comment: React.FC = () => {
             <div
               className="flow-title"
               style={{
-                fontSize: "clamp(2rem, 5vw, 4rem)",
+                fontSize: "clamp(1.5rem, 3vw, 3rem)",
                 fontWeight: 900,
-                marginBottom: "1rem",
+                marginBottom: "1.5rem",
                 textTransform: "uppercase",
                 color: "#9B59B6",
+                lineHeight: 1.1,
               }}
             >
-              Itérations rapides
+              Construction Rapide
             </div>
             <div
               className="flow-desc"
               style={{
-                fontSize: "clamp(1.1rem, 2vw, 1.5rem)",
+                fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
                 color: "var(--white)",
-                fontWeight: 600,
+                fontWeight: 400,
+                lineHeight: 1.5,
               }}
             >
-              Ajustements en temps réel. Feedback intégré immédiatement.
+              IA comme co-pilote. Développement + mise en marché en 3-4
+              semaines.
             </div>
           </div>
 
@@ -202,9 +209,8 @@ const Comment: React.FC = () => {
           <div
             className="flow-item"
             style={{
-              flex: "1 1 250px",
-              minWidth: "250px",
-              maxWidth: "400px",
+              flex: "1",
+              minWidth: "0",
               textAlign: "center",
               position: "relative",
             }}
@@ -212,11 +218,11 @@ const Comment: React.FC = () => {
             <div
               className="flow-number"
               style={{
-                fontSize: "clamp(8rem, 20vw, 20rem)",
+                fontSize: "clamp(6rem, 12vw, 15rem)",
                 fontWeight: 900,
                 lineHeight: 0.8,
                 opacity: 0.3,
-                marginBottom: "1rem",
+                marginBottom: "2rem",
                 color: "#F39C12",
               }}
             >
@@ -225,11 +231,12 @@ const Comment: React.FC = () => {
             <div
               className="flow-title"
               style={{
-                fontSize: "clamp(2rem, 5vw, 4rem)",
+                fontSize: "clamp(1.5rem, 3vw, 3rem)",
                 fontWeight: 900,
-                marginBottom: "1rem",
+                marginBottom: "1.5rem",
                 textTransform: "uppercase",
                 color: "#F39C12",
+                lineHeight: 1.1,
               }}
             >
               Zéro malentendu
@@ -237,9 +244,10 @@ const Comment: React.FC = () => {
             <div
               className="flow-desc"
               style={{
-                fontSize: "clamp(1.1rem, 2vw, 1.5rem)",
+                fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
                 color: "var(--white)",
-                fontWeight: 600,
+                fontWeight: 400,
+                lineHeight: 1.5,
               }}
             >
               Même personne qui écoute, conçoit et construit. Votre vision reste
