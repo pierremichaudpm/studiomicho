@@ -30,7 +30,7 @@ const Navigation: React.FC = () => {
           top: "calc(26rem + 14px)",
           left: "calc(2rem + 11px)",
           zIndex: 2000,
-          display: "flex",
+          display: "none",
           flexDirection: "column",
           gap: "2rem",
         }}
@@ -217,6 +217,9 @@ const Navigation: React.FC = () => {
           }
         }
         @media (min-width: 969px) {
+          .desktop-nav {
+            display: flex !important;
+          }
           .mobile-header {
             display: none !important;
           }
