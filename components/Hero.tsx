@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
   });
 
   const line4 = useTypewriter({
-    text: '> Du concept aux <span class="gradient-text">résultats</span> en 3-4 semaines.',
+    text: '> Du concept aux <span class="gradient-text">résultats</span> à vélocité IA.',
     speed: 23,
     delay: 5500,
     showCursor: true,
