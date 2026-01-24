@@ -29,6 +29,13 @@ const VerticalBrand: React.FC = () => {
       >
         STUDIO MICHO
       </a>
+      <style jsx>{`
+        @media (max-width: 968px) {
+          .vertical-brand {
+            top: 90px !important;
+          }
+        }
+      `}</style>
     </>
   );
 };
