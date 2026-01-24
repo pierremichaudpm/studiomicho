@@ -137,16 +137,17 @@ const Navigation: React.FC = () => {
         <a
           href="#"
           style={{
-            fontSize: "clamp(1rem, 3.5vw, 1.5rem)",
+            fontSize: "clamp(1.2rem, 4vw, 1.5rem)",
             fontWeight: 900,
             color: "var(--white)",
             textDecoration: "none",
-            letterSpacing: "0.2rem",
+            letterSpacing: "clamp(0.1rem, 0.5vw, 0.2rem)",
             transition: "color 0.3s ease",
-            marginLeft: "50px",
+            marginLeft: "clamp(10px, 5vw, 50px)",
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
+            flex: 1,
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = "#4A90E2";
