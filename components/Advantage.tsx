@@ -22,7 +22,7 @@ const Advantage: React.FC = () => {
     {
       title: "Expertise 360°",
       description:
-        "25 ans expérience contenu et produit (Radio-Canada - Olympiques) + maîtrise IA + marketing numérique. Construction + Marketing sous un toit.",
+        "25 ans expérience contenu et produit (Radio-Canada - Olympiques) + maîtrise IA (Claude Code) + marketing numérique. Construction + Marketing sous un toit.",
     },
     {
       title: "Tarifs boutique",
