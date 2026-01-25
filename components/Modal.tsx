@@ -19,13 +19,31 @@ interface ModalProps {
 
 const projects: Project[] = [
   {
-    name: "Aquamedias",
-    description: "Images sous-marines",
+    name: "Organisme communautaire",
+    description: "Gestion d'organisme",
     tags: ["En construction", "Prototype"],
     color: "#4A90E2",
+    imageUrl: "/images/aide-screenshot.png",
+    mobileImageUrl: "/images/m-aide-screenshot.png",
+    url: "https://aideanonyme.netlify.app/",
+  },
+  {
+    name: "Dashboard financier",
+    description: "Outils de gestion",
+    tags: ["Prototype", "En construction"],
+    color: "#9B59B6",
+    imageUrl: "/images/dashboard-screenshot.png",
+    mobileImageUrl: "/images/m-dashboard-screenshot.png",
+    url: "https://demodashboardfinance.netlify.app/",
+  },
+  {
+    name: "AquaProd",
+    description: "Images sous-marines",
+    tags: ["En construction", "Prototype"],
+    color: "#F39C12",
     imageUrl: "/images/aquamedias-screenshot.png",
     mobileImageUrl: "/images/m-aquamedias-screenshot.png",
-    url: "https://aquamedias.netlify.app/",
+    url: "https://aquaprod.netlify.app/",
   },
   {
     name: "Grands Prix Cyclistes",
@@ -35,6 +53,15 @@ const projects: Project[] = [
     imageUrl: "/images/grandsprixcyclistes-screenshot.png",
     mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.png",
     url: "https://www.gpcqm-mtl.ca/",
+  },
+  {
+    name: "Catherine François",
+    description: "Peintre",
+    tags: ["Site Gallerie"],
+    color: "#4A90E2",
+    imageUrl: "/images/cathfrancois-screenshot.png",
+    mobileImageUrl: "/images/m-cathfrancois-screenshot.png",
+    url: "https://cathfrancois.com/",
   },
   {
     name: "Jaxa Gomme Balloune",
