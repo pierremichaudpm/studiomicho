@@ -385,7 +385,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             color="cyan"
             skew={-1}
             delay={0}
-            imageUrl="/images/op2-screenshot.png"
+            imageUrl="/images/op2-screenshot.jpg"
             projectUrl="https://www.op2na.com/"
           />
 
@@ -396,7 +396,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             color="magenta"
             skew={1}
             delay={150}
-            imageUrl="/images/tonic-screenshot.png"
+            imageUrl="/images/tonic-screenshot.jpg"
             projectUrl="https://www.groupetonic.ca"
           />
 
@@ -407,7 +407,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             color="yellow"
             skew={-1}
             delay={300}
-            imageUrl="/images/jaxa-screenshot.png"
+            imageUrl="/images/jaxa-screenshot.jpg"
             projectUrl="https://jaxanew.netlify.app/"
           />
         </div>
