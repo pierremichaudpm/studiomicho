@@ -57,7 +57,7 @@ const projects: Project[] = [
   {
     name: "Catherine François",
     description: "Peintre",
-    tags: ["Site Gallerie"],
+    tags: ["Portfolio", "Site Gallerie"],
     color: "#4A90E2",
     imageUrl: "/images/cathfrancois-screenshot.png",
     mobileImageUrl: "/images/m-cathfrancois-screenshot.png",
