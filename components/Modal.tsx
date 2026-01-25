@@ -169,7 +169,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         onClick={onClose}
         style={{
           position: "fixed",
-          top: "2rem",
+          top: "calc(2rem + 25px)",
           right: "2rem",
           fontSize: "4rem",
           color: "#4A90E2",
@@ -199,7 +199,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           width: "100%",
           position: "relative",
           animation: "modalSlideIn 0.5s ease-out",
-          marginTop: "0",
+          marginTop: "25px",
         }}
       >
         <h2
