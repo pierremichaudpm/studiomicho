@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 
 interface Project {
   name: string;
@@ -296,6 +295,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   className="browser-content"
                   style={{
                     height: "335px",
+                    background:
+                      (project.mobileImageUrl && isMobile) || project.imageUrl
+                        ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${project.mobileImageUrl && isMobile ? project.mobileImageUrl : project.imageUrl}) center/cover no-repeat`
+                        : project.color === "#4A90E2"
+                          ? "linear-gradient(135deg, rgba(0, 245, 255, 0.15), transparent)"
+                          : project.color === "#9B59B6"
+                            ? "linear-gradient(135deg, rgba(255, 0, 255, 0.15), transparent)"
+                            : "linear-gradient(135deg, rgba(255, 255, 0, 0.15), transparent)",
                     display: "flex",
                     alignItems: "flex-end",
                     justifyContent: "flex-end",
@@ -303,51 +310,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     position: "relative",
                     cursor: project.url ? "pointer" : "default",
                     textDecoration: "none",
-                    overflow: "hidden",
-                    background:
-                      !project.imageUrl && !(project.mobileImageUrl && isMobile)
-                        ? project.color === "#4A90E2"
-                          ? "linear-gradient(135deg, rgba(0, 245, 255, 0.15), transparent)"
-                          : project.color === "#9B59B6"
-                            ? "linear-gradient(135deg, rgba(255, 0, 255, 0.15), transparent)"
-                            : "linear-gradient(135deg, rgba(255, 255, 0, 0.15), transparent)"
-                        : "transparent",
                   }}
                 >
-                  {((project.mobileImageUrl && isMobile) ||
-                    project.imageUrl) && (
-                    <>
-                      <Image
-                        src={
-                          project.mobileImageUrl && isMobile
-                            ? project.mobileImageUrl
-                            : project.imageUrl!
-                        }
-                        alt={project.name}
-                        fill
-                        sizes="(max-width: 968px) 100vw, 50vw"
-                        style={{
-                          objectFit: "cover",
-                          zIndex: 0,
-                        }}
-                        quality={85}
-                        priority={index < 2}
-                      />
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          background:
-                            "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%)",
-                          zIndex: 1,
-                          pointerEvents: "none",
-                        }}
-                      />
-                    </>
-                  )}
                   {!project.imageUrl &&
                     !(project.mobileImageUrl && isMobile) && (
                       <div
