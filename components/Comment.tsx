@@ -58,13 +58,27 @@ const Comment: React.FC = () => {
           style={{
             fontSize: "clamp(3rem, 9vw, 11.25rem)",
             fontWeight: 900,
-            marginBottom: "8rem",
+            marginBottom: "2rem",
             textAlign: "center",
             lineHeight: 0.9,
           }}
         >
           Ma <span className="gradient-text">méthode</span>
         </h2>
+
+        <p
+          style={{
+            fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)",
+            color: "var(--gray)",
+            textAlign: "center",
+            maxWidth: "700px",
+            margin: "0 auto 8rem",
+            lineHeight: 1.6,
+          }}
+        >
+          Vibe coding. Je décris la vision, l&apos;IA construit. Je pilote, je
+          valide, je livre.
+        </p>
 
         <div
           className="flow"
