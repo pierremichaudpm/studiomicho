@@ -19,6 +19,15 @@ interface ModalProps {
 
 const projects: Project[] = [
   {
+    name: "Grands Prix Cyclistes",
+    description: "PWA spectateurs",
+    tags: ["PWA", "3 semaines"],
+    color: "#9B59B6",
+    imageUrl: "/images/grandsprixcyclistes-screenshot.jpg",
+    mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.jpg",
+    url: "https://www.gpcqm-mtl.ca/",
+  },
+  {
     name: "Jaxa Production",
     description: "Site corporatif production immersive. Design audacieux.",
     tags: ["En construction", "Bold Design", "Immersif"],
@@ -53,15 +62,6 @@ const projects: Project[] = [
     imageUrl: "/images/aquamedias-screenshot.jpg",
     mobileImageUrl: "/images/m-aquamedias-screenshot.jpg",
     url: "https://aquaprod.netlify.app/",
-  },
-  {
-    name: "Grands Prix Cyclistes",
-    description: "PWA spectateurs",
-    tags: ["PWA", "3 semaines"],
-    color: "#9B59B6",
-    imageUrl: "/images/grandsprixcyclistes-screenshot.jpg",
-    mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.jpg",
-    url: "https://www.gpcqm-mtl.ca/",
   },
   {
     name: "Catherine François",
