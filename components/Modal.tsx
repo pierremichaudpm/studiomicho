@@ -19,6 +19,15 @@ interface ModalProps {
 
 const projects: Project[] = [
   {
+    name: "Jaxa Production",
+    description: "Site corporatif production immersive. Design audacieux.",
+    tags: ["En construction", "Bold Design", "Immersif"],
+    color: "#F39C12",
+    imageUrl: "/images/jaxa-screenshot.jpg",
+    mobileImageUrl: "/images/m-jaxa-screenshot.jpg",
+    url: "https://jaxanew.netlify.app/",
+  },
+  {
     name: "Organisme communautaire",
     description: "Gestion d'organisme",
     tags: ["En construction", "Prototype"],

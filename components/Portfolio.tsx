@@ -401,14 +401,14 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           />
 
           <Browser
-            name="JAXA PRODUCTION"
-            description="Site corporatif production immersive. Design audacieux."
-            tags={["En construction", "Bold Design", "Immersif"]}
-            color="yellow"
+            name="INTEXTO"
+            description="Site de nouvelles. Vidéo et audio. Conçu en quelques jours."
+            tags={["Solo", "Site de nouvelles", "Testé"]}
+            color="cyan"
             skew={-1}
             delay={300}
-            imageUrl="/images/jaxa-screenshot.jpg"
-            projectUrl="https://jaxanew.netlify.app/"
+            imageUrl="/images/intexto-screenshot.jpg"
+            projectUrl="https://intexto.ca"
           />
         </div>
 
