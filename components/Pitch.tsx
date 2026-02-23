@@ -87,7 +87,7 @@ const Pitch: React.FC = () => {
           }}
         >
           <a
-            href="mailto:pmicho@pm.me"
+            href="mailto:pierre@studiomicho.com"
             style={{
               fontSize: "1.2rem",
               color: "var(--cyan)",
@@ -102,11 +102,11 @@ const Pitch: React.FC = () => {
               e.currentTarget.style.color = "var(--cyan)";
             }}
           >
-            pmicho@pm.me
+            pierre@studiomicho.com
           </a>
 
           <a
-            href="mailto:pmicho@pm.me"
+            href="mailto:pierre@studiomicho.com"
             className="pitch-cta"
             style={{
               display: "inline-block",
