@@ -408,7 +408,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             skew={-1}
             delay={300}
             imageUrl="/images/dashboard-screenshot.jpg"
-            projectUrl="https://studiomicho.com/dashboards"
+            projectUrl="/dashboards/"
           />
         </div>
 
