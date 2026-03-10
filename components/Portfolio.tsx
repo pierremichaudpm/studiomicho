@@ -28,6 +28,7 @@ interface BrowserProps {
   delay: number;
   imageUrl?: string;
   projectUrl?: string;
+  ctaLabel?: string;
 }
 
 const Browser: React.FC<BrowserProps> = ({
@@ -39,6 +40,7 @@ const Browser: React.FC<BrowserProps> = ({
   delay,
   imageUrl,
   projectUrl,
+  ctaLabel,
 }) => {
   const [isRevealed, setIsRevealed] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -221,7 +223,7 @@ const Browser: React.FC<BrowserProps> = ({
                 zIndex: 10,
               }}
             >
-              Voir le projet →
+              {ctaLabel || "Voir le projet"} →
             </div>
           )}
         </a>
@@ -409,6 +411,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             delay={300}
             imageUrl="/images/gestion-screenshot.jpg"
             projectUrl="/dashboards/"
+            ctaLabel="Voir les projets"
           />
         </div>
 
