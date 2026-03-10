@@ -401,14 +401,14 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           />
 
           <Browser
-            name="INTEXTO"
-            description="Site de nouvelles. Vidéo et audio. Conçu en quelques jours."
-            tags={["Solo", "Site de nouvelles", "Testé"]}
-            color="cyan"
+            name="OUTILS DE GESTION"
+            description="Dashboards financiers. Prototypes d'outils de gestion sur mesure."
+            tags={["Prototype", "Dashboards"]}
+            color="magenta"
             skew={-1}
             delay={300}
-            imageUrl="/images/intexto-screenshot.jpg"
-            projectUrl="https://intexto.ca"
+            imageUrl="/images/dashboard-screenshot.jpg"
+            projectUrl="https://studiomicho.com/dashboards"
           />
         </div>
 

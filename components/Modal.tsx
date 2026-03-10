@@ -19,6 +19,15 @@ interface ModalProps {
 
 const projects: Project[] = [
   {
+    name: "InTexto",
+    description: "Site de nouvelles. Vidéo et audio. Conçu en quelques jours.",
+    tags: ["Solo", "Site de nouvelles", "Testé"],
+    color: "#4A90E2",
+    imageUrl: "/images/intexto-screenshot.jpg",
+    mobileImageUrl: "/images/m-intexto-screenshot.jpg",
+    url: "https://intexto.ca",
+  },
+  {
     name: "Grands Prix Cyclistes",
     description: "PWA spectateurs",
     tags: ["PWA", "3 semaines"],
@@ -44,15 +53,6 @@ const projects: Project[] = [
     imageUrl: "/images/aide-screenshot.jpg",
     mobileImageUrl: "/images/m-aide-screenshot.jpg",
     url: "https://aideanonyme.netlify.app/",
-  },
-  {
-    name: "Dashboard financier",
-    description: "Outils de gestion",
-    tags: ["Prototype", "En construction"],
-    color: "#9B59B6",
-    imageUrl: "/images/dashboard-screenshot.jpg",
-    mobileImageUrl: "/images/m-dashboard-screenshot.jpg",
-    url: "https://demodashboardfinance.netlify.app/",
   },
   // {
   //   name: "AquaProd",
