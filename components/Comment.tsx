@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import { useTranslation } from "@/lib/i18n";
 
 const Comment: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="sauce-section"
@@ -63,7 +65,7 @@ const Comment: React.FC = () => {
             lineHeight: 0.9,
           }}
         >
-          Ma <span className="gradient-text">méthode</span>
+          {t("method.title")} <span className="gradient-text">{t("method.titleHighlight")}</span>
         </h2>
 
         <p
@@ -76,8 +78,7 @@ const Comment: React.FC = () => {
             lineHeight: 1.6,
           }}
         >
-          Vibe coding. Je décris la vision, l&apos;IA construit. Je pilote, je
-          valide, je livre.
+          {t("method.subtitle")}
         </p>
 
         <div
@@ -125,7 +126,7 @@ const Comment: React.FC = () => {
                 lineHeight: 1.1,
               }}
             >
-              Écoute & Stratégie
+              {t("method.1.title")}
             </div>
             <div
               className="flow-desc"
@@ -136,8 +137,7 @@ const Comment: React.FC = () => {
                 lineHeight: 1.5,
               }}
             >
-              Comprendre vos objectifs business. Définir plan produit +
-              marketing intégré.
+              {t("method.1.desc")}
             </div>
           </div>
 
@@ -190,7 +190,7 @@ const Comment: React.FC = () => {
                 lineHeight: 1.1,
               }}
             >
-              Construction Rapide
+              {t("method.2.title")}
             </div>
             <div
               className="flow-desc"
@@ -201,8 +201,7 @@ const Comment: React.FC = () => {
                 lineHeight: 1.5,
               }}
             >
-              IA comme co-pilote. Développement + mise en marché en 3-4
-              semaines.
+              {t("method.2.desc")}
             </div>
           </div>
 
@@ -253,7 +252,7 @@ const Comment: React.FC = () => {
                 lineHeight: 1.1,
               }}
             >
-              Zéro malentendu
+              {t("method.3.title")}
             </div>
             <div
               className="flow-desc"
@@ -264,8 +263,7 @@ const Comment: React.FC = () => {
                 lineHeight: 1.5,
               }}
             >
-              Même personne qui écoute, conçoit et construit. Votre vision reste
-              intacte.
+              {t("method.3.desc")}
             </div>
           </div>
         </div>

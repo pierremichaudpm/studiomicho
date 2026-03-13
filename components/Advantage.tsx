@@ -1,33 +1,31 @@
 "use client";
 
 import React from "react";
+import { useTranslation } from "@/lib/i18n";
 
 const Advantage: React.FC = () => {
+  const { t } = useTranslation();
+
   const advantages = [
     {
-      title: "Contact direct",
-      description:
-        "Pas d'intermédiaires. Vous travaillez directement avec moi, du concept au déploiement.",
+      title: t("advantage.1.title"),
+      description: t("advantage.1.desc"),
     },
     {
-      title: "Écoute personnalisée",
-      description:
-        "Chaque projet commence par comprendre VOS besoins réels. Approche humaine, aux petits soins.",
+      title: t("advantage.2.title"),
+      description: t("advantage.2.desc"),
     },
     {
-      title: "Rapidité d'exécution",
-      description:
-        "3-4 semaines du brief au produit en ligne. Campagnes marketing lancées rapidement.",
+      title: t("advantage.3.title"),
+      description: t("advantage.3.desc"),
     },
     {
-      title: "Expertise 360°",
-      description:
-        "25 ans expérience contenu et produit (Radio-Canada - Olympiques) + maîtrise IA (Claude Code) + marketing numérique. Construction + Marketing sous un toit.",
+      title: t("advantage.4.title"),
+      description: t("advantage.4.desc"),
     },
     {
-      title: "Tarifs boutique",
-      description:
-        "Budget adapté à votre réalité. Qualité entreprise sans les frais d'agence.",
+      title: t("advantage.5.title"),
+      description: t("advantage.5.desc"),
     },
   ];
 
@@ -90,7 +88,7 @@ const Advantage: React.FC = () => {
             lineHeight: 0.9,
           }}
         >
-          L&apos;
+          {t("advantage.title1")}
           <br />
           <span
             className="gradient-text"
@@ -103,7 +101,7 @@ const Advantage: React.FC = () => {
               animation: "gradientShift 5s linear infinite",
             }}
           >
-            avantage
+            {t("advantage.title2")}
           </span>
         </h2>
 

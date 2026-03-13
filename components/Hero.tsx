@@ -2,10 +2,13 @@
 
 import React from "react";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import { useTranslation } from "@/lib/i18n";
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   const line1 = useTypewriter({
-    text: '> J\'imagine, construis et optimise des <span class="gradient-text">produits</span> <span class="gradient-text">numériques</span>',
+    text: t("hero.line1"),
     speed: 25,
     delay: 500,
     showCursor: true,
@@ -13,7 +16,7 @@ const Hero: React.FC = () => {
   });
 
   const line2 = useTypewriter({
-    text: ">",
+    text: t("hero.line2"),
     speed: 60,
     delay: 2000,
     showCursor: true,
@@ -21,7 +24,7 @@ const Hero: React.FC = () => {
   });
 
   const line3 = useTypewriter({
-    text: '> <span class="gradient-text">Développement</span>. Contenu. <span class="gradient-text">Marketing</span>. Analytics.',
+    text: t("hero.line3"),
     speed: 23,
     delay: 3000,
     showCursor: true,
@@ -29,7 +32,7 @@ const Hero: React.FC = () => {
   });
 
   const line4 = useTypewriter({
-    text: '> Du concept aux <span class="gradient-text">résultats</span> à vélocité IA.',
+    text: t("hero.line4"),
     speed: 23,
     delay: 5500,
     showCursor: true,

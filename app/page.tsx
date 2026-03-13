@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { I18nProvider } from "@/lib/i18n";
 import Navigation from "@/components/Navigation";
 import VerticalBrand from "@/components/VerticalBrand";
+import LanguageToggle from "@/components/LanguageToggle";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
@@ -18,9 +20,10 @@ export default function Home() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <>
+    <I18nProvider>
       <Navigation />
       <VerticalBrand />
+      <LanguageToggle />
       <Hero />
       <div id="services">
         <Services />
@@ -38,6 +41,6 @@ export default function Home() {
         <Pitch />
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
-    </>
+    </I18nProvider>
   );
 }

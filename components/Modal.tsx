@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "@/lib/i18n";
 
 interface Project {
   name: string;
@@ -17,101 +18,93 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const projects: Project[] = [
-  {
-    name: "InTexto",
-    description: "Site de nouvelles. Vidéo et audio. Conçu en quelques jours.",
-    tags: ["Solo", "Site de nouvelles", "Testé"],
-    color: "#4A90E2",
-    imageUrl: "/images/intexto-screenshot.jpg",
-    mobileImageUrl: "/images/m-intexto-screenshot.jpg",
-    url: "https://intexto.ca",
-  },
-  {
-    name: "Grands Prix Cyclistes",
-    description: "PWA spectateurs",
-    tags: ["PWA", "3 semaines"],
-    color: "#9B59B6",
-    imageUrl: "/images/grandsprixcyclistes-screenshot.jpg",
-    mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.jpg",
-    url: "https://www.gpcqm-mtl.ca/",
-  },
-  {
-    name: "Jaxa Production",
-    description: "Site corporatif production immersive. Design audacieux.",
-    tags: ["En construction", "Bold Design", "Immersif"],
-    color: "#F39C12",
-    imageUrl: "/images/jaxa-screenshot.jpg",
-    mobileImageUrl: "/images/m-jaxa-screenshot.jpg",
-    url: "https://jaxanew.netlify.app/",
-  },
-  {
-    name: "Organisme communautaire",
-    description: "Gestion d'organisme",
-    tags: ["En construction", "Prototype"],
-    color: "#4A90E2",
-    imageUrl: "/images/aide-screenshot.jpg",
-    mobileImageUrl: "/images/m-aide-screenshot.jpg",
-    url: "https://aideanonyme.netlify.app/",
-  },
-  // {
-  //   name: "AquaProd",
-  //   description: "Images sous-marines",
-  //   tags: ["En construction", "Prototype"],
-  //   color: "#F39C12",
-  //   imageUrl: "/images/aquamedias-screenshot.jpg",
-  //   mobileImageUrl: "/images/m-aquamedias-screenshot.jpg",
-  //   url: "https://aquaprod.netlify.app/",
-  // },
-  {
-    name: "Catherine François",
-    description: "Peintre",
-    tags: ["Portfolio", "Site Gallerie"],
-    color: "#4A90E2",
-    imageUrl: "/images/cathfrancois-screenshot.jpg",
-    mobileImageUrl: "/images/m-cathfrancois-screenshot.jpg",
-    url: "https://cathfrancois.com/",
-  },
-  {
-    name: "Jaxa Gomme Balloune",
-    description: "Contenus immersifs",
-    tags: ["Immersif", "Prototype"],
-    color: "#F39C12",
-    imageUrl: "/images/jaxagomme-screenshot.jpg",
-    mobileImageUrl: "/images/m-jaxagomme-screenshot.jpg",
-    url: "https://jaxaprod.netlify.app/",
-  },
-  {
-    name: "Jean Harvey",
-    description: "Page comédien",
-    tags: ["Portfolio", "Site vitrine"],
-    color: "#4A90E2",
-    imageUrl: "/images/jeanharvey-screenshot.jpg",
-    mobileImageUrl: "/images/m-jeanharvey-screenshot.jpg",
-    url: "https://jeanharvey.ca/",
-  },
-  {
-    name: "Studio 76",
-    description: "Production télé",
-    tags: ["Corporate", "Production TV"],
-    color: "#9B59B6",
-    imageUrl: "/images/studio76-screenshot.jpg",
-    mobileImageUrl: "/images/m-studio76-screenshot.jpg",
-    url: "https://www.studio-76.ca/",
-  },
-  {
-    name: "La Maison LeRoy",
-    description: "Location Provence",
-    tags: ["Tourisme"],
-    color: "#F39C12",
-    imageUrl: "/images/maisonleroy-screenshot.jpg",
-    mobileImageUrl: "/images/m-maisonleroy-screenshot.jpg",
-    url: "https://maisonleroy.info/",
-  },
-];
-
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useTranslation();
+
+  const projects: Project[] = [
+    {
+      name: "InTexto",
+      description: t("modal.intexto.desc"),
+      tags: [t("modal.intexto.tag1"), t("modal.intexto.tag2"), t("modal.intexto.tag3")],
+      color: "#4A90E2",
+      imageUrl: "/images/intexto-screenshot.jpg",
+      mobileImageUrl: "/images/m-intexto-screenshot.jpg",
+      url: "https://intexto.ca",
+    },
+    {
+      name: "Grands Prix Cyclistes",
+      description: t("modal.gpc.desc"),
+      tags: [t("modal.gpc.tag1"), t("modal.gpc.tag2")],
+      color: "#9B59B6",
+      imageUrl: "/images/grandsprixcyclistes-screenshot.jpg",
+      mobileImageUrl: "/images/m-grandsprixcyclistes-screenshot.jpg",
+      url: "https://www.gpcqm-mtl.ca/",
+    },
+    {
+      name: "Jaxa Production",
+      description: t("modal.jaxa.desc"),
+      tags: [t("modal.jaxa.tag1"), t("modal.jaxa.tag2"), t("modal.jaxa.tag3")],
+      color: "#F39C12",
+      imageUrl: "/images/jaxa-screenshot.jpg",
+      mobileImageUrl: "/images/m-jaxa-screenshot.jpg",
+      url: "https://jaxanew.netlify.app/",
+    },
+    {
+      name: t("modal.organisme.name"),
+      description: t("modal.organisme.desc"),
+      tags: [t("modal.organisme.tag1"), t("modal.organisme.tag2")],
+      color: "#4A90E2",
+      imageUrl: "/images/aide-screenshot.jpg",
+      mobileImageUrl: "/images/m-aide-screenshot.jpg",
+      url: "https://aideanonyme.netlify.app/",
+    },
+    {
+      name: "Catherine François",
+      description: t("modal.cathfrancois.desc"),
+      tags: [t("modal.cathfrancois.tag1"), t("modal.cathfrancois.tag2")],
+      color: "#4A90E2",
+      imageUrl: "/images/cathfrancois-screenshot.jpg",
+      mobileImageUrl: "/images/m-cathfrancois-screenshot.jpg",
+      url: "https://cathfrancois.com/",
+    },
+    {
+      name: "Jaxa Gomme Balloune",
+      description: t("modal.jaxagomme.desc"),
+      tags: [t("modal.jaxagomme.tag1"), t("modal.jaxagomme.tag2")],
+      color: "#F39C12",
+      imageUrl: "/images/jaxagomme-screenshot.jpg",
+      mobileImageUrl: "/images/m-jaxagomme-screenshot.jpg",
+      url: "https://jaxaprod.netlify.app/",
+    },
+    {
+      name: "Jean Harvey",
+      description: t("modal.jeanharvey.desc"),
+      tags: [t("modal.jeanharvey.tag1"), t("modal.jeanharvey.tag2")],
+      color: "#4A90E2",
+      imageUrl: "/images/jeanharvey-screenshot.jpg",
+      mobileImageUrl: "/images/m-jeanharvey-screenshot.jpg",
+      url: "https://jeanharvey.ca/",
+    },
+    {
+      name: "Studio 76",
+      description: t("modal.studio76.desc"),
+      tags: [t("modal.studio76.tag1"), t("modal.studio76.tag2")],
+      color: "#9B59B6",
+      imageUrl: "/images/studio76-screenshot.jpg",
+      mobileImageUrl: "/images/m-studio76-screenshot.jpg",
+      url: "https://www.studio-76.ca/",
+    },
+    {
+      name: "La Maison LeRoy",
+      description: t("modal.maisonleroy.desc"),
+      tags: [t("modal.maisonleroy.tag1")],
+      color: "#F39C12",
+      imageUrl: "/images/maisonleroy-screenshot.jpg",
+      mobileImageUrl: "/images/m-maisonleroy-screenshot.jpg",
+      url: "https://maisonleroy.info/",
+    },
+  ];
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -224,7 +217,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Autres projets
+          {t("modal.title")}
         </h2>
 
         <div

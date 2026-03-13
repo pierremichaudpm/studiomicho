@@ -1,35 +1,34 @@
 "use client";
 
 import React from "react";
+import { useTranslation } from "@/lib/i18n";
 
 const Services: React.FC = () => {
+  const { t } = useTranslation();
+
   const services = [
     {
       number: "01",
-      title: "Sites & Applis",
-      description:
-        "Sites optimisés SEO. Applications (PWA). Prototypes rapides. Construction complète vélocité IA.",
+      title: t("services.1.title"),
+      description: t("services.1.desc"),
       color: "#4A90E2",
     },
     {
       number: "02",
-      title: "Contenu & SEO",
-      description:
-        "Stratégie éditoriale. SEO technique. Optimisation contenu. Trafic organique.",
+      title: t("services.2.title"),
+      description: t("services.2.desc"),
       color: "#9B59B6",
     },
     {
       number: "03",
-      title: "Publicités & Analytique",
-      description:
-        "Google Ads. Facebook/Meta. Suivi conversions. Optimisation ROI.",
+      title: t("services.3.title"),
+      description: t("services.3.desc"),
       color: "#F39C12",
     },
     {
       number: "04",
-      title: "Transformation",
-      description:
-        "Audit complet. Plan stratégique. Implantation CRM. Soutien continu.",
+      title: t("services.4.title"),
+      description: t("services.4.desc"),
       color: "#E74C3C",
     },
   ];
@@ -97,7 +96,7 @@ const Services: React.FC = () => {
             lineHeight: 0.9,
           }}
         >
-          Ce que je <span className="gradient-text">fais</span>
+          {t("services.title")} <span className="gradient-text">{t("services.titleHighlight")}</span>
         </h2>
 
         <div

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/lib/i18n";
 
 // Hook to detect mobile screen
 const useIsMobile = () => {
@@ -45,6 +46,7 @@ const Browser: React.FC<BrowserProps> = ({
   const [isRevealed, setIsRevealed] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
 
   // Use mobile image if available
   const finalImageUrl =
@@ -223,7 +225,7 @@ const Browser: React.FC<BrowserProps> = ({
                 zIndex: 10,
               }}
             >
-              {ctaLabel || "Voir le projet"} →
+              {ctaLabel || t("portfolio.cta.default")} →
             </div>
           )}
         </a>
@@ -298,6 +300,8 @@ interface PortfolioProps {
 }
 
 const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
+  const { t } = useTranslation();
+
   return (
     <section
       className="proof-section"
@@ -356,7 +360,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             lineHeight: 0.9,
           }}
         >
-          Projets <span className="gradient-text">livrés</span>
+          {t("portfolio.title")} <span className="gradient-text">{t("portfolio.titleHighlight")}</span>
         </h2>
         <p
           className="proof-subtitle"
@@ -369,7 +373,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             margin: "0 auto 6rem",
           }}
         >
-          Sites, apps et stratégies déployés. Résultats mesurables.
+          {t("portfolio.subtitle")}
         </p>
 
         <div
@@ -382,8 +386,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
         >
           <Browser
             name="OP2"
-            description="Firme d'ingénierie — Site vitrine corporatif. 5 semaines, conception à déploiement."
-            tags={["Solo", "Corporate", "5 Semaines"]}
+            description={t("portfolio.op2.desc")}
+            tags={[t("portfolio.op2.tag1"), t("portfolio.op2.tag2"), t("portfolio.op2.tag3")]}
             color="cyan"
             skew={-1}
             delay={0}
@@ -393,8 +397,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
 
           <Browser
             name="GROUPE TONIC"
-            description="Site corporatif complet. CMS custom. Construction solo avec IA. Livraison express en temps record. 3 semaines."
-            tags={["Corporate", "CMS", "3 Semaines"]}
+            description={t("portfolio.tonic.desc")}
+            tags={[t("portfolio.tonic.tag1"), t("portfolio.tonic.tag2"), t("portfolio.tonic.tag3")]}
             color="magenta"
             skew={1}
             delay={150}
@@ -404,14 +408,14 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
 
           <Browser
             name="OUTILS DE GESTION"
-            description="Dashboards financiers. Prototypes d'outils de gestion sur mesure."
-            tags={["Prototype", "Dashboards"]}
+            description={t("portfolio.gestion.desc")}
+            tags={[t("portfolio.gestion.tag1"), t("portfolio.gestion.tag2")]}
             color="magenta"
             skew={-1}
             delay={300}
             imageUrl="/images/gestion-screenshot.jpg"
             projectUrl="/dashboards/"
-            ctaLabel="Voir les projets"
+            ctaLabel={t("portfolio.cta.projects")}
           />
         </div>
 
@@ -462,7 +466,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
               zIndex: -1,
             }}
           />
-          Plus de projets
+          {t("portfolio.more")}
         </button>
       </div>
     </section>

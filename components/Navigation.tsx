@@ -1,16 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslation } from "@/lib/i18n";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   const menuItems = [
-    { label: "Services", href: "#services" },
-    { label: "Projets", href: "#projets" },
-    { label: "Avantage", href: "#avantage" },
-    { label: "Méthode", href: "#methode" },
-    { label: "Contact", href: "#contact" },
+    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.projects"), href: "#projets" },
+    { label: t("nav.advantage"), href: "#avantage" },
+    { label: t("nav.method"), href: "#methode" },
+    { label: t("nav.contact"), href: "#contact" },
   ];
 
   const handleClick = (href: string) => {

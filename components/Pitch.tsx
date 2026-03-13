@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import { useTranslation } from "@/lib/i18n";
 
 const Pitch: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="pitch-section"
@@ -67,13 +69,13 @@ const Pitch: React.FC = () => {
             animation: "gradientShift 5s linear infinite",
           }}
         >
-          JE CONÇOIS.
+          {t("pitch.line1")}
           <br />
-          JE CONSTRUIS.
+          {t("pitch.line2")}
           <br />
-          JE LANCE.
+          {t("pitch.line3")}
           <br />
-          JE MESURE.
+          {t("pitch.line4")}
         </h1>
 
         <div
@@ -154,7 +156,7 @@ const Pitch: React.FC = () => {
                 zIndex: -1,
               }}
             />
-            Parlons-en
+            {t("pitch.cta")}
           </a>
 
           <a
