@@ -407,7 +407,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           />
 
           <Browser
-            name="OUTILS DE GESTION"
+            name={t("portfolio.gestion.name")}
             description={t("portfolio.gestion.desc")}
             tags={[t("portfolio.gestion.tag1"), t("portfolio.gestion.tag2")]}
             color="magenta"
