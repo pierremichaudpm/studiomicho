@@ -24,6 +24,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   const projects: Project[] = [
     {
+      name: "Auréa RH Conseil",
+      description: t("modal.aurea.desc"),
+      tags: [t("modal.aurea.tag1"), t("modal.aurea.tag2"), t("modal.aurea.tag3")],
+      color: "#4A90E2",
+      imageUrl: "/images/aurea-screenshot.jpg",
+      mobileImageUrl: "/images/m-aurea-screenshot.jpg",
+      url: "https://aurearhconseil.ca/",
+    },
+    {
       name: "InTexto",
       description: t("modal.intexto.desc"),
       tags: [t("modal.intexto.tag1"), t("modal.intexto.tag2"), t("modal.intexto.tag3")],
@@ -67,15 +76,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       imageUrl: "/images/cathfrancois-screenshot.jpg",
       mobileImageUrl: "/images/m-cathfrancois-screenshot.jpg",
       url: "https://cathfrancois.com/",
-    },
-    {
-      name: "Jaxa Gomme Balloune",
-      description: t("modal.jaxagomme.desc"),
-      tags: [t("modal.jaxagomme.tag1"), t("modal.jaxagomme.tag2")],
-      color: "#F39C12",
-      imageUrl: "/images/jaxagomme-screenshot.jpg",
-      mobileImageUrl: "/images/m-jaxagomme-screenshot.jpg",
-      url: "https://jaxaprod.netlify.app/",
     },
     {
       name: "Jean Harvey",
