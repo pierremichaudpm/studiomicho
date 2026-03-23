@@ -146,6 +146,7 @@ const Navigation: React.FC = () => {
             letterSpacing: "0.2rem",
             transition: "color 0.3s ease",
             marginLeft: "auto",
+            marginRight: "5px",
             whiteSpace: "nowrap",
           }}
           onMouseEnter={(e) => {
