@@ -15,7 +15,7 @@ const LanguageToggle: React.FC = () => {
         top: "calc(1.5rem - 7px)",
         right: "1.5rem",
         zIndex: 3000,
-        background: "rgba(255, 255, 255, 0.08)",
+        background: "transparent",
         border: "none",
         borderRadius: "0",
         padding: "0.4rem 0.8rem",
