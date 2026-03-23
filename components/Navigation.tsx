@@ -91,7 +91,7 @@ const Navigation: React.FC = () => {
           display: "none",
           alignItems: "center",
           justifyContent: "flex-start",
-          padding: "0 2rem",
+          padding: "0 5rem 0 2rem",
           gap: "1.5rem",
         }}
       >
