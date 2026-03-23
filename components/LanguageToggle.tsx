@@ -12,12 +12,12 @@ const LanguageToggle: React.FC = () => {
       aria-label={locale === "fr" ? "Switch to English" : "Passer en français"}
       style={{
         position: "fixed",
-        top: "calc(1.5rem - 5px)",
+        top: "calc(1.5rem - 7px)",
         right: "1.5rem",
         zIndex: 3000,
         background: "rgba(255, 255, 255, 0.08)",
-        border: "2px solid rgba(255, 255, 255, 0.2)",
-        borderRadius: "0.5rem",
+        border: "none",
+        borderRadius: "0",
         padding: "0.4rem 0.8rem",
         color: "var(--white)",
         fontSize: "0.8rem",
@@ -28,7 +28,6 @@ const LanguageToggle: React.FC = () => {
         fontFamily: "'Inter', sans-serif",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "#4A90E2";
         e.currentTarget.style.color = "#4A90E2";
       }}
       onMouseLeave={(e) => {
