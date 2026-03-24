@@ -25,55 +25,6 @@ const Navigation: React.FC = () => {
 
   return (
     <>
-      {/* Desktop Menu */}
-      <nav
-        style={{
-          position: "fixed",
-          top: "clamp(14rem, 38vh, 30rem)",
-          left: "calc(2rem + 11px)",
-          zIndex: 2000,
-          display: "none",
-          flexDirection: "column",
-          gap: "clamp(0.6rem, 1.5vh, 2rem)",
-          maxHeight: "calc(100vh - clamp(14rem, 38vh, 30rem) - 2rem)",
-          justifyContent: "center",
-        }}
-        className="desktop-nav"
-      >
-        {menuItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            onClick={(e) => {
-              e.preventDefault();
-              handleClick(item.href);
-            }}
-            style={{
-              color: "var(--white)",
-              textDecoration: "none",
-              fontSize: "clamp(0.65rem, 0.8vw, 0.8rem)",
-              fontWeight: 600,
-              letterSpacing: "clamp(0.1rem, 0.2vw, 0.2rem)",
-              transition: "all 0.3s ease",
-              textTransform: "lowercase",
-              opacity: 0.7,
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#4A90E2";
-              e.currentTarget.style.opacity = "1";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "var(--white)";
-              e.currentTarget.style.opacity = "0.5";
-            }}
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
-
       {/* Mobile Header Bar */}
       <header
         className="mobile-header"
@@ -231,17 +182,11 @@ const Navigation: React.FC = () => {
       {/* Responsive Styles */}
       <style jsx>{`
         @media (max-width: 968px) {
-          .desktop-nav {
-            display: none !important;
-          }
           .mobile-header {
             display: flex !important;
           }
         }
         @media (min-width: 969px) {
-          .desktop-nav {
-            display: flex !important;
-          }
           .mobile-header {
             display: none !important;
           }

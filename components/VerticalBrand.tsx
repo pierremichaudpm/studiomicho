@@ -1,6 +1,26 @@
+"use client";
+
 import React from "react";
+import { useTranslation } from "@/lib/i18n";
 
 const VerticalBrand: React.FC = () => {
+  const { t } = useTranslation();
+
+  const menuItems = [
+    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.projects"), href: "#projets" },
+    { label: t("nav.advantage"), href: "#avantage" },
+    { label: t("nav.method"), href: "#methode" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
+
+  const handleClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div
@@ -9,14 +29,16 @@ const VerticalBrand: React.FC = () => {
           position: "fixed",
           left: "2rem",
           top: "2rem",
-          zIndex: 1000,
+          bottom: "2rem",
+          zIndex: 2000,
           display: "none",
           flexDirection: "column",
           alignItems: "center",
           gap: "clamp(0.5rem, 1vh, 1rem)",
         }}
       >
-        <a href="#" style={{ lineHeight: 0 }}>
+        {/* Logo */}
+        <a href="#" style={{ lineHeight: 0, flexShrink: 0 }}>
           <img
             src="/studio-micho-icon.png"
             alt="Studio Micho"
@@ -27,6 +49,8 @@ const VerticalBrand: React.FC = () => {
             }}
           />
         </a>
+
+        {/* Title */}
         <a
           href="#"
           style={{
@@ -38,6 +62,7 @@ const VerticalBrand: React.FC = () => {
             writingMode: "vertical-rl",
             letterSpacing: "clamp(0.15rem, 0.3vh, 0.3rem)",
             transition: "color 0.3s ease",
+            flexShrink: 0,
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = "#4A90E2";
@@ -48,6 +73,52 @@ const VerticalBrand: React.FC = () => {
         >
           STUDIO MICHO
         </a>
+
+        {/* Spacer */}
+        <div style={{ flex: "0 0 clamp(0.5rem, 2vh, 2rem)" }} />
+
+        {/* Desktop Nav */}
+        <nav
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "clamp(0.6rem, 1.5vh, 2rem)",
+          }}
+        >
+          {menuItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleClick(item.href);
+              }}
+              style={{
+                color: "var(--white)",
+                textDecoration: "none",
+                fontSize: "clamp(0.55rem, 0.8vw, 0.8rem)",
+                fontWeight: 600,
+                letterSpacing: "clamp(0.1rem, 0.2vw, 0.2rem)",
+                transition: "all 0.3s ease",
+                textTransform: "lowercase",
+                opacity: 0.7,
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#4A90E2";
+                e.currentTarget.style.opacity = "1";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--white)";
+                e.currentTarget.style.opacity = "0.5";
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
       <style jsx>{`
         @media (min-width: 969px) {
