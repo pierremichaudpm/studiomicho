@@ -5,7 +5,7 @@ import { useTranslation } from "@/lib/i18n";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t, locale, setLocale } = useTranslation();
 
   const menuItems = [
     { label: t("nav.services"), href: "#services" },
@@ -41,12 +41,11 @@ const Navigation: React.FC = () => {
           zIndex: 2001,
           display: "none",
           alignItems: "center",
-          justifyContent: "flex-start",
-          padding: "0 5rem 0 2rem",
-          gap: "1.5rem",
+          justifyContent: "space-between",
+          padding: "0 1.2rem",
         }}
       >
-        {/* Mobile Menu Button */}
+        {/* Left: Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           style={{
@@ -86,35 +85,22 @@ const Navigation: React.FC = () => {
           />
         </button>
 
-        {/* Logo + Studio Micho Title */}
+        {/* Center: Title + Logo */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "0.6rem",
-            marginLeft: "auto",
-            marginRight: "5px",
+            gap: "0.5rem",
           }}
         >
-          <a href="#" style={{ lineHeight: 0, flexShrink: 0 }}>
-            <img
-              src="/studio-micho-icon.png"
-              alt="Studio Micho"
-              style={{
-                width: "32px",
-                height: "32px",
-                borderRadius: "50%",
-              }}
-            />
-          </a>
           <a
             href="#"
             style={{
-              fontSize: "1.5rem",
+              fontSize: "1.3rem",
               fontWeight: 900,
               color: "var(--white)",
               textDecoration: "none",
-              letterSpacing: "0.2rem",
+              letterSpacing: "0.15rem",
               transition: "color 0.3s ease",
               whiteSpace: "nowrap",
             }}
@@ -127,7 +113,38 @@ const Navigation: React.FC = () => {
           >
             STUDIO MICHO
           </a>
+          <a href="#" style={{ lineHeight: 0, flexShrink: 0 }}>
+            <img
+              src="/studio-micho-icon.png"
+              alt="Studio Micho"
+              style={{
+                width: "30px",
+                height: "30px",
+                borderRadius: "50%",
+              }}
+            />
+          </a>
         </div>
+
+        {/* Right: Language Toggle */}
+        <button
+          onClick={() => setLocale(locale === "fr" ? "en" : "fr")}
+          aria-label={locale === "fr" ? "Switch to English" : "Passer en français"}
+          style={{
+            background: "transparent",
+            border: "none",
+            padding: "0.4rem 0.5rem",
+            color: "var(--white)",
+            fontSize: "0.8rem",
+            fontWeight: 700,
+            letterSpacing: "0.1em",
+            cursor: "pointer",
+            fontFamily: "'Inter', sans-serif",
+            flexShrink: 0,
+          }}
+        >
+          {locale === "fr" ? "EN" : "FR"}
+        </button>
       </header>
 
       {/* Mobile Menu */}
