@@ -13,7 +13,7 @@ const VerticalBrand: React.FC = () => {
           display: "none",
           flexDirection: "column",
           alignItems: "center",
-          gap: "1rem",
+          gap: "clamp(0.5rem, 1vh, 1rem)",
         }}
       >
         <a href="#" style={{ lineHeight: 0 }}>
@@ -21,8 +21,8 @@ const VerticalBrand: React.FC = () => {
             src="/studio-micho-icon.png"
             alt="Studio Micho"
             style={{
-              width: "48px",
-              height: "48px",
+              width: "clamp(36px, 5vh, 48px)",
+              height: "clamp(36px, 5vh, 48px)",
               borderRadius: "50%",
             }}
           />
@@ -31,12 +31,12 @@ const VerticalBrand: React.FC = () => {
           href="#"
           style={{
             transform: "rotate(180deg)",
-            fontSize: "2.5rem",
+            fontSize: "clamp(1.8rem, 3vh, 2.5rem)",
             fontWeight: 900,
             color: "var(--white)",
             textDecoration: "none",
             writingMode: "vertical-rl",
-            letterSpacing: "0.3rem",
+            letterSpacing: "clamp(0.15rem, 0.3vh, 0.3rem)",
             transition: "color 0.3s ease",
           }}
           onMouseEnter={(e) => {
