@@ -29,13 +29,13 @@ const Navigation: React.FC = () => {
       <nav
         style={{
           position: "fixed",
-          top: "clamp(14rem, 26rem, 26rem + 14px)",
+          top: "clamp(18rem, 30rem, 30rem + 14px)",
           left: "calc(2rem + 11px)",
           zIndex: 2000,
           display: "none",
           flexDirection: "column",
           gap: "clamp(1rem, 2vh, 2rem)",
-          maxHeight: "calc(100vh - 14rem - 2rem)",
+          maxHeight: "calc(100vh - 18rem - 2rem)",
           justifyContent: "center",
         }}
         className="desktop-nav"
