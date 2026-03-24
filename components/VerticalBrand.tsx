@@ -3,37 +3,56 @@ import React from "react";
 const VerticalBrand: React.FC = () => {
   return (
     <>
-      <a
-        href="#"
+      <div
         className="brand vertical-brand"
         style={{
           position: "fixed",
           left: "2rem",
           top: "2rem",
-          transform: "rotate(180deg)",
-          fontSize: "2.5rem",
-          fontWeight: 900,
-          color: "var(--white)",
           zIndex: 1000,
-          textDecoration: "none",
-          writingMode: "vertical-rl",
-          letterSpacing: "0.3rem",
-          transition: "color 0.3s ease",
           display: "none",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.color = "#4A90E2";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.color = "var(--white)";
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "1rem",
         }}
       >
-        STUDIO MICHO
-      </a>
+        <a href="#" style={{ lineHeight: 0 }}>
+          <img
+            src="/studio-micho-icon.png"
+            alt="Studio Micho"
+            style={{
+              width: "48px",
+              height: "48px",
+              borderRadius: "50%",
+            }}
+          />
+        </a>
+        <a
+          href="#"
+          style={{
+            transform: "rotate(180deg)",
+            fontSize: "2.5rem",
+            fontWeight: 900,
+            color: "var(--white)",
+            textDecoration: "none",
+            writingMode: "vertical-rl",
+            letterSpacing: "0.3rem",
+            transition: "color 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = "#4A90E2";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = "var(--white)";
+          }}
+        >
+          STUDIO MICHO
+        </a>
+      </div>
       <style jsx>{`
         @media (min-width: 969px) {
           .vertical-brand {
-            display: block !important;
+            display: flex !important;
           }
         }
       `}</style>

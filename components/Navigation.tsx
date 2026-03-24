@@ -135,29 +135,48 @@ const Navigation: React.FC = () => {
           />
         </button>
 
-        {/* Studio Micho Title */}
-        <a
-          href="#"
+        {/* Logo + Studio Micho Title */}
+        <div
           style={{
-            fontSize: "1.5rem",
-            fontWeight: 900,
-            color: "var(--white)",
-            textDecoration: "none",
-            letterSpacing: "0.2rem",
-            transition: "color 0.3s ease",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.6rem",
             marginLeft: "auto",
             marginRight: "5px",
-            whiteSpace: "nowrap",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#4A90E2";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "var(--white)";
           }}
         >
-          STUDIO MICHO
-        </a>
+          <a href="#" style={{ lineHeight: 0, flexShrink: 0 }}>
+            <img
+              src="/studio-micho-icon.png"
+              alt="Studio Micho"
+              style={{
+                width: "32px",
+                height: "32px",
+                borderRadius: "50%",
+              }}
+            />
+          </a>
+          <a
+            href="#"
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: 900,
+              color: "var(--white)",
+              textDecoration: "none",
+              letterSpacing: "0.2rem",
+              transition: "color 0.3s ease",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#4A90E2";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "var(--white)";
+            }}
+          >
+            STUDIO MICHO
+          </a>
+        </div>
       </header>
 
       {/* Mobile Menu */}
