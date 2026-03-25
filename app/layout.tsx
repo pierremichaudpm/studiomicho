@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://studiomicho.com"),
   title: "Studio Micho - Produits numériques à vélocité IA",
   description:
-    "J'imagine et construis des produits numériques à vélocité IA. Produits qui fonctionnent, pas juste des plans.",
+    "Produits numériques à vélocité IA. Sites, apps, dashboards et marketing — livrés en 3-4 semaines par une équipe de deux. Studio Micho × JAXA Production, Montréal.",
   openGraph: {
     title: "Studio Micho - Produits numériques à vélocité IA",
     description:
-      "J'imagine et construis des produits numériques à vélocité IA. Produits qui fonctionnent, pas juste des plans.",
+      "Produits numériques à vélocité IA. Sites, apps, dashboards et marketing — livrés en 3-4 semaines par une équipe de deux. Studio Micho × JAXA Production, Montréal.",
     type: "website",
     locale: "fr_FR",
     url: "https://studiomicho.com",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Studio Micho - Produits numériques à vélocité IA",
     description:
-      "J'imagine et construis des produits numériques à vélocité IA. Produits qui fonctionnent, pas juste des plans.",
+      "Produits numériques à vélocité IA. Sites, apps, dashboards et marketing — livrés en 3-4 semaines par une équipe de deux. Studio Micho × JAXA Production, Montréal.",
     images: ["/studio-micho-logo-1200.png"],
   },
   icons: {

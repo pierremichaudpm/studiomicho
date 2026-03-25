@@ -413,7 +413,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           height: "250px",
           borderRadius: "50%",
           background: "#E74C3C",
-          opacity: 0.2,
+          opacity: 0.09,
           right: "5%",
           top: "10%",
           animation: "float 7s ease-in-out infinite",
@@ -425,11 +425,11 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           position: "absolute",
           width: "300px",
           height: "300px",
+          borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.15,
+          opacity: 0.09,
           left: "3%",
           bottom: "15%",
-          transform: "rotate(45deg)",
           animation: "float 9s ease-in-out infinite reverse",
           zIndex: 2,
         }}
@@ -476,7 +476,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "6rem",
+            gap: "10rem",
           }}
         >
           <Browser
@@ -504,7 +504,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           <Browser
             name={t("portfolio.gestion.name")}
             description={t("portfolio.gestion.desc")}
-            tags={[t("portfolio.gestion.tag1"), t("portfolio.gestion.tag2")]}
+            tags={[t("portfolio.gestion.tag1"), t("portfolio.gestion.tag2"), t("portfolio.gestion.tag3")]}
             color="yellow"
             skew={-1}
             delay={300}
@@ -513,7 +513,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
         </div>
 
         {/* ─── Demos Section ─── */}
-        <div id="demos" style={{ marginTop: "8rem" }}>
+        <div id="demos" style={{ marginTop: "12rem" }}>
           <h3
             style={{
               fontSize: "clamp(2rem, 4vw, 3.5rem)",

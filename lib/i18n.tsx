@@ -42,24 +42,30 @@ const translations: Record<Locale, Record<string, string>> = {
     "team.virginie.point2": "Administration, facturation, suivi de projets",
     "team.virginie.point3": "Interface client principale — votre point de contact",
     "team.virginie.point4": "Expérience en production numérique et XR",
-    "team.stat1.value": "3–4",
-    "team.stat1.label": "semaines de livraison",
-    "team.stat2.value": "100%",
-    "team.stat2.label": "sur mesure",
-    "team.stat3.value": "0",
-    "team.stat3.label": "intermédiaire",
+    "team.stat1.value": "25 ans",
+    "team.stat1.label": "Radio-Canada — journalisme, production, numérique",
+    "team.stat2.value": "12 ans",
+    "team.stat2.label": "en produits numériques",
+    "team.stat3.value": "10+",
+    "team.stat3.label": "produits livrés depuis 2025",
+    "team.stat4.value": "3–4",
+    "team.stat4.label": "semaines de livraison",
+    "team.stat5.value": "0",
+    "team.stat5.label": "intermédiaire",
+    "team.stat6.value": "2",
+    "team.stat6.label": "personnes. Du brief au déploiement.",
 
     // Services
     "services.title": "Ce que nous",
     "services.titleHighlight": "faisons",
     "services.1.title": "Sites & Applis",
-    "services.1.desc": "Sites optimisés SEO. Applications (PWA). Prototypes rapides. Construction complète à vélocité IA.",
+    "services.1.desc": "Pas de site, ou il date de 2019. On vous met en ligne en 3 semaines — site, app ou prototype. Optimisé, rapide, construit avec l'IA.",
     "services.2.title": "Contenu & Marketing",
-    "services.2.desc": "Stratégie éditoriale. SEO technique. Google Ads. Facebook/Meta. Suivi conversions et trafic organique.",
+    "services.2.desc": "Personne vous trouve sur Google. Vos pubs coûtent cher sans résultat clair. On prend le relais — SEO, contenu, pubs, conversions.",
     "services.3.title": "Outils de gestion",
-    "services.3.desc": "Dashboards opérationnels et financiers. Vos KPIs en temps réel, visuels et exportables.",
+    "services.3.desc": "Vos données sont dans 4 fichiers Excel et la tête de quelqu'un. On vous construit un dashboard sur mesure — vos KPIs, en temps réel, exportables.",
     "services.4.title": "Transformation",
-    "services.4.desc": "Audit complet. Plan stratégique. Implantation CRM. Soutien continu.",
+    "services.4.desc": "Vous savez que ça pourrait être mieux mais vous savez pas par où commencer. Audit, plan, CRM, exécution — on vous accompagne.",
 
     // Portfolio
     "portfolio.title": "Projets",
@@ -78,12 +84,12 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cari.tag3": "4 semaines",
     "portfolio.cari.stat": "12 langues · Chatbot · Calendrier · 4 semaines",
     // OP2
-    "portfolio.op2.desc": "Firme d'ingénierie — Site vitrine corporatif bilingue. 5 semaines, conception à déploiement.",
+    "portfolio.op2.desc": "Firme d'ingénierie sans présence web. Site bilingue complet, en ligne en 5 semaines. De zéro à crédible.",
     "portfolio.op2.tag1": "Ingénierie",
     "portfolio.op2.tag2": "Bilingue",
     "portfolio.op2.tag3": "5 semaines",
     // Tonic
-    "portfolio.tonic.desc": "Site corporatif complet. CMS custom. Construction avec IA. Livraison express. 3 semaines.",
+    "portfolio.tonic.desc": "Organisateur des Grands Prix Cyclistes. Nouveau site corporatif avec CMS sur mesure, livré en 3 semaines. Prêt avant la saison.",
     "portfolio.tonic.tag1": "Événementiel",
     "portfolio.tonic.tag2": "CMS",
     "portfolio.tonic.tag3": "3 semaines",
@@ -107,9 +113,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo3.desc": "Gestion des dossiers clients. Échéances fiscales automatisées. Productivité de l'équipe.",
     // Gestion (legacy kept for modal)
     "portfolio.gestion.name": "OUTILS DE GESTION",
-    "portfolio.gestion.desc": "Dashboards financiers. Prototypes d'outils de gestion sur mesure.",
+    "portfolio.gestion.desc": "Ce que votre ERP devrait faire mais ne fait pas. Dashboards opérationnels et financiers, construits sur mesure en quelques semaines.",
     "portfolio.gestion.tag1": "Prototype",
     "portfolio.gestion.tag2": "Dashboards",
+    "portfolio.gestion.tag3": "Sur mesure",
 
     // Comparison table
     "compare.title": "Pourquoi",
@@ -207,7 +214,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Metadata
     "meta.title": "Studio Micho - Produits numériques à vélocité IA",
-    "meta.description": "Nous imaginons et construisons des produits numériques à vélocité IA. Produits qui fonctionnent, pas juste des plans.",
+    "meta.description": "Produits numériques à vélocité IA. Sites, apps, dashboards et marketing — livrés en 3-4 semaines par une équipe de deux. Studio Micho × JAXA Production, Montréal.",
   },
   en: {
     // Navigation
@@ -240,24 +247,30 @@ const translations: Record<Locale, Record<string, string>> = {
     "team.virginie.point2": "Administration, invoicing, project tracking",
     "team.virginie.point3": "Main client interface — your point of contact",
     "team.virginie.point4": "Experience in digital and XR production",
-    "team.stat1.value": "3–4",
-    "team.stat1.label": "weeks to deliver",
-    "team.stat2.value": "100%",
-    "team.stat2.label": "custom-built",
-    "team.stat3.value": "0",
-    "team.stat3.label": "middlemen",
+    "team.stat1.value": "25 yrs",
+    "team.stat1.label": "CBC/Radio-Canada — journalism, production, digital",
+    "team.stat2.value": "12 yrs",
+    "team.stat2.label": "in digital products",
+    "team.stat3.value": "10+",
+    "team.stat3.label": "products shipped since 2025",
+    "team.stat4.value": "3–4",
+    "team.stat4.label": "weeks to deliver",
+    "team.stat5.value": "0",
+    "team.stat5.label": "middlemen",
+    "team.stat6.value": "2",
+    "team.stat6.label": "people. From brief to deployment.",
 
     // Services
     "services.title": "What we",
     "services.titleHighlight": "do",
     "services.1.title": "Sites & Apps",
-    "services.1.desc": "SEO-optimized sites. Applications (PWA). Rapid prototypes. Full build at AI velocity.",
+    "services.1.desc": "No website, or it's from 2019. We get you online in 3 weeks — site, app or prototype. Optimized, fast, AI-built.",
     "services.2.title": "Content & Marketing",
-    "services.2.desc": "Editorial strategy. Technical SEO. Google Ads. Facebook/Meta. Conversion tracking and organic traffic.",
+    "services.2.desc": "Nobody finds you on Google. Your ads cost a fortune with no clear results. We take over — SEO, content, ads, conversions.",
     "services.3.title": "Management Tools",
-    "services.3.desc": "Operational and financial dashboards. Your KPIs in real time, visual and exportable.",
+    "services.3.desc": "Your data lives in 4 Excel files and someone's head. We build you a custom dashboard — your KPIs, real-time, exportable.",
     "services.4.title": "Transformation",
-    "services.4.desc": "Full audit. Strategic plan. CRM implementation. Ongoing support.",
+    "services.4.desc": "You know it could be better but don't know where to start. Audit, plan, CRM, execution — we walk you through it.",
 
     // Portfolio
     "portfolio.title": "Delivered",
@@ -276,12 +289,12 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cari.tag3": "4 weeks",
     "portfolio.cari.stat": "12 languages · Chatbot · Calendar · 4 weeks",
     // OP2
-    "portfolio.op2.desc": "Engineering firm — Bilingual corporate showcase. 5 weeks, design to deployment.",
+    "portfolio.op2.desc": "Engineering firm with no web presence. Full bilingual site, online in 5 weeks. From zero to credible.",
     "portfolio.op2.tag1": "Engineering",
     "portfolio.op2.tag2": "Bilingual",
     "portfolio.op2.tag3": "5 weeks",
     // Tonic
-    "portfolio.tonic.desc": "Full corporate site. Custom CMS. AI-powered build. Express delivery. 3 weeks.",
+    "portfolio.tonic.desc": "Organizer of the Grands Prix Cyclistes. New corporate site with custom CMS, delivered in 3 weeks. Ready before the season.",
     "portfolio.tonic.tag1": "Events",
     "portfolio.tonic.tag2": "CMS",
     "portfolio.tonic.tag3": "3 weeks",
@@ -305,9 +318,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo3.desc": "Client file management. Automated tax deadlines. Team productivity.",
     // Gestion (legacy)
     "portfolio.gestion.name": "MANAGEMENT TOOLS",
-    "portfolio.gestion.desc": "Financial dashboards. Custom management tool prototypes.",
+    "portfolio.gestion.desc": "What your ERP should do but doesn't. Operational and financial dashboards, custom-built in a few weeks.",
     "portfolio.gestion.tag1": "Prototype",
     "portfolio.gestion.tag2": "Dashboards",
+    "portfolio.gestion.tag3": "Custom",
 
     // Comparison table
     "compare.title": "Why",
@@ -405,7 +419,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Metadata
     "meta.title": "Studio Micho - Digital products at AI velocity",
-    "meta.description": "We imagine and build digital products at AI velocity. Products that work, not just plans.",
+    "meta.description": "Digital products at AI velocity. Sites, apps, dashboards and marketing — delivered in 3-4 weeks by a team of two. Studio Micho × JAXA Production, Montréal.",
   },
 };
 

@@ -10,6 +10,9 @@ const TeamDuo: React.FC = () => {
     { value: t("team.stat1.value"), label: t("team.stat1.label") },
     { value: t("team.stat2.value"), label: t("team.stat2.label") },
     { value: t("team.stat3.value"), label: t("team.stat3.label") },
+    { value: t("team.stat4.value"), label: t("team.stat4.label") },
+    { value: t("team.stat5.value"), label: t("team.stat5.label") },
+    { value: t("team.stat6.value"), label: t("team.stat6.label") },
   ];
 
   return (
@@ -24,7 +27,7 @@ const TeamDuo: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
-        padding: "8rem 2rem",
+        padding: "12rem 2rem",
       }}
     >
       {/* Floating shapes */}
@@ -35,7 +38,7 @@ const TeamDuo: React.FC = () => {
           height: "300px",
           borderRadius: "50%",
           background: "#F39C12",
-          opacity: 0.12,
+          opacity: 0.09,
           top: "5%",
           left: "60%",
           animation: "float 11s ease-in-out infinite",
@@ -47,11 +50,11 @@ const TeamDuo: React.FC = () => {
           position: "absolute",
           width: "250px",
           height: "250px",
+          borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.12,
+          opacity: 0.09,
           bottom: "15%",
           right: "70%",
-          transform: "rotate(45deg)",
           animation: "float 9s ease-in-out infinite reverse",
           zIndex: 1,
         }}
@@ -88,7 +91,7 @@ const TeamDuo: React.FC = () => {
             fontWeight: 900,
             textAlign: "center",
             lineHeight: 1.1,
-            marginBottom: "5rem",
+            marginBottom: "7rem",
           }}
         >
           {t("team.title")}
@@ -103,7 +106,7 @@ const TeamDuo: React.FC = () => {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "4rem",
-            marginBottom: "5rem",
+            marginBottom: "7rem",
           }}
         >
           {/* Pierre */}
@@ -225,9 +228,9 @@ const TeamDuo: React.FC = () => {
         <div
           className="team-stats"
           style={{
-            display: "flex",
-            gap: "4rem",
-            justifyContent: "center",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "3rem 4rem",
             padding: "3rem 0",
             borderTop: "1px solid rgba(255,255,255,0.1)",
             borderBottom: "1px solid rgba(255,255,255,0.1)",
@@ -276,9 +279,8 @@ const TeamDuo: React.FC = () => {
             gap: 3rem !important;
           }
           .team-stats {
-            flex-direction: column !important;
+            grid-template-columns: repeat(2, 1fr) !important;
             gap: 2rem !important;
-            align-items: center !important;
           }
         }
       `}</style>
