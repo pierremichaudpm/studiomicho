@@ -5,6 +5,14 @@ import { useTranslation } from "@/lib/i18n";
 
 const Comment: React.FC = () => {
   const { t } = useTranslation();
+
+  const steps = [
+    { number: "01", title: t("method.1.title"), desc: t("method.1.desc"), color: "#4A90E2" },
+    { number: "02", title: t("method.2.title"), desc: t("method.2.desc"), color: "#9B59B6" },
+    { number: "03", title: t("method.3.title"), desc: t("method.3.desc"), color: "#F39C12" },
+    { number: "04", title: t("method.4.title"), desc: t("method.4.desc"), color: "#E74C3C" },
+  ];
+
   return (
     <section
       className="sauce-section"
@@ -20,14 +28,14 @@ const Comment: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          width: "300px",
-          height: "300px",
+          width: "320px",
+          height: "320px",
           borderRadius: "50%",
-          background: "#E74C3C",
-          opacity: 0.15,
-          right: "-5%",
-          top: "10%",
-          animation: "float 8s ease-in-out infinite",
+          background: "#4A90E2",
+          opacity: 0.12,
+          bottom: "10%",
+          left: "65%",
+          animation: "float 10s ease-in-out infinite",
           zIndex: 1,
         }}
       />
@@ -36,12 +44,12 @@ const Comment: React.FC = () => {
           position: "absolute",
           width: "250px",
           height: "250px",
-          background: "#4A90E2",
-          opacity: 0.15,
-          left: "-3%",
-          bottom: "5%",
+          background: "#E74C3C",
+          opacity: 0.12,
+          right: "-3%",
+          top: "10%",
           transform: "rotate(45deg)",
-          animation: "float 11s ease-in-out infinite reverse",
+          animation: "float 8s ease-in-out infinite reverse",
           zIndex: 1,
         }}
       />
@@ -49,14 +57,13 @@ const Comment: React.FC = () => {
       <div
         className="sauce-container"
         style={{
-          maxWidth: "1600px",
+          maxWidth: "1200px",
           width: "100%",
           position: "relative",
           zIndex: 10,
         }}
       >
         <h2
-          className="sauce-header"
           style={{
             fontSize: "clamp(3rem, 9vw, 11.25rem)",
             fontWeight: 900,
@@ -65,7 +72,8 @@ const Comment: React.FC = () => {
             lineHeight: 0.9,
           }}
         >
-          {t("method.title")} <span className="gradient-text">{t("method.titleHighlight")}</span>
+          {t("method.title")}{" "}
+          <span className="gradient-text">{t("method.titleHighlight")}</span>
         </h2>
 
         <p
@@ -74,200 +82,88 @@ const Comment: React.FC = () => {
             color: "var(--gray)",
             textAlign: "center",
             maxWidth: "700px",
-            margin: "0 auto 8rem",
+            margin: "0 auto 6rem",
             lineHeight: 1.6,
           }}
         >
           {t("method.subtitle")}
         </p>
 
+        {/* 4 steps grid */}
         <div
-          className="flow"
+          className="method-steps"
           style={{
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
-            gap: "clamp(1.5rem, 3vw, 3rem)",
-            position: "relative",
-            flexWrap: "nowrap",
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "clamp(1.5rem, 2.5vw, 2.5rem)",
           }}
         >
-          {/* Flow Item 01 */}
-          <div
-            className="flow-item"
-            style={{
-              flex: "1",
-              minWidth: "0",
-              textAlign: "center",
-              position: "relative",
-            }}
-          >
+          {steps.map((step) => (
             <div
-              className="flow-number"
+              key={step.number}
+              className="method-step"
               style={{
-                fontSize: "clamp(6rem, 12vw, 15rem)",
-                fontWeight: 900,
-                lineHeight: 0.8,
-                opacity: 0.3,
-                marginBottom: "2rem",
-                color: "#4A90E2",
+                paddingTop: "2rem",
+                borderTop: `2px solid rgba(255,255,255,0.1)`,
+                transition: "border-color 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = step.color;
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.1)";
               }}
             >
-              01
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "clamp(2.5rem, 3.5vw, 3.5rem)",
+                  fontWeight: 700,
+                  opacity: 0.2,
+                  color: step.color,
+                  marginBottom: "1rem",
+                }}
+              >
+                {step.number}
+              </div>
+              <h4
+                style={{
+                  fontSize: "clamp(1.2rem, 1.5vw, 1.5rem)",
+                  fontWeight: 900,
+                  marginBottom: "1rem",
+                  color: "var(--white)",
+                }}
+              >
+                {step.title}
+              </h4>
+              <p
+                style={{
+                  fontSize: "clamp(0.85rem, 1vw, 1rem)",
+                  color: "var(--gray)",
+                  lineHeight: 1.7,
+                  maxWidth: "300px",
+                }}
+              >
+                {step.desc}
+              </p>
             </div>
-            <div
-              className="flow-title"
-              style={{
-                fontSize: "clamp(1.5rem, 3vw, 3rem)",
-                fontWeight: 900,
-                marginBottom: "1.5rem",
-                textTransform: "uppercase",
-                color: "#4A90E2",
-                lineHeight: 1.1,
-              }}
-            >
-              {t("method.1.title")}
-            </div>
-            <div
-              className="flow-desc"
-              style={{
-                fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
-                color: "var(--white)",
-                fontWeight: 400,
-                lineHeight: 1.5,
-              }}
-            >
-              {t("method.1.desc")}
-            </div>
-          </div>
-
-          {/* Arrow */}
-          <div
-            className="flow-arrow"
-            style={{
-              fontSize: "clamp(3rem, 6vw, 8rem)",
-              color: "#E74C3C",
-              opacity: 0.6,
-              flexShrink: 0,
-              fontWeight: 300,
-              alignSelf: "center",
-            }}
-          >
-            →
-          </div>
-
-          {/* Flow Item 02 */}
-          <div
-            className="flow-item"
-            style={{
-              flex: "1",
-              minWidth: "0",
-              textAlign: "center",
-              position: "relative",
-            }}
-          >
-            <div
-              className="flow-number"
-              style={{
-                fontSize: "clamp(6rem, 12vw, 15rem)",
-                fontWeight: 900,
-                lineHeight: 0.8,
-                opacity: 0.3,
-                marginBottom: "2rem",
-                color: "#9B59B6",
-              }}
-            >
-              02
-            </div>
-            <div
-              className="flow-title"
-              style={{
-                fontSize: "clamp(1.5rem, 3vw, 3rem)",
-                fontWeight: 900,
-                marginBottom: "1.5rem",
-                textTransform: "uppercase",
-                color: "#9B59B6",
-                lineHeight: 1.1,
-              }}
-            >
-              {t("method.2.title")}
-            </div>
-            <div
-              className="flow-desc"
-              style={{
-                fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
-                color: "var(--white)",
-                fontWeight: 400,
-                lineHeight: 1.5,
-              }}
-            >
-              {t("method.2.desc")}
-            </div>
-          </div>
-
-          {/* Arrow */}
-          <div
-            className="flow-arrow"
-            style={{
-              fontSize: "clamp(3rem, 8vw, 8rem)",
-              color: "#E74C3C",
-              opacity: 0.5,
-              flexShrink: 0,
-            }}
-          >
-            →
-          </div>
-
-          {/* Flow Item 03 */}
-          <div
-            className="flow-item"
-            style={{
-              flex: "1",
-              minWidth: "0",
-              textAlign: "center",
-              position: "relative",
-            }}
-          >
-            <div
-              className="flow-number"
-              style={{
-                fontSize: "clamp(6rem, 12vw, 15rem)",
-                fontWeight: 900,
-                lineHeight: 0.8,
-                opacity: 0.3,
-                marginBottom: "2rem",
-                color: "#F39C12",
-              }}
-            >
-              03
-            </div>
-            <div
-              className="flow-title"
-              style={{
-                fontSize: "clamp(1.5rem, 3vw, 3rem)",
-                fontWeight: 900,
-                marginBottom: "1.5rem",
-                textTransform: "uppercase",
-                color: "#F39C12",
-                lineHeight: 1.1,
-              }}
-            >
-              {t("method.3.title")}
-            </div>
-            <div
-              className="flow-desc"
-              style={{
-                fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
-                color: "var(--white)",
-                fontWeight: 400,
-                lineHeight: 1.5,
-              }}
-            >
-              {t("method.3.desc")}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      {/* Responsive */}
+      <style jsx>{`
+        @media (max-width: 968px) {
+          .method-steps {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 580px) {
+          .method-steps {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

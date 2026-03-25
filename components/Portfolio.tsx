@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 
-// Hook to detect mobile screen
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -30,6 +29,7 @@ interface BrowserProps {
   imageUrl?: string;
   projectUrl?: string;
   ctaLabel?: string;
+  stat?: string;
 }
 
 const Browser: React.FC<BrowserProps> = ({
@@ -42,13 +42,13 @@ const Browser: React.FC<BrowserProps> = ({
   imageUrl,
   projectUrl,
   ctaLabel,
+  stat,
 }) => {
   const [isRevealed, setIsRevealed] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
 
-  // Use mobile image if available
   const finalImageUrl =
     isMobile && imageUrl ? imageUrl.replace(/\/([^/]+)\./, "/m-$1.") : imageUrl;
 
@@ -98,6 +98,22 @@ const Browser: React.FC<BrowserProps> = ({
         filter: `drop-shadow(0 0 60px ${borderColor}80)`,
       }}
     >
+      {/* Title above screenshot */}
+      <div
+        className="browser-name"
+        style={{
+          fontSize: "clamp(3rem, 8vw, 8rem)",
+          fontWeight: 900,
+          lineHeight: 0.9,
+          marginBottom: "2rem",
+          paddingLeft: "2rem",
+          color: borderColor,
+        }}
+      >
+        {name}
+      </div>
+
+      {/* Screenshot */}
       <div
         className="browser-window"
         style={{
@@ -136,30 +152,9 @@ const Browser: React.FC<BrowserProps> = ({
             borderRadius: "1rem 1rem 0 0",
           }}
         >
-          <div
-            style={{
-              width: "12px",
-              height: "12px",
-              borderRadius: "50%",
-              background: "#FF5F56",
-            }}
-          />
-          <div
-            style={{
-              width: "12px",
-              height: "12px",
-              borderRadius: "50%",
-              background: "#FFBD2E",
-            }}
-          />
-          <div
-            style={{
-              width: "12px",
-              height: "12px",
-              borderRadius: "50%",
-              background: "#27C93F",
-            }}
-          />
+          <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#FF5F56" }} />
+          <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#FFBD2E" }} />
+          <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27C93F" }} />
         </div>
 
         <a
@@ -208,7 +203,7 @@ const Browser: React.FC<BrowserProps> = ({
                 color: "var(--white)",
               }}
             >
-              SCREENSHOT ICI
+              {t("portfolio.screenshot")}
             </div>
           )}
           {projectUrl && finalImageUrl && (
@@ -231,6 +226,7 @@ const Browser: React.FC<BrowserProps> = ({
         </a>
       </div>
 
+      {/* Info below screenshot */}
       <div
         className="browser-info"
         style={{
@@ -240,18 +236,6 @@ const Browser: React.FC<BrowserProps> = ({
           textAlign: "right",
         }}
       >
-        <div
-          className="browser-name"
-          style={{
-            fontSize: "clamp(3rem, 8vw, 8rem)",
-            fontWeight: 900,
-            lineHeight: 0.9,
-            marginBottom: "1rem",
-            color: borderColor,
-          }}
-        >
-          {name}
-        </div>
         <div
           className="browser-desc"
           style={{
@@ -264,6 +248,20 @@ const Browser: React.FC<BrowserProps> = ({
         >
           {description}
         </div>
+        {stat && (
+          <div
+            style={{
+              fontSize: "1rem",
+              color: borderColor,
+              fontFamily: "'JetBrains Mono', monospace",
+              letterSpacing: "0.05em",
+              marginBottom: "1rem",
+              opacity: 0.9,
+            }}
+          >
+            {stat}
+          </div>
+        )}
         <div
           className="browser-tags"
           style={{
@@ -295,6 +293,102 @@ const Browser: React.FC<BrowserProps> = ({
   );
 };
 
+/* ─── Demo Card ─── */
+interface DemoCardProps {
+  name: string;
+  sector: string;
+  description: string;
+  url: string;
+  color: string;
+  ctaLabel: string;
+}
+
+const DemoCard: React.FC<DemoCardProps> = ({ name, sector, description, url, color, ctaLabel }) => {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="demo-card"
+      style={{
+        background: "rgba(20, 20, 20, 0.8)",
+        border: "2px solid rgba(255,255,255,0.1)",
+        borderRadius: "1rem",
+        padding: "clamp(1.5rem, 2vw, 2rem)",
+        transition: "all 0.3s ease",
+        position: "relative",
+        overflow: "hidden",
+        textDecoration: "none",
+        display: "block",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = color;
+        e.currentTarget.style.boxShadow = `0 20px 60px ${color}33`;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      {/* Top gradient line */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "3px",
+          background: `linear-gradient(90deg, ${color}, transparent)`,
+        }}
+      />
+      <h4
+        style={{
+          fontSize: "clamp(1.2rem, 1.5vw, 1.5rem)",
+          fontWeight: 900,
+          marginBottom: "0.3rem",
+          color: "var(--white)",
+        }}
+      >
+        {name}
+      </h4>
+      <div
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: "11px",
+          textTransform: "uppercase",
+          letterSpacing: "0.15em",
+          color: color,
+          marginBottom: "1.2rem",
+        }}
+      >
+        {sector}
+      </div>
+      <p
+        style={{
+          fontSize: "14px",
+          color: "var(--gray)",
+          lineHeight: 1.6,
+          marginBottom: "1.5rem",
+        }}
+      >
+        {description}
+      </p>
+      <div
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: "12px",
+          textTransform: "uppercase",
+          letterSpacing: "0.12em",
+          color: color,
+        }}
+      >
+        {ctaLabel} →
+      </div>
+    </a>
+  );
+};
+
+/* ─── Portfolio Section ─── */
 interface PortfolioProps {
   onOpenModal: () => void;
 }
@@ -360,7 +454,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             lineHeight: 0.9,
           }}
         >
-          {t("portfolio.title")} <span className="gradient-text">{t("portfolio.titleHighlight")}</span>
+          {t("portfolio.title")}{" "}
+          <span className="gradient-text">{t("portfolio.titleHighlight")}</span>
         </h2>
         <p
           className="proof-subtitle"
@@ -410,13 +505,85 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             name={t("portfolio.gestion.name")}
             description={t("portfolio.gestion.desc")}
             tags={[t("portfolio.gestion.tag1"), t("portfolio.gestion.tag2")]}
-            color="magenta"
+            color="yellow"
             skew={-1}
             delay={300}
             imageUrl="/images/gestion-screenshot.jpg"
-            projectUrl="/dashboards/"
-            ctaLabel={t("portfolio.cta.projects")}
           />
+        </div>
+
+        {/* ─── Demos Section ─── */}
+        <div id="demos" style={{ marginTop: "8rem" }}>
+          <h3
+            style={{
+              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              fontWeight: 900,
+              textAlign: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            <span className="gradient-text">{t("portfolio.demos.title")}</span>
+          </h3>
+          <p
+            style={{
+              fontSize: "clamp(1rem, 1.5vw, 1.3rem)",
+              textAlign: "center",
+              color: "var(--gray)",
+              marginBottom: "3rem",
+              maxWidth: "600px",
+              margin: "0 auto 3rem",
+            }}
+          >
+            {t("portfolio.demos.subtitle")}
+          </p>
+
+          <div
+            className="demos-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "1.5rem",
+              maxWidth: "1200px",
+              margin: "0 auto",
+            }}
+          >
+            <DemoCard
+              name={t("portfolio.demo1.name")}
+              sector={t("portfolio.demo1.sector")}
+              description={t("portfolio.demo1.desc")}
+              url="https://accueildemo.netlify.app/"
+              color="#4A90E2"
+              ctaLabel={t("portfolio.cta.demo")}
+            />
+            <DemoCard
+              name={t("portfolio.demo2.name")}
+              sector={t("portfolio.demo2.sector")}
+              description={t("portfolio.demo2.desc")}
+              url="https://demodashboardfinance.netlify.app/"
+              color="#9B59B6"
+              ctaLabel={t("portfolio.cta.demo")}
+            />
+            <DemoCard
+              name={t("portfolio.demo3.name")}
+              sector={t("portfolio.demo3.sector")}
+              description={t("portfolio.demo3.desc")}
+              url="https://comptablepro.netlify.app/"
+              color="#F39C12"
+              ctaLabel={t("portfolio.cta.demo")}
+            />
+          </div>
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "13px",
+              color: "var(--gray)",
+              fontStyle: "italic",
+              marginTop: "1.5rem",
+              opacity: 0.7,
+            }}
+          >
+            Données fictives — Démos interactives en ligne
+          </p>
         </div>
 
         <button
@@ -469,6 +636,15 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           {t("portfolio.more")}
         </button>
       </div>
+
+      {/* Responsive */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .demos-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

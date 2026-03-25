@@ -6,11 +6,13 @@ import Navigation from "@/components/Navigation";
 import VerticalBrand from "@/components/VerticalBrand";
 import LanguageToggle from "@/components/LanguageToggle";
 import Hero from "@/components/Hero";
+import TeamDuo from "@/components/TeamDuo";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Modal from "@/components/Modal";
 import Advantage from "@/components/Advantage";
 import Comment from "@/components/Comment";
+
 import Pitch from "@/components/Pitch";
 
 export default function Home() {
@@ -25,6 +27,9 @@ export default function Home() {
       <VerticalBrand />
       <LanguageToggle />
       <Hero />
+      <div id="equipe">
+        <TeamDuo />
+      </div>
       <div id="services">
         <Services />
       </div>

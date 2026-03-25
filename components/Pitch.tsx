@@ -56,7 +56,7 @@ const Pitch: React.FC = () => {
         <h1
           className="pitch-statement"
           style={{
-            fontSize: "clamp(2.25rem, 7.5vw, 7.5rem)",
+            fontSize: "clamp(1.5rem, 4vw, 4rem)",
             fontWeight: 900,
             lineHeight: 1.2,
             marginBottom: "2rem",
@@ -78,105 +78,201 @@ const Pitch: React.FC = () => {
           {t("pitch.line4")}
         </h1>
 
-        <div
+        <p
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "3rem",
-            marginTop: "2rem",
-            flexWrap: "wrap",
+            fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
+            color: "var(--gray)",
+            marginBottom: "3rem",
+            lineHeight: 1.6,
           }}
         >
-          <a
-            href="mailto:pierre@studiomicho.com"
-            style={{
-              fontSize: "1.2rem",
-              color: "var(--cyan)",
-              textDecoration: "none",
-              fontWeight: 700,
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#9B59B6";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "var(--cyan)";
-            }}
-          >
-            pierre@studiomicho.com
-          </a>
+          {t("pitch.subcta")}
+        </p>
 
-          <a
-            href="mailto:pierre@studiomicho.com"
-            className="pitch-cta"
+        {/* CTA button */}
+        <a
+          href="mailto:pierre@studiomicho.com"
+          className="pitch-cta"
+          style={{
+            display: "inline-block",
+            background: "#4A90E2",
+            color: "var(--bg-dark)",
+            padding: "2rem 5rem",
+            fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+            fontWeight: 900,
+            textDecoration: "none",
+            textTransform: "uppercase",
+            letterSpacing: "3px",
+            transition: "all 0.3s ease",
+            position: "relative",
+            overflow: "hidden",
+            marginBottom: "4rem",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "scale(1.05)";
+            e.currentTarget.style.boxShadow =
+              "0 20px 60px rgba(255, 0, 255, 0.5)";
+            const before = e.currentTarget.querySelector(
+              ".cta-before",
+            ) as HTMLDivElement;
+            if (before) before.style.left = "0";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+            e.currentTarget.style.boxShadow = "none";
+            const before = e.currentTarget.querySelector(
+              ".cta-before",
+            ) as HTMLDivElement;
+            if (before) before.style.left = "-100%";
+          }}
+        >
+          <div
+            className="cta-before"
             style={{
-              display: "inline-block",
-              background: "#4A90E2",
-              color: "var(--bg-dark)",
-              padding: "2rem 5rem",
-              fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
-              fontWeight: 900,
-              textDecoration: "none",
-              textTransform: "uppercase",
-              letterSpacing: "3px",
+              content: "",
+              position: "absolute",
+              top: 0,
+              left: "-100%",
+              width: "100%",
+              height: "100%",
+              background: "#9B59B6",
+              transition: "left 0.3s ease",
+              zIndex: -1,
+            }}
+          />
+          {t("pitch.cta")}
+        </a>
+
+        {/* Dual contact cards */}
+        <div
+          className="pitch-contacts"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "3rem",
+            flexWrap: "wrap",
+            marginBottom: "4rem",
+          }}
+        >
+          {/* Pierre */}
+          <div
+            style={{
+              textAlign: "center",
+              padding: "2rem",
+              background: "rgba(20, 20, 20, 0.8)",
+              border: "2px solid rgba(255,255,255,0.1)",
+              borderRadius: "1rem",
+              minWidth: "260px",
               transition: "all 0.3s ease",
-              position: "relative",
-              overflow: "hidden",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 60px rgba(255, 0, 255, 0.5)";
-              const before = e.currentTarget.querySelector(
-                ".cta-before",
-              ) as HTMLDivElement;
-              if (before) before.style.left = "0";
+              e.currentTarget.style.borderColor = "#4A90E2";
+              e.currentTarget.style.boxShadow = "0 10px 40px rgba(74, 144, 226, 0.15)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
               e.currentTarget.style.boxShadow = "none";
-              const before = e.currentTarget.querySelector(
-                ".cta-before",
-              ) as HTMLDivElement;
-              if (before) before.style.left = "-100%";
             }}
           >
+            <h4 style={{ fontSize: "1.3rem", fontWeight: 900, marginBottom: "0.3rem" }}>
+              {t("team.pierre.name")}
+            </h4>
             <div
-              className="cta-before"
               style={{
-                content: "",
-                position: "absolute",
-                top: 0,
-                left: "-100%",
-                width: "100%",
-                height: "100%",
-                background: "#9B59B6",
-                transition: "left 0.3s ease",
-                zIndex: -1,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "11px",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                color: "#4A90E2",
+                marginBottom: "1rem",
               }}
-            />
-            {t("pitch.cta")}
-          </a>
+            >
+              {t("pitch.pierre.role")}
+            </div>
+            <a
+              href="mailto:pierre@studiomicho.com"
+              style={{ color: "var(--gray)", textDecoration: "none", fontSize: "0.95rem", display: "block", marginBottom: "0.3rem", transition: "color 0.3s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#4A90E2"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--gray)"; }}
+            >
+              pierre@studiomicho.com
+            </a>
+            <a
+              href="tel:+15149159370"
+              style={{ color: "var(--gray)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.3s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#4A90E2"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--gray)"; }}
+            >
+              514 915-9370
+            </a>
+          </div>
 
-          <a
-            href="tel:+15149159370"
+          {/* Virginie */}
+          <div
             style={{
-              fontSize: "1.2rem",
-              color: "var(--cyan)",
-              textDecoration: "none",
-              fontWeight: 700,
+              textAlign: "center",
+              padding: "2rem",
+              background: "rgba(20, 20, 20, 0.8)",
+              border: "2px solid rgba(255,255,255,0.1)",
+              borderRadius: "1rem",
+              minWidth: "260px",
               transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#9B59B6";
+              e.currentTarget.style.borderColor = "#9B59B6";
+              e.currentTarget.style.boxShadow = "0 10px 40px rgba(155, 89, 182, 0.15)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = "var(--cyan)";
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+              e.currentTarget.style.boxShadow = "none";
             }}
           >
-            +1 514-915-9370
-          </a>
+            <h4 style={{ fontSize: "1.3rem", fontWeight: 900, marginBottom: "0.3rem" }}>
+              {t("team.virginie.name")}
+            </h4>
+            <div
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "11px",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                color: "#9B59B6",
+                marginBottom: "1rem",
+              }}
+            >
+              {t("pitch.virginie.role")}
+            </div>
+            <a
+              href="mailto:virginiejaffredo@jaxa.ca"
+              style={{ color: "var(--gray)", textDecoration: "none", fontSize: "0.95rem", display: "block", marginBottom: "0.3rem", transition: "color 0.3s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#9B59B6"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--gray)"; }}
+            >
+              virginiejaffredo@jaxa.ca
+            </a>
+            <a
+              href="tel:+15145789989"
+              style={{ color: "var(--gray)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.3s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#9B59B6"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--gray)"; }}
+            >
+              514 578-9989
+            </a>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "11px",
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            color: "var(--gray)",
+            opacity: 0.25,
+          }}
+        >
+          {t("pitch.footer")}
         </div>
       </div>
     </section>

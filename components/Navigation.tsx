@@ -8,6 +8,7 @@ const Navigation: React.FC = () => {
   const { t, locale, setLocale } = useTranslation();
 
   const menuItems = [
+    { label: t("nav.team"), href: "#equipe" },
     { label: t("nav.services"), href: "#services" },
     { label: t("nav.projects"), href: "#projets" },
     { label: t("nav.advantage"), href: "#avantage" },
