@@ -10,9 +10,6 @@ const TeamDuo: React.FC = () => {
     { value: t("team.stat1.value"), label: t("team.stat1.label") },
     { value: t("team.stat2.value"), label: t("team.stat2.label") },
     { value: t("team.stat3.value"), label: t("team.stat3.label") },
-    { value: t("team.stat4.value"), label: t("team.stat4.label") },
-    { value: t("team.stat5.value"), label: t("team.stat5.label") },
-    { value: t("team.stat6.value"), label: t("team.stat6.label") },
   ];
 
   return (
@@ -228,9 +225,9 @@ const TeamDuo: React.FC = () => {
         <div
           className="team-stats"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "3rem 4rem",
+            display: "flex",
+            gap: "4rem",
+            justifyContent: "center",
             padding: "3rem 0",
             borderTop: "1px solid rgba(255,255,255,0.1)",
             borderBottom: "1px solid rgba(255,255,255,0.1)",
@@ -279,8 +276,9 @@ const TeamDuo: React.FC = () => {
             gap: 3rem !important;
           }
           .team-stats {
-            grid-template-columns: repeat(2, 1fr) !important;
+            flex-direction: column !important;
             gap: 2rem !important;
+            align-items: center !important;
           }
         }
       `}</style>
