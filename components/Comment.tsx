@@ -21,7 +21,6 @@ const Comment: React.FC = () => {
           "linear-gradient(135deg, var(--bg-dark) 0%, var(--deep-blue) 100%)",
         flexDirection: "column",
         position: "relative",
-        padding: "10rem 2rem",
       }}
     >
       {/* Floating shapes */}
@@ -32,7 +31,7 @@ const Comment: React.FC = () => {
           height: "320px",
           borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.12,
+          opacity: 0.09,
           bottom: "10%",
           left: "65%",
           animation: "float 10s ease-in-out infinite",
@@ -44,11 +43,11 @@ const Comment: React.FC = () => {
           position: "absolute",
           width: "250px",
           height: "250px",
+          borderRadius: "50%",
           background: "#E74C3C",
-          opacity: 0.12,
+          opacity: 0.09,
           right: "-3%",
           top: "10%",
-          transform: "rotate(45deg)",
           animation: "float 8s ease-in-out infinite reverse",
           zIndex: 1,
         }}
@@ -57,7 +56,7 @@ const Comment: React.FC = () => {
       <div
         className="sauce-container"
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1000px",
           width: "100%",
           position: "relative",
           zIndex: 10,
@@ -65,7 +64,7 @@ const Comment: React.FC = () => {
       >
         <h2
           style={{
-            fontSize: "clamp(3rem, 9vw, 11.25rem)",
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
             fontWeight: 900,
             marginBottom: "2rem",
             textAlign: "center",
@@ -78,11 +77,11 @@ const Comment: React.FC = () => {
 
         <p
           style={{
-            fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)",
+            fontSize: "clamp(1rem, 1.3vw, 1.2rem)",
             color: "var(--gray)",
             textAlign: "center",
             maxWidth: "700px",
-            margin: "0 auto 6rem",
+            margin: "0 auto 4rem",
             lineHeight: 1.6,
           }}
         >
@@ -117,7 +116,7 @@ const Comment: React.FC = () => {
               <div
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: "clamp(2.5rem, 3.5vw, 3.5rem)",
+                  fontSize: "clamp(2rem, 2.5vw, 2.5rem)",
                   fontWeight: 700,
                   opacity: 0.2,
                   color: step.color,
@@ -128,7 +127,7 @@ const Comment: React.FC = () => {
               </div>
               <h4
                 style={{
-                  fontSize: "clamp(1.2rem, 1.5vw, 1.5rem)",
+                  fontSize: "clamp(1rem, 1.2vw, 1.2rem)",
                   fontWeight: 900,
                   marginBottom: "1rem",
                   color: "var(--white)",

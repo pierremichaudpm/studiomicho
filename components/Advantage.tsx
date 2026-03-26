@@ -40,7 +40,7 @@ const Advantage: React.FC = () => {
           height: "400px",
           borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.15,
+          opacity: 0.09,
           left: "-10%",
           top: "20%",
           animation: "float 8s ease-in-out infinite",
@@ -52,11 +52,11 @@ const Advantage: React.FC = () => {
           position: "absolute",
           width: "350px",
           height: "350px",
+          borderRadius: "50%",
           background: "#9B59B6",
-          opacity: 0.15,
+          opacity: 0.09,
           right: "-5%",
           bottom: "10%",
-          transform: "rotate(45deg)",
           animation: "float 10s ease-in-out infinite reverse",
           zIndex: 1,
         }}
@@ -65,7 +65,7 @@ const Advantage: React.FC = () => {
       <div
         className="advantage-container"
         style={{
-          maxWidth: "1100px",
+          maxWidth: "1000px",
           width: "100%",
           position: "relative",
           zIndex: 10,
@@ -73,9 +73,9 @@ const Advantage: React.FC = () => {
       >
         <h2
           style={{
-            fontSize: "clamp(3rem, 9vw, 11.25rem)",
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
             fontWeight: 900,
-            marginBottom: "1.5rem",
+            marginBottom: "2rem",
             textAlign: "center",
             lineHeight: 0.9,
           }}
@@ -86,11 +86,11 @@ const Advantage: React.FC = () => {
 
         <p
           style={{
-            fontSize: "clamp(1.2rem, 2vw, 1.6rem)",
+            fontSize: "clamp(1rem, 1.3vw, 1.2rem)",
             color: "var(--gray)",
             textAlign: "center",
             maxWidth: "700px",
-            margin: "0 auto 5rem",
+            margin: "0 auto 4rem",
             lineHeight: 1.6,
           }}
         >

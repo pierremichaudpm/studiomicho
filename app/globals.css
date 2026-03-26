@@ -37,14 +37,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(4rem, 8vh, 6rem) 2rem;
+    padding: clamp(6rem, 10vh, 8rem) clamp(2rem, 5vw, 4rem);
     position: relative;
     overflow: hidden;
 }
 
 @media (min-width: 969px) {
     section {
-        padding: clamp(6rem, 10vh, 8rem) 2rem;
+        padding: clamp(8rem, 12vh, 10rem) clamp(3rem, 8vw, 6rem);
     }
 }
 

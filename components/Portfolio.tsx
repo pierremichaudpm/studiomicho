@@ -102,7 +102,7 @@ const Browser: React.FC<BrowserProps> = ({
       <div
         className="browser-name"
         style={{
-          fontSize: "clamp(3rem, 8vw, 8rem)",
+          fontSize: "clamp(2rem, 4vw, 4rem)",
           fontWeight: 900,
           lineHeight: 0.9,
           marginBottom: "2rem",
@@ -239,7 +239,7 @@ const Browser: React.FC<BrowserProps> = ({
         <div
           className="browser-desc"
           style={{
-            fontSize: "1.3rem",
+            fontSize: "1rem",
             color: "var(--white)",
             maxWidth: "600px",
             marginBottom: "1rem",
@@ -447,7 +447,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
         <h2
           className="proof-header"
           style={{
-            fontSize: "clamp(3rem, 9vw, 11.25rem)",
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
             fontWeight: 900,
             marginBottom: "2rem",
             textAlign: "center",
@@ -460,12 +460,12 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
         <p
           className="proof-subtitle"
           style={{
-            fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
+            fontSize: "clamp(1rem, 1.3vw, 1.2rem)",
             textAlign: "center",
             color: "var(--gray)",
-            marginBottom: "6rem",
-            maxWidth: "800px",
-            margin: "0 auto 6rem",
+            maxWidth: "700px",
+            margin: "0 auto 4rem",
+            lineHeight: 1.6,
           }}
         >
           {t("portfolio.subtitle")}
@@ -476,7 +476,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "10rem",
+            gap: "8rem",
           }}
         >
           <Browser
@@ -513,7 +513,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
         </div>
 
         {/* ─── Demos Section ─── */}
-        <div id="demos" style={{ marginTop: "12rem" }}>
+        <div id="demos" style={{ marginTop: "8rem" }}>
           <h3
             style={{
               fontSize: "clamp(2rem, 4vw, 3.5rem)",
@@ -590,7 +590,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
           className="more-projects-btn"
           onClick={onOpenModal}
           style={{
-            marginTop: "6rem",
+            marginTop: "5rem",
             padding: "1.5rem 4rem",
             background: "transparent",
             border: "3px solid #4A90E2",

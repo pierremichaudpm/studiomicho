@@ -8,25 +8,21 @@ const Services: React.FC = () => {
 
   const services = [
     {
-      number: "01",
       title: t("services.1.title"),
       description: t("services.1.desc"),
       color: "#4A90E2",
     },
     {
-      number: "02",
       title: t("services.2.title"),
       description: t("services.2.desc"),
       color: "#9B59B6",
     },
     {
-      number: "03",
       title: t("services.3.title"),
       description: t("services.3.desc"),
       color: "#F39C12",
     },
     {
-      number: "04",
       title: t("services.4.title"),
       description: t("services.4.desc"),
       color: "#E74C3C",
@@ -37,14 +33,10 @@ const Services: React.FC = () => {
     <section
       className="services-section"
       style={{
-        minHeight: "100vh",
         background:
           "linear-gradient(135deg, var(--deep-blue) 0%, var(--bg-dark) 100%)",
         flexDirection: "column",
         position: "relative",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
       }}
     >
       {/* Floating shapes */}
@@ -55,7 +47,7 @@ const Services: React.FC = () => {
           height: "350px",
           borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.15,
+          opacity: 0.09,
           right: "-8%",
           top: "15%",
           animation: "float 9s ease-in-out infinite",
@@ -67,111 +59,100 @@ const Services: React.FC = () => {
           position: "absolute",
           width: "280px",
           height: "280px",
+          borderRadius: "50%",
           background: "#9B59B6",
-          opacity: 0.15,
+          opacity: 0.09,
           left: "-5%",
           bottom: "20%",
-          transform: "rotate(45deg)",
           animation: "float 11s ease-in-out infinite reverse",
           zIndex: 1,
         }}
       />
 
       <div
-        className="services-container"
         style={{
-          maxWidth: "1600px",
+          maxWidth: "900px",
           width: "100%",
           position: "relative",
           zIndex: 10,
+          margin: "0 auto",
         }}
       >
         <h2
-          className="services-header"
           style={{
-            fontSize: "clamp(3rem, 9vw, 11.25rem)",
-            textAlign: "center",
-            marginBottom: "8rem",
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
             fontWeight: 900,
             lineHeight: 0.9,
+            marginBottom: "4rem",
+            textAlign: "center",
           }}
         >
-          {t("services.title")} <span className="gradient-text">{t("services.titleHighlight")}</span>
+          {t("services.title")}{" "}
+          <span className="gradient-text">{t("services.titleHighlight")}</span>
         </h2>
 
-        <div
-          className="services-grid"
+        <ul
+          className="services-list"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "clamp(4rem, 6vw, 8rem)",
-            alignItems: "start",
+            listStyle: "none",
+            padding: 0,
+            margin: 0,
           }}
         >
-          <style jsx>{`
-            @media (max-width: 968px) {
-              .services-grid {
-                grid-template-columns: 1fr !important;
-              }
-            }
-          `}</style>
           {services.map((service, index) => (
-            <div
+            <li
               key={index}
-              className="service-item"
+              className="service-row"
               style={{
-                position: "relative",
-                textAlign: "center",
+                display: "grid",
+                gridTemplateColumns: "200px 1fr",
+                gap: "2rem",
+                alignItems: "baseline",
+                padding: "2rem 0",
+                borderBottom: "1px solid rgba(255,255,255,0.1)",
+                transition: "border-color 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLLIElement).style.borderColor = `${service.color}50`;
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLLIElement).style.borderColor = "rgba(255,255,255,0.1)";
               }}
             >
-              {/* Giant number */}
-              <div
-                className="service-number"
+              <span
                 style={{
-                  fontSize: "clamp(6.4rem, 12vw, 14.4rem)",
-                  fontWeight: 900,
-                  lineHeight: 0.8,
-                  opacity: 0.3,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.15em",
                   color: service.color,
-                  marginBottom: "1.6rem",
                 }}
               >
-                {service.number}
-              </div>
-
-              {/* Content */}
-              <div className="service-content">
-                <h3
-                  className="service-title"
-                  style={{
-                    fontSize: "clamp(1.6rem, 2.8vw, 3.2rem)",
-                    fontWeight: 900,
-                    marginBottom: "1.2rem",
-                    textTransform: "uppercase",
-                    color: service.color,
-                    letterSpacing: "1px",
-                    lineHeight: 1.1,
-                  }}
-                >
-                  {service.title}
-                </h3>
-                <p
-                  className="service-desc"
-                  style={{
-                    fontSize: "clamp(0.8rem, 1.2vw, 1.12rem)",
-                    color: "var(--white)",
-                    lineHeight: 1.5,
-                    fontWeight: 400,
-                    opacity: 0.9,
-                  }}
-                >
-                  {service.description}
-                </p>
-              </div>
-            </div>
+                {service.title}
+              </span>
+              <span
+                style={{
+                  fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
+                  color: "var(--gray)",
+                  lineHeight: 1.7,
+                }}
+              >
+                {service.description}
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
+
+      {/* Responsive */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .service-row {
+            grid-template-columns: 1fr !important;
+            gap: 0.5rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

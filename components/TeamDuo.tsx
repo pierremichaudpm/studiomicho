@@ -24,7 +24,7 @@ const TeamDuo: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
-        padding: "12rem 2rem",
+        padding: "8rem 2rem",
       }}
     >
       {/* Floating shapes */}
@@ -59,7 +59,7 @@ const TeamDuo: React.FC = () => {
 
       <div
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1000px",
           width: "100%",
           position: "relative",
           zIndex: 10,
@@ -84,11 +84,11 @@ const TeamDuo: React.FC = () => {
         {/* Title */}
         <h2
           style={{
-            fontSize: "clamp(2.5rem, 6vw, 5rem)",
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
             fontWeight: 900,
             textAlign: "center",
-            lineHeight: 1.1,
-            marginBottom: "7rem",
+            lineHeight: 0.9,
+            marginBottom: "5rem",
           }}
         >
           {t("team.title")}
@@ -103,7 +103,7 @@ const TeamDuo: React.FC = () => {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "4rem",
-            marginBottom: "7rem",
+            marginBottom: "5rem",
           }}
         >
           {/* Pierre */}
@@ -237,7 +237,7 @@ const TeamDuo: React.FC = () => {
             <div key={i} style={{ textAlign: "center" }}>
               <div
                 style={{
-                  fontSize: "clamp(2.5rem, 4vw, 4rem)",
+                  fontSize: "clamp(2rem, 3vw, 3rem)",
                   fontWeight: 900,
                   lineHeight: 1,
                   marginBottom: "0.5rem",

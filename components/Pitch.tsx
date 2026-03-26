@@ -23,7 +23,7 @@ const Pitch: React.FC = () => {
           height: "400px",
           borderRadius: "50%",
           background: "#9B59B6",
-          opacity: 0.15,
+          opacity: 0.09,
           left: "-10%",
           top: "50%",
           animation: "float 10s ease-in-out infinite",
@@ -35,11 +35,11 @@ const Pitch: React.FC = () => {
           position: "absolute",
           width: "300px",
           height: "300px",
+          borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.15,
+          opacity: 0.09,
           right: "-5%",
           top: "20%",
-          transform: "rotate(45deg)",
           animation: "float 12s ease-in-out infinite reverse",
           zIndex: 1,
         }}
@@ -56,10 +56,10 @@ const Pitch: React.FC = () => {
         <h1
           className="pitch-statement"
           style={{
-            fontSize: "clamp(1.5rem, 4vw, 4rem)",
+            fontSize: "clamp(1.3rem, 3vw, 3rem)",
             fontWeight: 900,
             lineHeight: 1.2,
-            marginBottom: "2rem",
+            marginBottom: "3rem",
             background:
               "linear-gradient(90deg, #4A90E2, #9B59B6, #F39C12, #4A90E2)",
             backgroundSize: "200% auto",
@@ -80,7 +80,7 @@ const Pitch: React.FC = () => {
 
         <p
           style={{
-            fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
+            fontSize: "clamp(0.95rem, 1.2vw, 1.1rem)",
             color: "var(--gray)",
             marginBottom: "3rem",
             lineHeight: 1.6,
@@ -97,8 +97,8 @@ const Pitch: React.FC = () => {
             display: "inline-block",
             background: "#4A90E2",
             color: "var(--bg-dark)",
-            padding: "2rem 5rem",
-            fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+            padding: "1.5rem 4rem",
+            fontSize: "clamp(1rem, 1.5vw, 1.3rem)",
             fontWeight: 900,
             textDecoration: "none",
             textTransform: "uppercase",
