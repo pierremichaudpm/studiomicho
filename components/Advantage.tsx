@@ -97,17 +97,12 @@ const Advantage: React.FC = () => {
           {t("compare.subtitle")}
         </p>
 
-        {/* Comparison table */}
-        <div
-          className="compare-table-wrapper"
-          style={{ overflowX: "auto" }}
-        >
+        {/* Desktop: Table */}
+        <div className="compare-desktop">
           <table
-            className="compare-table"
             style={{
               width: "100%",
               borderCollapse: "collapse",
-              minWidth: "600px",
             }}
           >
             <thead>
@@ -174,7 +169,85 @@ const Advantage: React.FC = () => {
             </tbody>
           </table>
         </div>
+
+        {/* Mobile: Cards */}
+        <div className="compare-mobile">
+          {rows.map((row, i) => (
+            <div
+              key={i}
+              style={{
+                marginBottom: "1.5rem",
+                borderBottom: "1px solid rgba(255,255,255,0.08)",
+                paddingBottom: "1.5rem",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "0.95rem",
+                  fontWeight: 700,
+                  color: "var(--white)",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                {row.label}
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr 1fr",
+                  gap: "0.5rem",
+                }}
+              >
+                <div style={{ textAlign: "center" }}>
+                  <div style={{ fontSize: "0.65rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.3rem", fontWeight: 600 }}>
+                    {t("compare.col.agency")}
+                  </div>
+                  <div style={{ fontSize: "0.85rem", color: "var(--gray)", lineHeight: 1.4 }}>
+                    {row.agency}
+                  </div>
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div style={{ fontSize: "0.65rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.3rem", fontWeight: 600 }}>
+                    {t("compare.col.freelance")}
+                  </div>
+                  <div style={{ fontSize: "0.85rem", color: "var(--gray)", lineHeight: 1.4 }}>
+                    {row.freelance}
+                  </div>
+                </div>
+                <div
+                  style={{
+                    textAlign: "center",
+                    background: "rgba(74, 144, 226, 0.1)",
+                    borderRadius: "0.5rem",
+                    padding: "0.5rem 0.3rem",
+                  }}
+                >
+                  <div style={{ fontSize: "0.65rem", color: "#4A90E2", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.3rem", fontWeight: 700 }}>
+                    {t("compare.col.studio")}
+                  </div>
+                  <div style={{ fontSize: "0.85rem", color: "var(--white)", fontWeight: 600, lineHeight: 1.4 }}>
+                    {row.studio}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      <style jsx>{`
+        .compare-mobile {
+          display: none;
+        }
+        @media (max-width: 968px) {
+          .compare-desktop {
+            display: none !important;
+          }
+          .compare-mobile {
+            display: block !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
