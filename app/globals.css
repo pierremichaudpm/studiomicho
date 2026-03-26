@@ -33,19 +33,12 @@ html {
 }
 
 section {
-    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4rem 1.5rem;
     position: relative;
     overflow: hidden;
-}
-
-@media (max-width: 968px) {
-    section {
-        min-height: auto !important;
-    }
 }
 
 @media (min-width: 969px) {
@@ -174,7 +167,7 @@ section {
 @media (max-width: 968px) {
     body {
         padding-left: 0;
-        padding-top: 80px;
+        padding-top: 0;
     }
 
     .brand {
@@ -191,22 +184,17 @@ section {
     }
 
     .hero {
-        min-height: 100vh !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        min-height: 100svh;
+        padding: 5rem 1.5rem 4rem;
     }
 
     .terminal {
-        margin-top: 0;
-        font-size: 1rem !important;
+        font-size: 1rem;
     }
 
     .scroll-indicator {
-        bottom: 2rem !important;
-        font-size: 2rem !important;
+        bottom: 1.5rem;
+        font-size: 1.5rem;
     }
 
     .vs-grid {
