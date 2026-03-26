@@ -170,64 +170,47 @@ const Advantage: React.FC = () => {
           </table>
         </div>
 
-        {/* Mobile: Stacked cards */}
+        {/* Mobile: 3-column grid like desktop but sized for mobile */}
         <div className="compare-mobile">
-          {rows.map((row, i) => (
-            <div
-              key={i}
-              style={{
-                marginBottom: "2rem",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "2rem",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "1.1rem",
-                  fontWeight: 700,
-                  color: "var(--white)",
-                  marginBottom: "1rem",
-                }}
-              >
-                {row.label}
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontSize: "0.75rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>
-                    {t("compare.col.agency")}
-                  </span>
-                  <span style={{ fontSize: "0.9rem", color: "var(--gray)" }}>
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+            }}
+          >
+            <thead>
+              <tr>
+                <th style={{ padding: "0.6rem 0.4rem", color: "var(--gray)", fontWeight: 400, textAlign: "left", width: "28%", fontSize: "0.7rem", borderBottom: "1px solid rgba(255,255,255,0.08)" }}></th>
+                <th style={{ padding: "0.6rem 0.4rem", color: "var(--gray)", fontWeight: 700, textAlign: "center", width: "22%", fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+                  {t("compare.col.agency")}
+                </th>
+                <th style={{ padding: "0.6rem 0.4rem", color: "var(--gray)", fontWeight: 700, textAlign: "center", width: "22%", fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+                  {t("compare.col.freelance")}
+                </th>
+                <th style={{ padding: "0.6rem 0.4rem", fontWeight: 900, textAlign: "center", width: "28%", fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#4A90E2", background: "rgba(74, 144, 226, 0.08)", borderRadius: "0.5rem 0.5rem 0 0", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+                  {t("compare.col.studio")}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, i) => (
+                <tr key={i}>
+                  <td style={{ padding: "0.6rem 0.4rem", color: "var(--white)", fontWeight: 700, textAlign: "left", fontSize: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", lineHeight: 1.3 }}>
+                    {row.label}
+                  </td>
+                  <td style={{ padding: "0.6rem 0.4rem", color: "var(--gray)", textAlign: "center", fontSize: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", lineHeight: 1.3 }}>
                     {row.agency}
-                  </span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontSize: "0.75rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>
-                    {t("compare.col.freelance")}
-                  </span>
-                  <span style={{ fontSize: "0.9rem", color: "var(--gray)" }}>
+                  </td>
+                  <td style={{ padding: "0.6rem 0.4rem", color: "var(--gray)", textAlign: "center", fontSize: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", lineHeight: 1.3 }}>
                     {row.freelance}
-                  </span>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    background: "rgba(74, 144, 226, 0.1)",
-                    borderRadius: "0.5rem",
-                    padding: "0.6rem 0.8rem",
-                  }}
-                >
-                  <span style={{ fontSize: "0.75rem", color: "#4A90E2", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 700 }}>
-                    {t("compare.col.studio")}
-                  </span>
-                  <span style={{ fontSize: "0.9rem", color: "var(--white)", fontWeight: 600 }}>
+                  </td>
+                  <td style={{ padding: "0.6rem 0.4rem", color: "var(--white)", textAlign: "center", fontWeight: 600, fontSize: "0.75rem", background: "rgba(74, 144, 226, 0.08)", borderBottom: "1px solid rgba(255,255,255,0.06)", lineHeight: 1.3, borderRadius: i === rows.length - 1 ? "0 0 0.5rem 0.5rem" : undefined }}>
                     {row.studio}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
 
