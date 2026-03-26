@@ -33,17 +33,24 @@ html {
 }
 
 section {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(6rem, 10vh, 8rem) clamp(2rem, 5vw, 4rem);
+    padding: 4rem 1.5rem;
     position: relative;
     overflow: hidden;
 }
 
+@media (max-width: 968px) {
+    section {
+        min-height: auto !important;
+    }
+}
+
 @media (min-width: 969px) {
     section {
+        min-height: 100vh;
         padding: clamp(8rem, 12vh, 10rem) clamp(3rem, 8vw, 6rem);
     }
 }
