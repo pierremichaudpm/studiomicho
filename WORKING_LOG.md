@@ -144,7 +144,105 @@ Nettoyage screenshots, traduction complète FR/EN avec toggle de langue.
 2. `09d2a49` — Translate Outils de gestion title to English (MANAGEMENT TOOLS)
 
 ### Prochaines étapes
-- [ ] Traduire les metadata SEO dynamiquement (nécessiterait un refactoring layout → client ou generateMetadata dynamique)
+- [x] ~~Traduire les metadata SEO~~ → fait (session 2026-03-26)
 - [ ] Traduire `public/dashboards/index.html` (page statique, hors React)
-- [ ] Vérifier rendu mobile du LanguageToggle (position top-right vs menu hamburger)
+- [x] ~~Vérifier rendu mobile du LanguageToggle~~ → fait, intégré dans le header mobile
 - [ ] Considérer ajout d'un flag/icône sur le toggle plutôt que texte EN/FR
+
+---
+
+## Session 2026-03-26 — Redesign majeur contenu + conversion
+
+### Objectif
+Refonte complète du contenu pour convertir les prospects PME québécoises. Passage du "je" au "nous", nouvelle structure de sections, copy de conversion, design plus aéré.
+
+### Changements effectués
+
+#### 1. Passage "je" → "nous" (global)
+- Tout le copywriting du site passe au "nous" (duo Pierre + Virginie)
+- Hero, services, méthode, pitch, footer, meta SEO — tout ajusté
+- Meta description SEO mise à jour en FR (layout.tsx)
+
+#### 2. Section TeamDuo — Nouvelle section duo
+- Nouveau composant `TeamDuo.tsx` après le hero
+- Photos Pierre + Virginie (depuis la présentation bijoux)
+- Rôles révisés : Pierre = Consultant numérique · Développeur IA / Virginie = Stratégie opérationnelle · Gestion de comptes
+- Stats en bas = promesse équipe (3–4 semaines, 100% sur mesure, 0 intermédiaire)
+
+#### 3. Services — Refonte complète
+- Layout changé de grille 2×2 à liste verticale (plus élégant, inspiré présentation)
+- Réduit de 5 services à 4 : fusionné "Publicité & Analytique" dans "Contenu & Marketing", "Outils de gestion" promu en #3
+- Descriptions réécrites en "problème client → solution" au lieu de listes de features
+- Titre centré, suppression du sous-titre dupliqué
+
+#### 4. Portfolio — Restructuration
+- CARI Saint-Laurent retiré des projets vedettes
+- 3e projet = Outils de gestion (yellow) avec scroll vers démos
+- Section démos interactives ajoutée sous les projets vedettes (3 dashboards)
+- Descriptions de projets réécrites avec impact : contexte client + résultat + délai
+- OP2 : "Firme d'ingénierie internationale. Nouveau site bilingue pour le marché nord-américain"
+- Tonic : "Organisateur d'événements sportifs et production audiovisuelle"
+- Gestion : "Ce que votre ERP devrait faire mais ne fait pas"
+- Auréa ajouté dans le modal "Plus de projets"
+
+#### 5. Avantage → Tableau comparatif
+- Section Advantage transformée en tableau 3 colonnes : Agence vs Freelance vs Studio Micho
+- Colonne Studio Micho mise en évidence visuellement
+- Ton factuel, pas arrogant
+
+#### 6. Méthode — 3 étapes → 4 étapes
+- Écoute → Prototype → Construction → Livraison (inspiré présentation bijoux)
+- Descriptions plus concrètes et conversationnelles
+
+#### 7. Design — Plus aéré
+- Floating shapes : tous les carrés (rotate 45deg) remplacés par des cercles
+- Opacité des shapes réduite à 0.09
+- Padding des sections augmenté globalement
+- Pitch : font-size réduit (était trop agressif)
+
+#### 8. Mobile header — Réorganisation
+- Layout : hamburger | STUDIO MICHO + logo | EN/FR
+- Language toggle intégré dans le header (plus de toggle fixe séparé sur mobile)
+- Logo ajouté à droite du titre
+- LanguageToggle desktop masqué sous 968px
+
+#### 9. VerticalBrand — Desktop nav fusionné
+- Navigation desktop fusionnée dans VerticalBrand (un seul conteneur flex)
+- Logo + titre vertical + nav dans une colonne fixe à gauche
+- Élimine le problème de synchronisation de position entre brand et nav séparés
+
+### Décisions techniques
+| Décision | Raison |
+|----------|--------|
+| Stats = promesse équipe, pas CV Pierre | Les 3 stats (3-4 sem, 100%, 0) parlent au client, les détails perso sont dans les fiches |
+| Services en liste verticale | Plus élégant et aéré que la grille 2×2, inspiré de la présentation |
+| 4 services au lieu de 5 | Pub & Analytique fusionné dans Contenu & Marketing, moins de dispersion |
+| Cercles au lieu de carrés | Cohérent avec la présentation bijoux, plus doux visuellement |
+| Nav fusionnée dans VerticalBrand | Impossible de synchroniser deux éléments fixed séparés proprement |
+| Browser #anchor = smooth scroll | Les ancres internes ne doivent pas ouvrir un nouvel onglet |
+
+### Problèmes rencontrés
+- Nav desktop overlap avec le titre après ajout du logo → résolu en fusionnant nav dans VerticalBrand
+- `href="#"` dans Browser sans projectUrl renvoyait en haut de page → ajout de preventDefault
+- Descriptions de projets inventaient du contexte faux (OP2 "sans présence web" alors qu'ils avaient déjà un site international) → corrigé avec le vrai contexte
+- "Pas de site, ou il date de 2019" → formulation bizarre, remplacée
+- Section services "Ce que nous faisons" dupliquait le titre (sous-titre mono + gros titre) → supprimé le doublon
+- Floating shapes carrées ne matchaient pas la présentation → remplacées par cercles
+
+### Commits
+- `c64f78a` — Major site redesign: je→nous, team duo, comparison table, 4-step method
+- `24a95b6` — Reorganize mobile header: hamburger | STUDIO MICHO + logo | EN/FR
+- `397aa69` — Merge desktop nav into VerticalBrand as single flex column
+- `2563181` — Add conversion copy: impact descriptions, client-problem services, 6 stats
+- `a36a80b` — Trim stats to best 3 (25 yrs, 15 yrs digital, 10+ shipped), fix 12→15 ans
+- `60485e1` — Polish: airy spacing, circles, list-style services, team stats as promise
+- `f4dc336` — Fix Outils de gestion click: smooth scroll to demos
+- `b1ccdf8` — Fix project descriptions: OP2 international firm, Tonic sports+AV
+
+### Prochaines étapes
+- [ ] Passe globale cohérence design : paddings, fonts, spacing proportionnels
+- [ ] Vérifier version anglaise complète (toutes les nouvelles clés traduites)
+- [ ] Tester responsive mobile complet (toutes les nouvelles sections)
+- [ ] Traduire `public/dashboards/index.html`
+- [ ] Merger la branche redesign dans main quand satisfait
+- [ ] Déployer sur Netlify et vérifier
