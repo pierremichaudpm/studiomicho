@@ -46,6 +46,7 @@ const Hero: React.FC = () => {
         background:
           "linear-gradient(135deg, var(--bg-dark) 0%, var(--deep-blue) 100%)",
         position: "relative",
+        minHeight: "100vh",
       }}
     >
       <div

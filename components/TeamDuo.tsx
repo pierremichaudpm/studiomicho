@@ -16,7 +16,6 @@ const TeamDuo: React.FC = () => {
     <section
       className="team-section"
       style={{
-        minHeight: "100vh",
         background:
           "linear-gradient(135deg, var(--bg-dark) 0%, var(--deep-blue) 100%)",
         display: "flex",
@@ -24,7 +23,6 @@ const TeamDuo: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
-        padding: "8rem 2rem",
       }}
     >
       {/* Floating shapes */}
