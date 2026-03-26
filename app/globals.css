@@ -191,20 +191,22 @@ section {
     }
 
     .hero {
-        padding-top: 6rem !important;
+        min-height: 100vh !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
     .terminal {
         margin-top: 0;
+        font-size: 1rem !important;
     }
 
     .scroll-indicator {
-        bottom: 4rem !important;
+        bottom: 2rem !important;
         font-size: 2rem !important;
-    }
-
-    .terminal {
-        font-size: 1rem !important;
     }
 
     .vs-grid {
