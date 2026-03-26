@@ -191,11 +191,11 @@ section {
     }
 
     .hero {
-        padding-top: 2rem !important;
+        padding-top: 6rem !important;
     }
 
     .terminal {
-        margin-top: -3rem;
+        margin-top: 0;
     }
 
     .scroll-indicator {
