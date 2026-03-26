@@ -158,9 +158,19 @@ const Browser: React.FC<BrowserProps> = ({
         </div>
 
         <a
-          href={projectUrl || "#"}
-          target={projectUrl ? "_blank" : undefined}
-          rel={projectUrl ? "noopener noreferrer" : undefined}
+          href={projectUrl || undefined}
+          target={projectUrl && !projectUrl.startsWith("#") ? "_blank" : undefined}
+          rel={projectUrl && !projectUrl.startsWith("#") ? "noopener noreferrer" : undefined}
+          onClick={
+            projectUrl?.startsWith("#")
+              ? (e: React.MouseEvent) => {
+                  e.preventDefault();
+                  document.querySelector(projectUrl)?.scrollIntoView({ behavior: "smooth" });
+                }
+              : !projectUrl
+                ? (e: React.MouseEvent) => e.preventDefault()
+                : undefined
+          }
           className="browser-content"
           style={{
             height: "560px",
@@ -509,6 +519,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ onOpenModal }) => {
             skew={-1}
             delay={300}
             imageUrl="/images/gestion-screenshot.jpg"
+            projectUrl="#demos"
+            ctaLabel={t("portfolio.cta.demo")}
           />
         </div>
 
