@@ -23,7 +23,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Hero (unchanged)
     "hero.line1": '> Nous imaginons, construisons et optimisons des <span class="gradient-text">produits</span> <span class="gradient-text">numériques</span>',
     "hero.line2": ">",
-    "hero.line3": '> <span class="gradient-text">Développement</span>. Contenu. <span class="gradient-text">Marketing</span>. Analytics.',
+    "hero.line3": '> <span class="gradient-text">Sites</span>. Apps. <span class="gradient-text">Dashboards</span>. Outils de gestion.',
     "hero.line4": '> Du concept aux <span class="gradient-text">résultats</span> à vélocité IA.',
 
     // Team Duo
@@ -55,7 +55,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "services.1.title": "Sites & Applis",
     "services.1.desc": "Votre vieux WordPress vous donne des maux de tête. Nous construisons des sites vitrines ou plus complexes, applications, prototypes — en ligne en 3 semaines. Optimisés, rapides, construits avec l'IA.",
     "services.2.title": "Contenu & Marketing",
-    "services.2.desc": "Personne vous trouve sur Google. Vos pubs coûtent cher sans résultat clair. On prend le relais — SEO, contenu, pubs, conversions.",
+    "services.2.desc": "Personne ne vous trouve sur Google? Vos pubs coûtent cher sans résultat clair. On prend le relais — SEO, contenu, pubs, conversions.",
     "services.3.title": "Outils de gestion",
     "services.3.desc": "Vos données sont dans 4 fichiers Excel et la tête de quelqu'un. On vous construit un dashboard sur mesure — vos KPIs, en temps réel, exportables.",
     "services.4.title": "Transformation",
@@ -222,7 +222,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Hero
     "hero.line1": '> We imagine, build and optimize <span class="gradient-text">digital</span> <span class="gradient-text">products</span>',
     "hero.line2": ">",
-    "hero.line3": '> <span class="gradient-text">Development</span>. Content. <span class="gradient-text">Marketing</span>. Analytics.',
+    "hero.line3": '> <span class="gradient-text">Sites</span>. Apps. <span class="gradient-text">Dashboards</span>. Management tools.',
     "hero.line4": '> From concept to <span class="gradient-text">results</span> at AI velocity.',
 
     // Team Duo
