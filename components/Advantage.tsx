@@ -170,64 +170,60 @@ const Advantage: React.FC = () => {
           </table>
         </div>
 
-        {/* Mobile: Cards */}
+        {/* Mobile: Stacked cards */}
         <div className="compare-mobile">
           {rows.map((row, i) => (
             <div
               key={i}
               style={{
-                marginBottom: "1.5rem",
+                marginBottom: "2rem",
                 borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "1.5rem",
+                paddingBottom: "2rem",
               }}
             >
               <div
                 style={{
-                  fontSize: "0.95rem",
+                  fontSize: "1.1rem",
                   fontWeight: 700,
                   color: "var(--white)",
-                  marginBottom: "0.75rem",
+                  marginBottom: "1rem",
                 }}
               >
                 {row.label}
               </div>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr 1fr",
-                  gap: "0.5rem",
-                }}
-              >
-                <div style={{ textAlign: "center" }}>
-                  <div style={{ fontSize: "0.65rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.3rem", fontWeight: 600 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: "0.75rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>
                     {t("compare.col.agency")}
-                  </div>
-                  <div style={{ fontSize: "0.85rem", color: "var(--gray)", lineHeight: 1.4 }}>
+                  </span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--gray)" }}>
                     {row.agency}
-                  </div>
+                  </span>
                 </div>
-                <div style={{ textAlign: "center" }}>
-                  <div style={{ fontSize: "0.65rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.3rem", fontWeight: 600 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: "0.75rem", color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>
                     {t("compare.col.freelance")}
-                  </div>
-                  <div style={{ fontSize: "0.85rem", color: "var(--gray)", lineHeight: 1.4 }}>
+                  </span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--gray)" }}>
                     {row.freelance}
-                  </div>
+                  </span>
                 </div>
                 <div
                   style={{
-                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
                     background: "rgba(74, 144, 226, 0.1)",
                     borderRadius: "0.5rem",
-                    padding: "0.5rem 0.3rem",
+                    padding: "0.6rem 0.8rem",
                   }}
                 >
-                  <div style={{ fontSize: "0.65rem", color: "#4A90E2", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.3rem", fontWeight: 700 }}>
+                  <span style={{ fontSize: "0.75rem", color: "#4A90E2", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 700 }}>
                     {t("compare.col.studio")}
-                  </div>
-                  <div style={{ fontSize: "0.85rem", color: "var(--white)", fontWeight: 600, lineHeight: 1.4 }}>
+                  </span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--white)", fontWeight: 600 }}>
                     {row.studio}
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
