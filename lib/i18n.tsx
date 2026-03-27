@@ -68,7 +68,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cta.default": "Voir le projet",
     "portfolio.cta.projects": "Voir les projets",
     "portfolio.cta.demo": "Essayer la démo",
-    "portfolio.more": "Plus de projets",
+    "portfolio.more": "Tous nos projets",
     "portfolio.screenshot": "SCREENSHOT ICI",
     // CARI
     "portfolio.cari.name": "CARI SAINT-LAURENT",
@@ -96,6 +96,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Demos section
     "portfolio.demos.title": "Essayez nos démos",
     "portfolio.demos.subtitle": "Trois outils livrés, trois réalités différentes.",
+    "portfolio.demos.disclaimer": "Données fictives — Démos interactives en ligne",
     "portfolio.demo1.name": "Dashboard Accueil",
     "portfolio.demo1.sector": "Secteur communautaire",
     "portfolio.demo1.desc": "Suivi opérationnel en temps réel. Données terrain et visualisation. KPIs, tendances, répartition des ressources.",
@@ -158,10 +159,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.4.desc": "Déploiement, formation, ajustements. Vous êtes autonomes. On reste disponibles.",
 
     // Pitch
-    "pitch.line1": "NOUS CONCEVONS.",
-    "pitch.line2": "NOUS CONSTRUISONS.",
-    "pitch.line3": "NOUS LANÇONS.",
-    "pitch.line4": "NOUS MESURONS.",
+    "pitch.line1": "Nous concevons",
+    "pitch.line2": "construisons",
+    "pitch.line3": "lançons",
+    "pitch.line4": "et mesurons.",
     "pitch.cta": "On en jase?",
     "pitch.subcta": "Dites-nous ce qui vous ralentit au quotidien.",
     "pitch.footer": "Studio Micho × JAXA Production · Montréal",
@@ -173,7 +174,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "estimator.subtitle": "En 2 minutes, une idée de budget et de délai.",
 
     // Modal
-    "modal.title": "Autres projets",
+    "modal.title": "Tous nos projets",
     "modal.screenshot": "SCREENSHOT",
     "modal.intexto.desc": "Site de nouvelles. Vidéo et audio. Conçu en quelques jours.",
     "modal.intexto.tag1": "Solo",
@@ -267,7 +268,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cta.default": "View project",
     "portfolio.cta.projects": "View projects",
     "portfolio.cta.demo": "Try the demo",
-    "portfolio.more": "More projects",
+    "portfolio.more": "All our projects",
     "portfolio.screenshot": "SCREENSHOT HERE",
     // CARI
     "portfolio.cari.name": "CARI SAINT-LAURENT",
@@ -295,6 +296,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Demos section
     "portfolio.demos.title": "Try our demos",
     "portfolio.demos.subtitle": "Three tools delivered, three different realities.",
+    "portfolio.demos.disclaimer": "Fictional data — Interactive online demos",
     "portfolio.demo1.name": "Reception Dashboard",
     "portfolio.demo1.sector": "Community sector",
     "portfolio.demo1.desc": "Real-time operational tracking. Field data and visualization. KPIs, trends, resource allocation.",
@@ -357,10 +359,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.4.desc": "Deployment, training, adjustments. You're autonomous. We stay available.",
 
     // Pitch
-    "pitch.line1": "WE DESIGN.",
-    "pitch.line2": "WE BUILD.",
-    "pitch.line3": "WE LAUNCH.",
-    "pitch.line4": "WE MEASURE.",
+    "pitch.line1": "We design",
+    "pitch.line2": "build",
+    "pitch.line3": "launch",
+    "pitch.line4": "and measure.",
     "pitch.cta": "Let's chat?",
     "pitch.subcta": "Tell us what's slowing you down.",
     "pitch.footer": "Studio Micho × JAXA Production · Montréal",
@@ -372,7 +374,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "estimator.subtitle": "In 2 minutes, get a budget and timeline idea.",
 
     // Modal
-    "modal.title": "Other projects",
+    "modal.title": "All our projects",
     "modal.screenshot": "SCREENSHOT",
     "modal.intexto.desc": "News site. Video and audio. Built in a few days.",
     "modal.intexto.tag1": "Solo",

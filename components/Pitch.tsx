@@ -56,25 +56,16 @@ const Pitch: React.FC = () => {
         <h1
           className="pitch-statement"
           style={{
-            fontSize: "clamp(1.3rem, 3vw, 3rem)",
+            fontSize: "clamp(1.8rem, 4vw, 4rem)",
             fontWeight: 900,
-            lineHeight: 1.2,
-            marginBottom: "3rem",
-            background:
-              "linear-gradient(90deg, #4A90E2, #9B59B6, #F39C12, #4A90E2)",
-            backgroundSize: "200% auto",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            animation: "gradientShift 5s linear infinite",
+            lineHeight: 1.5,
+            marginBottom: "2.5rem",
+            color: "var(--white)",
           }}
         >
-          {t("pitch.line1")}
-          <br />
-          {t("pitch.line2")}
-          <br />
-          {t("pitch.line3")}
-          <br />
+          {t("pitch.line1")},{" "}
+          <span className="gradient-text">{t("pitch.line2")}</span>,{" "}
+          <span className="gradient-text">{t("pitch.line3")}</span>{" "}
           {t("pitch.line4")}
         </h1>
 

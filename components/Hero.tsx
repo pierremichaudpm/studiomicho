@@ -1,11 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { useTranslation } from "@/lib/i18n";
 
-const Hero: React.FC = () => {
+interface MosaicProject {
+  id: string;
+  name: string;
+  mobileName?: string;
+  imageUrl: string;
+  mobileImageUrl?: string;
+}
+
+const PROJECTS: MosaicProject[] = [
+  { id: "op2", name: "OP2", imageUrl: "/images/op2-screenshot.jpg", mobileImageUrl: "/images/m-op2-screenshot.jpg" },
+  { id: "tonic", name: "Groupe Tonic", imageUrl: "/images/tonic-screenshot.jpg", mobileImageUrl: "/images/m-tonic-screenshot.jpg" },
+  { id: "aurea", name: "Auréa RH Conseil", imageUrl: "/images/aurea-screenshot.jpg", mobileImageUrl: "/images/m-aurea-screenshot.jpg" },
+  { id: "intexto", name: "InTexto", imageUrl: "/images/intexto-screenshot.jpg", mobileImageUrl: "/images/m-intexto-screenshot.jpg" },
+  { id: "dashboard-finance", name: "Dashboard Financier", mobileName: "Finance", imageUrl: "/images/finance-screenshot.jpg", mobileImageUrl: "/images/m-finance-screenshot.jpg" },
+  { id: "dashboard-comptable", name: "Dashboard Comptabilité", mobileName: "Comptabilité", imageUrl: "/images/compta-screenshot.jpg", mobileImageUrl: "/images/m-compta-screenshot.jpg" },
+];
+
+// Desktop: all 6, Mobile: 4 with real mobile screenshots
+const MOBILE_IDS = ["op2", "tonic", "dashboard-finance", "dashboard-comptable"];
+
+interface HeroProps {
+  onOpenModal: (projectId: string) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   const { t } = useTranslation();
+  const [showMosaic, setShowMosaic] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 968);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const line1 = useTypewriter({
     text: t("hero.line1"),
@@ -39,6 +72,18 @@ const Hero: React.FC = () => {
     permanentCursor: true,
   });
 
+  // Trigger mosaic after typewriter finishes
+  useEffect(() => {
+    if (line4.isComplete) {
+      const timer = setTimeout(() => setShowMosaic(true), 600);
+      return () => clearTimeout(timer);
+    }
+  }, [line4.isComplete]);
+
+  const visibleProjects = isMobile
+    ? PROJECTS.filter((p) => MOBILE_IDS.includes(p.id))
+    : PROJECTS;
+
   return (
     <section
       className="hero"
@@ -46,8 +91,10 @@ const Hero: React.FC = () => {
         background:
           "linear-gradient(135deg, var(--bg-dark) 0%, var(--deep-blue) 100%)",
         position: "relative",
+        flexDirection: "column",
       }}
     >
+      {/* Terminal */}
       <div
         className="terminal"
         style={{
@@ -58,6 +105,9 @@ const Hero: React.FC = () => {
           lineHeight: "1.8",
           position: "relative",
           zIndex: 10,
+          opacity: showMosaic ? 0 : 1,
+          transition: "opacity 0.8s ease",
+          pointerEvents: showMosaic ? "none" : "auto",
         }}
       >
         <div
@@ -81,6 +131,84 @@ const Hero: React.FC = () => {
           dangerouslySetInnerHTML={{ __html: line4.displayedText }}
         />
       </div>
+
+      {/* Mosaic */}
+      {showMosaic && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 10,
+            padding: isMobile ? "4.5rem 1.5rem 5rem" : "calc(4rem + 40px) 4rem 4rem",
+          }}
+        >
+          <div className="mosaic-grid">
+            {visibleProjects.map((project, index) => (
+              <div
+                key={project.id}
+                className="mosaic-cell"
+                onClick={() => onOpenModal(project.id)}
+                style={{
+                  animation: `mosaicFadeIn 0.6s ease-out ${index * 100}ms both`,
+                  cursor: "pointer",
+                }}
+              >
+                <div className="mosaic-item">
+                  <div className="mosaic-bar">
+                    <div className="mosaic-dot" style={{ background: "#FF5F56" }} />
+                    <div className="mosaic-dot" style={{ background: "#FFBD2E" }} />
+                    <div className="mosaic-dot" style={{ background: "#27C93F" }} />
+                  </div>
+                  <img
+                    src={isMobile && project.mobileImageUrl ? project.mobileImageUrl : project.imageUrl}
+                    alt={project.name}
+                    loading="eager"
+                    style={{ paddingTop: "20px" }}
+                  />
+                </div>
+                <div className="mosaic-label">{isMobile && project.mobileName ? project.mobileName : project.name}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Plus de projets button */}
+          <button
+            onClick={() => onOpenModal("")}
+            style={{
+              marginTop: isMobile ? "0.8rem" : "2.5rem",
+              padding: isMobile ? "0.5rem 1.5rem" : "1rem 3rem",
+              background: "transparent",
+              border: isMobile ? "1px solid rgba(255, 255, 255, 0.2)" : "2px solid rgba(255, 255, 255, 0.25)",
+              color: "rgba(255, 255, 255, 0.6)",
+              fontSize: isMobile ? "0.65rem" : "1rem",
+              fontWeight: 700,
+              letterSpacing: "1px",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              animation: `mosaicFadeIn 0.6s ease-out ${visibleProjects.length * 100}ms both`,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "#4A90E2";
+              e.currentTarget.style.color = "#4A90E2";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.25)";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 0.7)";
+            }}
+          >
+            {t("portfolio.more")}
+          </button>
+        </div>
+      )}
+
+      {/* Scroll indicator */}
       <div
         className="scroll-indicator"
         style={{

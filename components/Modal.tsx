@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 
 interface Project {
+  id: string;
   name: string;
   description: string;
   tags: string[];
@@ -16,14 +17,143 @@ interface Project {
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  initialProjectId?: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+/* ─── Demo Card ─── */
+interface DemoCardProps {
+  name: string;
+  sector: string;
+  description: string;
+  url: string;
+  color: string;
+  ctaLabel: string;
+}
+
+const DemoCard: React.FC<DemoCardProps> = ({ name, sector, description, url, color, ctaLabel }) => {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="demo-card"
+      style={{
+        background: "rgba(20, 20, 20, 0.8)",
+        border: "2px solid rgba(255,255,255,0.1)",
+        borderRadius: "1rem",
+        padding: "clamp(1.5rem, 2vw, 2rem)",
+        transition: "all 0.3s ease",
+        position: "relative",
+        overflow: "hidden",
+        textDecoration: "none",
+        display: "block",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = color;
+        e.currentTarget.style.boxShadow = `0 20px 60px ${color}33`;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "3px",
+          background: `linear-gradient(90deg, ${color}, transparent)`,
+        }}
+      />
+      <h4
+        style={{
+          fontSize: "clamp(1.2rem, 1.5vw, 1.5rem)",
+          fontWeight: 900,
+          marginBottom: "0.3rem",
+          color: "var(--white)",
+        }}
+      >
+        {name}
+      </h4>
+      <div
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: "11px",
+          textTransform: "uppercase",
+          letterSpacing: "0.15em",
+          color: color,
+          marginBottom: "1.2rem",
+        }}
+      >
+        {sector}
+      </div>
+      <p
+        style={{
+          fontSize: "14px",
+          color: "var(--gray)",
+          lineHeight: 1.6,
+          marginBottom: "1.5rem",
+        }}
+      >
+        {description}
+      </p>
+      <div
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: "12px",
+          textTransform: "uppercase",
+          letterSpacing: "0.12em",
+          color: color,
+        }}
+      >
+        {ctaLabel} →
+      </div>
+    </a>
+  );
+};
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
   const [isMobile, setIsMobile] = useState(false);
   const { t } = useTranslation();
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const projects: Project[] = [
+    // Featured projects (from Portfolio)
     {
+      id: "op2",
+      name: "OP2",
+      description: t("portfolio.op2.desc"),
+      tags: [t("portfolio.op2.tag1"), t("portfolio.op2.tag2"), t("portfolio.op2.tag3")],
+      color: "#4A90E2",
+      imageUrl: "/images/op2-screenshot.jpg",
+      mobileImageUrl: "/images/m-op2-screenshot.jpg",
+      url: "https://www.op2na.com/",
+    },
+    {
+      id: "tonic",
+      name: "GROUPE TONIC",
+      description: t("portfolio.tonic.desc"),
+      tags: [t("portfolio.tonic.tag1"), t("portfolio.tonic.tag2"), t("portfolio.tonic.tag3")],
+      color: "#9B59B6",
+      imageUrl: "/images/tonic-screenshot.jpg",
+      mobileImageUrl: "/images/m-tonic-screenshot.jpg",
+      url: "https://www.groupetonic.ca",
+    },
+    {
+      id: "gestion",
+      name: t("portfolio.gestion.name"),
+      description: t("portfolio.gestion.desc"),
+      tags: [t("portfolio.gestion.tag1"), t("portfolio.gestion.tag2"), t("portfolio.gestion.tag3")],
+      color: "#F39C12",
+      imageUrl: "/images/gestion-screenshot.jpg",
+      mobileImageUrl: "/images/m-gestion-screenshot.jpg",
+      url: "/dashboards/",
+    },
+    // Additional projects
+    {
+      id: "aurea",
       name: "Auréa RH Conseil",
       description: t("modal.aurea.desc"),
       tags: [t("modal.aurea.tag1"), t("modal.aurea.tag2"), t("modal.aurea.tag3")],
@@ -33,6 +163,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       url: "https://aurearhconseil.ca/",
     },
     {
+      id: "intexto",
       name: "InTexto",
       description: t("modal.intexto.desc"),
       tags: [t("modal.intexto.tag1"), t("modal.intexto.tag2"), t("modal.intexto.tag3")],
@@ -42,6 +173,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       url: "https://intexto.ca",
     },
     {
+      id: "gpc",
       name: "Grands Prix Cyclistes",
       description: t("modal.gpc.desc"),
       tags: [t("modal.gpc.tag1"), t("modal.gpc.tag2")],
@@ -51,15 +183,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       url: "https://www.gpcqm-mtl.ca/",
     },
     {
-      name: "Jaxa Production",
-      description: t("modal.jaxa.desc"),
-      tags: [t("modal.jaxa.tag1"), t("modal.jaxa.tag2"), t("modal.jaxa.tag3")],
-      color: "#F39C12",
-      imageUrl: "/images/jaxa-screenshot.jpg",
-      mobileImageUrl: "/images/m-jaxa-screenshot.jpg",
-      url: "https://jaxanew.netlify.app/",
-    },
-    {
+      id: "organisme",
       name: t("modal.organisme.name"),
       description: t("modal.organisme.desc"),
       tags: [t("modal.organisme.tag1"), t("modal.organisme.tag2")],
@@ -69,6 +193,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       url: "https://aideanonyme.netlify.app/",
     },
     {
+      id: "cathfrancois",
       name: "Catherine François",
       description: t("modal.cathfrancois.desc"),
       tags: [t("modal.cathfrancois.tag1"), t("modal.cathfrancois.tag2")],
@@ -78,6 +203,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       url: "https://cathfrancois.com/",
     },
     {
+      id: "jeanharvey",
       name: "Jean Harvey",
       description: t("modal.jeanharvey.desc"),
       tags: [t("modal.jeanharvey.tag1"), t("modal.jeanharvey.tag2")],
@@ -87,6 +213,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       url: "https://jeanharvey.ca/",
     },
     {
+      id: "studio76",
       name: "Studio 76",
       description: t("modal.studio76.desc"),
       tags: [t("modal.studio76.tag1"), t("modal.studio76.tag2")],
@@ -95,16 +222,33 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       mobileImageUrl: "/images/m-studio76-screenshot.jpg",
       url: "https://www.studio-76.ca/",
     },
+  ];
+
+  // Dashboard demo projects mapped to their mosaic IDs
+  const dashboardProjects: Project[] = [
     {
-      name: "La Maison LeRoy",
-      description: t("modal.maisonleroy.desc"),
-      tags: [t("modal.maisonleroy.tag1")],
+      id: "dashboard-finance",
+      name: t("portfolio.demo2.name"),
+      description: t("portfolio.demo2.desc"),
+      tags: ["Dashboard", "Finance"],
+      color: "#9B59B6",
+      imageUrl: "/images/finance-screenshot.jpg",
+      mobileImageUrl: "/images/m-finance-screenshot.jpg",
+      url: "https://demodashboardfinance.netlify.app/",
+    },
+    {
+      id: "dashboard-comptable",
+      name: t("portfolio.demo3.name"),
+      description: t("portfolio.demo3.desc"),
+      tags: ["Dashboard", t("portfolio.demo3.sector")],
       color: "#F39C12",
-      imageUrl: "/images/maisonleroy-screenshot.jpg",
-      mobileImageUrl: "/images/m-maisonleroy-screenshot.jpg",
-      url: "https://maisonleroy.info/",
+      imageUrl: "/images/compta-screenshot.jpg",
+      mobileImageUrl: "/images/m-compta-screenshot.jpg",
+      url: "https://comptablepro.netlify.app/",
     },
   ];
+
+  const allProjects = [...projects, ...dashboardProjects];
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -138,6 +282,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       window.removeEventListener("resize", checkMobile);
     };
   }, []);
+
+  // Scroll to targeted project when modal opens
+  useEffect(() => {
+    if (isOpen && initialProjectId) {
+      const timer = setTimeout(() => {
+        const el = document.querySelector(`[data-project="${initialProjectId}"]`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 600); // After modal animation
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, initialProjectId]);
 
   if (!isOpen) return null;
 
@@ -195,6 +352,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       </button>
 
       <div
+        ref={contentRef}
         className="modal-content"
         style={{
           maxWidth: "1400px",
@@ -231,10 +389,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             paddingTop: "0",
           }}
         >
-          {projects.map((project, index) => (
+          {allProjects.map((project, index) => (
             <div
               key={index}
               className="modal-browser"
+              data-project={project.id}
               style={{
                 position: "relative",
               }}
@@ -262,33 +421,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     gap: "0.4rem",
                   }}
                 >
-                  <div
-                    className="browser-dot dot-red"
-                    style={{
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "50%",
-                      background: "#FF5F56",
-                    }}
-                  />
-                  <div
-                    className="browser-dot dot-yellow"
-                    style={{
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "50%",
-                      background: "#FFBD2E",
-                    }}
-                  />
-                  <div
-                    className="browser-dot dot-green"
-                    style={{
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "50%",
-                      background: "#27C93F",
-                    }}
-                  />
+                  <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#FF5F56" }} />
+                  <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#FFBD2E" }} />
+                  <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#27C93F" }} />
                 </div>
                 <a
                   href={project.url || "#"}
@@ -300,11 +435,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     background:
                       (project.mobileImageUrl && isMobile) || project.imageUrl
                         ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${project.mobileImageUrl && isMobile ? project.mobileImageUrl : project.imageUrl}) center/cover no-repeat`
-                        : project.color === "#4A90E2"
-                          ? "linear-gradient(135deg, rgba(0, 245, 255, 0.15), transparent)"
-                          : project.color === "#9B59B6"
-                            ? "linear-gradient(135deg, rgba(255, 0, 255, 0.15), transparent)"
-                            : "linear-gradient(135deg, rgba(255, 255, 0, 0.15), transparent)",
+                        : `linear-gradient(135deg, ${project.color}26, transparent)`,
                     display: "flex",
                     alignItems: "flex-end",
                     justifyContent: "flex-end",
@@ -327,6 +458,22 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         SCREENSHOT
                       </div>
                     )}
+                  {project.url && project.imageUrl && (
+                    <div
+                      style={{
+                        background: "rgba(0, 0, 0, 0.85)",
+                        color: "var(--white)",
+                        padding: "0.5rem 1rem",
+                        borderRadius: "0.4rem",
+                        fontSize: "0.8rem",
+                        fontWeight: 700,
+                        border: `1px solid ${project.color}`,
+                        zIndex: 10,
+                      }}
+                    >
+                      {t("portfolio.cta.default")} →
+                    </div>
+                  )}
                 </a>
               </div>
 
@@ -391,6 +538,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
