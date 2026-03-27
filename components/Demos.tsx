@@ -129,13 +129,18 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
       <div style={{ maxWidth: "1200px", width: "100%", zIndex: 10 }}>
         <h3
           style={{
-            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
             fontWeight: 900,
             textAlign: "center",
             marginBottom: "1rem",
           }}
         >
-          <span className="gradient-text">{t("portfolio.demos.title")}</span>
+          {t("portfolio.demos.title").split(" ").map((word, i) => (
+            <span key={i}>
+              {i === 0 ? <span style={{ color: "var(--white)" }}>{word}</span> : <span className="gradient-text">{word}</span>}
+              {" "}
+            </span>
+          ))}
         </h3>
         <p
           style={{
@@ -208,8 +213,8 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
             style={{
               padding: "1rem 3rem",
               background: "transparent",
-              border: "2px solid rgba(255, 255, 255, 0.25)",
-              color: "rgba(255, 255, 255, 0.7)",
+              border: "2px solid #4A90E2",
+              color: "#4A90E2",
               fontSize: "1rem",
               fontWeight: 700,
               letterSpacing: "1px",
