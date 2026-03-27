@@ -431,7 +431,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
                   rel={project.url ? "noopener noreferrer" : undefined}
                   className="browser-content"
                   style={{
-                    height: "335px",
+                    height: isMobile ? "500px" : "335px",
                     background:
                       (project.mobileImageUrl && isMobile) || project.imageUrl
                         ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url(${project.mobileImageUrl && isMobile ? project.mobileImageUrl : project.imageUrl}) center/cover no-repeat`
