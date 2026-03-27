@@ -30,7 +30,7 @@ const VerticalBrand: React.FC = () => {
           left: "2rem",
           top: "2rem",
           bottom: "2rem",
-          zIndex: 2000,
+          zIndex: 2100,
           display: "none",
           flexDirection: "column",
           alignItems: "center",
