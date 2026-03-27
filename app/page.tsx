@@ -8,33 +8,41 @@ import LanguageToggle from "@/components/LanguageToggle";
 import Hero from "@/components/Hero";
 import TeamDuo from "@/components/TeamDuo";
 import Services from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
+import Demos from "@/components/Demos";
 import Modal from "@/components/Modal";
 import Advantage from "@/components/Advantage";
 import Comment from "@/components/Comment";
-
 import Pitch from "@/components/Pitch";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProjectId, setModalProjectId] = useState<string | undefined>();
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = (projectId?: string) => {
+    setModalProjectId(projectId || undefined);
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalProjectId(undefined);
+  };
 
   return (
     <I18nProvider>
       <Navigation />
-      <VerticalBrand />
+      <VerticalBrand onNavigate={closeModal} />
       <LanguageToggle />
-      <Hero />
+      <div id="projets">
+        <Hero onOpenModal={openModal} />
+      </div>
       <div id="equipe">
         <TeamDuo />
       </div>
       <div id="services">
         <Services />
       </div>
-      <div id="projets">
-        <Portfolio onOpenModal={openModal} />
+      <div id="demos">
+        <Demos onOpenModal={() => openModal("")} />
       </div>
       <div id="avantage">
         <Advantage />
@@ -45,7 +53,7 @@ export default function Home() {
       <div id="contact">
         <Pitch />
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} initialProjectId={modalProjectId} />
     </I18nProvider>
   );
 }

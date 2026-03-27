@@ -118,7 +118,7 @@ const Comment: React.FC = () => {
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "clamp(2rem, 2.5vw, 2.5rem)",
                   fontWeight: 700,
-                  opacity: 0.2,
+                  opacity: 0.4,
                   color: step.color,
                   marginBottom: "1rem",
                 }}
