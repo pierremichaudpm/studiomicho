@@ -3,7 +3,11 @@
 import React from "react";
 import { useTranslation } from "@/lib/i18n";
 
-const VerticalBrand: React.FC = () => {
+interface VerticalBrandProps {
+  onNavigate?: () => void;
+}
+
+const VerticalBrand: React.FC<VerticalBrandProps> = ({ onNavigate }) => {
   const { t } = useTranslation();
 
   const menuItems = [
@@ -15,9 +19,14 @@ const VerticalBrand: React.FC = () => {
   ];
 
   const handleClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (onNavigate) onNavigate();
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -38,7 +47,7 @@ const VerticalBrand: React.FC = () => {
         }}
       >
         {/* Logo */}
-        <a href="#" style={{ lineHeight: 0, flexShrink: 0 }}>
+        <a href="#" onClick={(e) => { e.preventDefault(); handleClick("#"); }} style={{ lineHeight: 0, flexShrink: 0 }}>
           <img
             src="/studio-micho-icon.png"
             alt="Studio Micho"
@@ -53,6 +62,7 @@ const VerticalBrand: React.FC = () => {
         {/* Title */}
         <a
           href="#"
+          onClick={(e) => { e.preventDefault(); handleClick("#"); }}
           style={{
             transform: "rotate(180deg)",
             fontSize: "clamp(1.8rem, 3vh, 2.5rem)",

@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <I18nProvider>
       <Navigation />
-      <VerticalBrand />
+      <VerticalBrand onNavigate={closeModal} />
       <LanguageToggle />
       <div id="projets">
         <Hero onOpenModal={openModal} />
