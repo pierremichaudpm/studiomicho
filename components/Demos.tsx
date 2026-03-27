@@ -68,7 +68,7 @@ const DemoCard: React.FC<DemoCardProps> = ({ name, sector, url, color, ctaLabel,
           <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#27C93F" }} />
         </div>
         {/* Screenshot */}
-        <div style={{ aspectRatio: "16 / 10", overflow: "hidden" }}>
+        <div style={{ aspectRatio: isMobile ? "9 / 16" : "16 / 10", overflow: "hidden" }}>
           <img
             src={isMobile ? mobileImageUrl : imageUrl}
             alt={name}
@@ -158,7 +158,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
           className="demos-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+            gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
             gap: "1.5rem",
             margin: "0 auto",
           }}
