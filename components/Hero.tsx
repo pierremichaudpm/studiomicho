@@ -208,22 +208,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         </div>
       )}
 
-      {/* Scroll indicator */}
-      <div
-        className="scroll-indicator"
-        style={{
-          position: "absolute",
-          bottom: "2rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: "3rem",
-          color: "#4A90E2",
-          animation: "bounce 2s infinite",
-          zIndex: 10,
-        }}
-      >
-        ↓
-      </div>
     </section>
   );
 };
