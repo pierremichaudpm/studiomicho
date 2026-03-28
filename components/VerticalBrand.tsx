@@ -14,7 +14,6 @@ const VerticalBrand: React.FC<VerticalBrandProps> = ({ onNavigate }) => {
     { label: t("nav.services"), href: "#services" },
     { label: t("nav.projects"), href: "#projets" },
     { label: t("nav.advantage"), href: "#avantage" },
-    { label: t("nav.method"), href: "#methode" },
     { label: t("nav.contact"), href: "#contact" },
     { label: "JAXA", href: "https://jaxa.ca", external: true },
   ];
