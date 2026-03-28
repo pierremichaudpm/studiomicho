@@ -19,9 +19,10 @@ const PROJECTS: MosaicProject[] = [
   { id: "intexto", name: "InTexto", imageUrl: "/images/intexto-screenshot.jpg", mobileImageUrl: "/images/m-intexto-screenshot.jpg" },
   { id: "dashboard-finance", name: "Dashboard Financier", mobileName: "Finance", imageUrl: "/images/finance-screenshot.jpg", mobileImageUrl: "/images/m-finance-screenshot.jpg" },
   { id: "dashboard-comptable", name: "Dashboard Comptabilité", mobileName: "Comptabilité", imageUrl: "/images/compta-screenshot.jpg", mobileImageUrl: "/images/m-compta-screenshot.jpg" },
+  { id: "estimateur", name: "Estimateur de tournée", mobileName: "Estimateur", imageUrl: "/images/estimateur-screenshot.jpg", mobileImageUrl: "/images/m-estimateur-screenshot.jpg" },
 ];
 
-// Desktop: all 6, Mobile: 4 with real mobile screenshots
+// Desktop: all 7, Mobile: 4 with real mobile screenshots
 const MOBILE_IDS = ["op2", "tonic", "dashboard-finance", "dashboard-comptable"];
 
 interface HeroProps {

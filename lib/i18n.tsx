@@ -106,6 +106,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo3.name": "Dashboard Comptabilité",
     "portfolio.demo3.sector": "Cabinet comptable",
     "portfolio.demo3.desc": "Gestion des dossiers clients. Échéances fiscales automatisées. Productivité de l'équipe.",
+    "portfolio.demo4.name": "Estimateur de tournée",
+    "portfolio.demo4.sector": "Galerie Nomade",
+    "portfolio.demo4.desc": "Budgétisation rapide pour la location et l'installation d'œuvres d'art en itinérance.",
     // Gestion (legacy kept for modal)
     "portfolio.gestion.name": "OUTILS DE GESTION",
     "portfolio.gestion.desc": "Ce que votre ERP devrait faire mais ne fait pas. Dashboards opérationnels et financiers, construits sur mesure en quelques semaines.",
@@ -306,6 +309,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo3.name": "Accounting Dashboard",
     "portfolio.demo3.sector": "Accounting firm",
     "portfolio.demo3.desc": "Client file management. Automated tax deadlines. Team productivity.",
+    "portfolio.demo4.name": "Tour Cost Estimator",
+    "portfolio.demo4.sector": "Galerie Nomade",
+    "portfolio.demo4.desc": "Quick budgeting for touring art exhibitions. Select a work, destination and season for a detailed cost estimate.",
     // Gestion (legacy)
     "portfolio.gestion.name": "MANAGEMENT TOOLS",
     "portfolio.gestion.desc": "What your ERP should do but doesn't. Operational and financial dashboards, custom-built in a few weeks.",
