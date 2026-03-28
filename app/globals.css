@@ -455,7 +455,7 @@ section {
 @media (max-width: 968px) {
     .mosaic-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 1.8rem;
         max-width: 68vw;
     }
 
