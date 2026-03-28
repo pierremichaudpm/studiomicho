@@ -260,14 +260,31 @@ const Pitch: React.FC = () => {
         <div
           style={{
             fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "11px",
+            fontSize: "12px",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
             color: "var(--gray)",
-            opacity: 0.25,
+            opacity: 0.5,
+            lineHeight: 1.8,
           }}
         >
-          {t("pitch.footer")}
+          <div>Studio Micho {t("pitch.footerBy")}{" "}
+            <a
+              href="https://jaxa.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "var(--gray)",
+                textDecoration: "none",
+                transition: "color 0.3s ease",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#4A90E2"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--gray)"; }}
+            >
+              JAXA Production
+            </a>
+          </div>
+          <div>Montréal</div>
         </div>
       </div>
     </section>

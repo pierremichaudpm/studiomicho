@@ -456,7 +456,7 @@ section {
     .mosaic-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.8rem;
-        max-width: 68vw;
+        max-width: 75vw;
     }
 
     .mosaic-item {

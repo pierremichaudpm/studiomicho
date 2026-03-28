@@ -169,6 +169,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "pitch.cta": "On en jase?",
     "pitch.subcta": "Dites-nous ce qui vous ralentit au quotidien.",
     "pitch.footer": "Studio Micho × JAXA Production · Montréal",
+    "pitch.footerBy": "par",
     "pitch.pierre.role": "Consultant · Développeur",
     "pitch.virginie.role": "Opérations · Gestion de comptes",
 
@@ -372,6 +373,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "pitch.cta": "Let's chat?",
     "pitch.subcta": "Tell us what's slowing you down.",
     "pitch.footer": "Studio Micho × JAXA Production · Montréal",
+    "pitch.footerBy": "by",
     "pitch.pierre.role": "Consultant · Developer",
     "pitch.virginie.role": "Operations · Account Management",
 

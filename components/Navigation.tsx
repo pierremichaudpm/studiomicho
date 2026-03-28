@@ -14,6 +14,7 @@ const Navigation: React.FC = () => {
     { label: t("nav.advantage"), href: "#avantage" },
     { label: t("nav.method"), href: "#methode" },
     { label: t("nav.contact"), href: "#contact" },
+    { label: "JAXA", href: "https://jaxa.ca", external: true },
   ];
 
   const handleClick = (href: string) => {
@@ -168,7 +169,8 @@ const Navigation: React.FC = () => {
           <a
             key={item.label}
             href={item.href}
-            onClick={(e) => {
+            {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            onClick={item.external ? undefined : (e) => {
               e.preventDefault();
               handleClick(item.href);
             }}
