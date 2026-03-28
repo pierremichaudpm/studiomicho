@@ -7,6 +7,7 @@ interface UseTypewriterOptions {
   onComplete?: () => void;
   showCursor?: boolean;
   permanentCursor?: boolean;
+  enabled?: boolean;
 }
 
 export const useTypewriter = ({
@@ -16,12 +17,14 @@ export const useTypewriter = ({
   onComplete,
   showCursor = true,
   permanentCursor = false,
+  enabled = true,
 }: UseTypewriterOptions) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
+    if (!enabled) return;
     let timeoutId: NodeJS.Timeout;
     let currentIndex = 0;
     let currentHTML = "";
@@ -133,7 +136,7 @@ export const useTypewriter = ({
       clearTimeout(initialTimeoutId);
       clearTimeout(timeoutId);
     };
-  }, [text, speed, delay, onComplete, showCursor, permanentCursor]);
+  }, [text, speed, delay, onComplete, showCursor, permanentCursor, enabled]);
 
   return { displayedText, isTyping, isComplete };
 };

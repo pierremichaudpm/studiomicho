@@ -21,10 +21,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero (unchanged)
-    "hero.line1": '> Nous imaginons, construisons et optimisons des <span class="gradient-text">produits</span> <span class="gradient-text">numériques</span>',
-    "hero.line2": ">",
-    "hero.line3": '> <span class="gradient-text">Sites</span>. Apps. <span class="gradient-text">Dashboards</span>. Outils de gestion.',
-    "hero.line4": '> Du concept aux <span class="gradient-text">résultats</span> à vélocité IA.',
+    "hero.line1": '<span style="color:#4A90E2">></span> Gagnez <span class="gradient-text">2 mois</span> sur votre prochain déploiement.',
+    "hero.line2": '<span style="color:#4A90E2">></span> Propulsez votre vision à <span class="gradient-text">vélocité IA</span>.',
+    "hero.line3": "<span style=\"color:#4A90E2\">></span> Des <span class=\"gradient-text\">produits numériques</span> sur mesure,",
+    "hero.line4": '<span style="color:#4A90E2">></span> du concept aux <span class="gradient-text">résultats</span>.',
 
     // Team Duo
     "team.subtitle": "Qui nous sommes",
@@ -225,10 +225,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.line1": '> We imagine, build and optimize <span class="gradient-text">digital</span> <span class="gradient-text">products</span>',
-    "hero.line2": ">",
-    "hero.line3": '> <span class="gradient-text">Sites</span>. Apps. <span class="gradient-text">Dashboards</span>. Management tools.',
-    "hero.line4": '> From concept to <span class="gradient-text">results</span> at AI velocity.',
+    "hero.line1": '<span style="color:#4A90E2">></span> Save <span class="gradient-text">2 months</span> on your next deployment.',
+    "hero.line2": '<span style="color:#4A90E2">></span> Launch your vision at <span class="gradient-text">AI velocity</span>.',
+    "hero.line3": "<span style=\"color:#4A90E2\">></span> Custom <span class=\"gradient-text\">digital products</span>,",
+    "hero.line4": '<span style="color:#4A90E2">></span> from concept to <span class="gradient-text">results</span>.',
 
     // Team Duo
     "team.subtitle": "Who we are",

@@ -50,32 +50,35 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
   const line2 = useTypewriter({
     text: t("hero.line2"),
-    speed: 60,
-    delay: 2000,
+    speed: 25,
+    delay: 500,
     showCursor: true,
     permanentCursor: false,
+    enabled: line1.isComplete,
   });
 
   const line3 = useTypewriter({
     text: t("hero.line3"),
     speed: 23,
-    delay: 3000,
+    delay: 400,
     showCursor: true,
     permanentCursor: false,
+    enabled: line2.isComplete,
   });
 
   const line4 = useTypewriter({
     text: t("hero.line4"),
     speed: 23,
-    delay: 5500,
+    delay: 200,
     showCursor: true,
     permanentCursor: true,
+    enabled: line3.isComplete,
   });
 
   // Trigger mosaic after typewriter finishes
   useEffect(() => {
     if (line4.isComplete) {
-      const timer = setTimeout(() => setShowMosaic(true), 600);
+      const timer = setTimeout(() => setShowMosaic(true), 1500);
       return () => clearTimeout(timer);
     }
   }, [line4.isComplete]);
@@ -141,13 +144,23 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         }}
       >
         <div
+          style={{
+            fontSize: "0.75rem",
+            color: "rgba(255,255,255,0.25)",
+            marginBottom: "1.5rem",
+            letterSpacing: "0.05em",
+          }}
+        >
+          ~/studio-micho $
+        </div>
+        <div
           className="terminal-line"
-          style={{ minHeight: "2.7rem" }}
+          style={{ minHeight: "2.7rem", marginBottom: "1.2rem" }}
           dangerouslySetInnerHTML={{ __html: line1.displayedText }}
         />
         <div
           className="terminal-line"
-          style={{ minHeight: "2.7rem" }}
+          style={{ minHeight: "2.7rem", marginBottom: "1.2rem" }}
           dangerouslySetInnerHTML={{ __html: line2.displayedText }}
         />
         <div
