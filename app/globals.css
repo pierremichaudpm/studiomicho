@@ -25,7 +25,7 @@ body {
     color: var(--white);
     overflow-x: hidden;
     line-height: 1.6;
-    padding-left: 120px;
+    padding-left: 0;
 }
 
 html {
@@ -43,7 +43,7 @@ section {
 
 @media (min-width: 969px) {
     section {
-        padding: clamp(5rem, 8vh, 7rem) clamp(3rem, 8vw, 6rem);
+        padding: clamp(5rem, 8vh, 7rem) clamp(3rem, 8vw, 6rem) clamp(5rem, 8vh, 7rem) calc(120px + clamp(3rem, 8vw, 6rem));
     }
 }
 
