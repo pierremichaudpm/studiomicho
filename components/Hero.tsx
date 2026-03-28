@@ -147,7 +147,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             alignItems: "center",
             justifyContent: "center",
             zIndex: 10,
-            padding: isMobile ? "4.5rem 1.5rem 5rem" : "calc(4rem + 40px) 4rem 4rem",
+            padding: isMobile ? "calc(4.5rem + 30px) 1.5rem 5rem" : "calc(4rem + 40px) 4rem 4rem",
           }}
         >
           <div className="mosaic-grid">
@@ -183,7 +183,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           <button
             onClick={() => onOpenModal("")}
             style={{
-              marginTop: isMobile ? "0.8rem" : "2.5rem",
+              marginTop: isMobile ? "calc(0.8rem + 12px)" : "2.5rem",
               padding: isMobile ? "0.5rem 1.5rem" : "1rem 3rem",
               background: "transparent",
               border: isMobile ? "1px solid #4A90E2" : "2px solid #4A90E2",
