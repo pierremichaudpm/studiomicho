@@ -33,7 +33,7 @@ const TeamDuo: React.FC = () => {
           height: "300px",
           borderRadius: "50%",
           background: "#F39C12",
-          opacity: 0.09,
+          opacity: 0.15,
           top: "5%",
           left: "60%",
           animation: "float 11s ease-in-out infinite",
@@ -47,10 +47,24 @@ const TeamDuo: React.FC = () => {
           height: "250px",
           borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.09,
-          bottom: "15%",
-          right: "70%",
+          opacity: 0.15,
+          bottom: "10%",
+          right: "80%",
           animation: "float 9s ease-in-out infinite reverse",
+          zIndex: 1,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          width: "180px",
+          height: "180px",
+          borderRadius: "50%",
+          background: "#9B59B6",
+          opacity: 0.12,
+          left: "45%",
+          top: "80%",
+          animation: "float 14s ease-in-out infinite",
           zIndex: 1,
         }}
       />

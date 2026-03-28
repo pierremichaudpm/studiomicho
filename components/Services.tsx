@@ -47,7 +47,7 @@ const Services: React.FC = () => {
           height: "350px",
           borderRadius: "50%",
           background: "#4A90E2",
-          opacity: 0.09,
+          opacity: 0.15,
           right: "-8%",
           top: "15%",
           animation: "float 9s ease-in-out infinite",
@@ -61,10 +61,24 @@ const Services: React.FC = () => {
           height: "280px",
           borderRadius: "50%",
           background: "#9B59B6",
-          opacity: 0.09,
+          opacity: 0.15,
           left: "-5%",
           bottom: "20%",
           animation: "float 11s ease-in-out infinite reverse",
+          zIndex: 1,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          width: "200px",
+          height: "200px",
+          borderRadius: "50%",
+          background: "#F39C12",
+          opacity: 0.12,
+          right: "30%",
+          top: "60%",
+          animation: "float 13s ease-in-out infinite",
           zIndex: 1,
         }}
       />
