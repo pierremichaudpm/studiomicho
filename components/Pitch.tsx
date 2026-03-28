@@ -153,7 +153,9 @@ const Pitch: React.FC = () => {
               background: "rgba(20, 20, 20, 0.8)",
               border: "2px solid rgba(255,255,255,0.1)",
               borderRadius: "1rem",
+              flex: "1 1 0",
               minWidth: "260px",
+              maxWidth: "380px",
               transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => {
@@ -206,7 +208,9 @@ const Pitch: React.FC = () => {
               background: "rgba(20, 20, 20, 0.8)",
               border: "2px solid rgba(255,255,255,0.1)",
               borderRadius: "1rem",
+              flex: "1 1 0",
               minWidth: "260px",
+              maxWidth: "380px",
               transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => {
