@@ -35,11 +35,11 @@ export default function Home() {
       <div id="projets">
         <Hero onOpenModal={openModal} />
       </div>
-      <div id="equipe">
-        <TeamDuo />
-      </div>
       <div id="services">
         <Services />
+      </div>
+      <div id="equipe">
+        <TeamDuo />
       </div>
       <div id="demos">
         <Demos onOpenModal={() => openModal("")} />

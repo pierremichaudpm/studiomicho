@@ -15,6 +15,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Navigation
     "nav.services": "Services",
     "nav.projects": "Projets",
+    "nav.demos": "Démos",
     "nav.team": "Équipe",
     "nav.advantage": "Avantage",
     "nav.method": "Méthode",
@@ -219,6 +220,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Navigation
     "nav.services": "Services",
     "nav.projects": "Projects",
+    "nav.demos": "Demos",
     "nav.team": "Team",
     "nav.advantage": "Advantage",
     "nav.method": "Method",
