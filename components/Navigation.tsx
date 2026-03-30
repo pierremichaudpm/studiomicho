@@ -23,24 +23,25 @@ const Navigation: React.FC = () => {
   useEffect(() => {
     if (typeof window === "undefined" || window.innerWidth >= 968) return;
 
-    const sections = document.querySelectorAll("section[id], .hero");
-    if (!sections.length) return;
+    const update = () => {
+      const sections = document.querySelectorAll("section[id], .hero");
+      const headerBottom = 70;
+      let current = "#030712";
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-            const id = entry.target.id || (entry.target.classList.contains("hero") ? "hero" : "");
-            const color = SECTION_COLORS[id] || "#030712";
-            setHeaderBg(color);
-          }
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= headerBottom && rect.bottom > headerBottom) {
+          const id = section.id || (section.classList.contains("hero") ? "hero" : "");
+          current = SECTION_COLORS[id] || "#030712";
+          break;
         }
-      },
-      { threshold: 0.3, rootMargin: "-70px 0px 0px 0px" }
-    );
+      }
+      setHeaderBg(current);
+    };
 
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+    return () => window.removeEventListener("scroll", update);
   }, []);
 
   const menuItems = [
