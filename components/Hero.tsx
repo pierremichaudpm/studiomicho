@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
       className="hero"
       style={{
         background:
-          "linear-gradient(135deg, rgba(10, 14, 28, 1) 0%, rgba(15, 23, 42, 1) 100%)",
+          "linear-gradient(135deg, #0f1a2e 0%, #162544 100%)",
         position: "relative",
         flexDirection: "column",
       }}
