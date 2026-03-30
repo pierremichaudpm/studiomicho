@@ -1,11 +1,47 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n";
+
+const SECTION_COLORS: Record<string, string> = {
+  hero: "#0f1a2e",
+  equipe: "#030712",
+  services: "#0a1128",
+  demos: "#030712",
+  projets: "#030712",
+  avantage: "#0a1128",
+  methode: "#030712",
+  contact: "#030712",
+};
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [headerBg, setHeaderBg] = useState("rgba(3, 7, 18, 0.98)");
+  const headerRef = useRef<HTMLElement>(null);
   const { t, locale, setLocale } = useTranslation();
+
+  useEffect(() => {
+    if (typeof window === "undefined" || window.innerWidth >= 968) return;
+
+    const sections = document.querySelectorAll("section[id], .hero");
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            const id = entry.target.id || (entry.target.classList.contains("hero") ? "hero" : "");
+            const color = SECTION_COLORS[id] || "#030712";
+            setHeaderBg(color);
+          }
+        }
+      },
+      { threshold: 0.3, rootMargin: "-70px 0px 0px 0px" }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
 
   const menuItems = [
     { label: t("nav.team"), href: "#equipe" },
@@ -29,6 +65,7 @@ const Navigation: React.FC = () => {
     <>
       {/* Mobile Header Bar */}
       <header
+        ref={headerRef}
         className="mobile-header"
         style={{
           position: "fixed",
@@ -36,13 +73,14 @@ const Navigation: React.FC = () => {
           left: 0,
           width: "100%",
           height: "70px",
-          background: "rgba(3, 7, 18, 0.98)",
+          background: isOpen ? "rgba(3, 7, 18, 0.98)" : headerBg,
           backdropFilter: "blur(10px)",
           zIndex: 2001,
           display: "none",
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 1.2rem",
+          transition: "background 0.4s ease",
         }}
       >
         {/* Left: Hamburger */}
