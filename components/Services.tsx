@@ -34,7 +34,7 @@ const Services: React.FC = () => {
       className="services-section"
       style={{
         background:
-          "linear-gradient(135deg, #0a1222 0%, #0f1a2e 100%)",
+          "linear-gradient(180deg, #122040 0%, #0f1a2e 100%)",
         flexDirection: "column",
         position: "relative",
       }}
