@@ -121,7 +121,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
   return (
     <section
       style={{
-        background: "var(--bg-dark)",
+        background: "linear-gradient(135deg, #081020 0%, #0c1626 100%)",
         flexDirection: "column",
         position: "relative",
       }}

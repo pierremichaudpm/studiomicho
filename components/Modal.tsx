@@ -325,7 +325,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
         left: 0,
         right: 0,
         bottom: 0,
-        background: "rgba(0, 0, 0, 0.95)",
+        background: "rgba(10, 18, 34, 0.98)",
         zIndex: 2000,
         overflowY: "auto",
         padding: "5rem 2rem 3rem 2rem",

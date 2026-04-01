@@ -27,7 +27,7 @@ const Advantage: React.FC = () => {
       className="advantage-section"
       style={{
         background:
-          "linear-gradient(135deg, var(--deep-blue) 0%, var(--bg-dark) 100%)",
+          "linear-gradient(135deg, #060e1c 0%, #0a1222 100%)",
         flexDirection: "column",
         position: "relative",
       }}

@@ -5,12 +5,12 @@ import { useTranslation } from "@/lib/i18n";
 
 const SECTION_COLORS: Record<string, string> = {
   hero: "#0f1a2e",
-  equipe: "#030712",
-  services: "#0a1128",
-  demos: "#030712",
-  projets: "#030712",
-  avantage: "#0a1128",
-  methode: "#030712",
+  equipe: "#0c1626",
+  services: "#0a1222",
+  demos: "#081020",
+  projets: "#081020",
+  avantage: "#060e1c",
+  methode: "#050c18",
   contact: "#030712",
 };
 

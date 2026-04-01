@@ -17,7 +17,7 @@ const TeamDuo: React.FC = () => {
       className="team-section"
       style={{
         background:
-          "linear-gradient(135deg, var(--bg-dark) 0%, var(--deep-blue) 100%)",
+          "linear-gradient(135deg, #0c1626 0%, #122040 100%)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

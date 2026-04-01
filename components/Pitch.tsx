@@ -9,7 +9,7 @@ const Pitch: React.FC = () => {
     <section
       className="pitch-section"
       style={{
-        background: "var(--bg-dark)",
+        background: "linear-gradient(135deg, #030712 0%, #060e1c 100%)",
         flexDirection: "column",
         textAlign: "center",
         position: "relative",

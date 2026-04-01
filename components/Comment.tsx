@@ -18,7 +18,7 @@ const Comment: React.FC = () => {
       className="sauce-section"
       style={{
         background:
-          "linear-gradient(135deg, var(--bg-dark) 0%, var(--deep-blue) 100%)",
+          "linear-gradient(135deg, #050c18 0%, #081020 100%)",
         flexDirection: "column",
         position: "relative",
       }}
