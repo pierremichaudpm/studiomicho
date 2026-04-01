@@ -22,10 +22,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero (unchanged)
-    "hero.line1": '<span style="color:#4A90E2">></span> Gagnez <span class="gradient-text">2 mois</span> sur votre prochain déploiement.',
-    "hero.line2": '<span style="color:#4A90E2">></span> Propulsez votre vision à <span class="gradient-text">vélocité IA</span>.',
-    "hero.line3": "<span style=\"color:#4A90E2\">></span> Des <span class=\"gradient-text\">produits numériques</span> sur mesure,",
-    "hero.line4": '<span style="color:#4A90E2">></span> du concept aux <span class="gradient-text">résultats</span>.',
+    "hero.line1": '<span style="color:#4A90E2">></span> Votre site date, vos <span class="gradient-text">outils</span> ne suivent plus.',
+    "hero.line2": '<span style="color:#4A90E2">></span> On règle ça en <span class="gradient-text">quelques semaines</span>.',
+    "hero.line3": '<span style="color:#4A90E2">></span> Du <span class="gradient-text">sur-mesure</span> propulsé par l\'IA.',
+    "hero.line4": '<span style="color:#4A90E2">></span> Simple, du premier appel au <span class="gradient-text">produit final</span>.',
 
     // Team Duo
     "team.subtitle": "Qui nous sommes",
@@ -227,10 +227,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.line1": '<span style="color:#4A90E2">></span> Save <span class="gradient-text">2 months</span> on your next deployment.',
-    "hero.line2": '<span style="color:#4A90E2">></span> Launch your vision at <span class="gradient-text">AI velocity</span>.',
-    "hero.line3": "<span style=\"color:#4A90E2\">></span> Custom <span class=\"gradient-text\">digital products</span>,",
-    "hero.line4": '<span style="color:#4A90E2">></span> from concept to <span class="gradient-text">results</span>.',
+    "hero.line1": '<span style="color:#4A90E2">></span> Your site is dated, your <span class="gradient-text">tools</span> can\'t keep up.',
+    "hero.line2": '<span style="color:#4A90E2">></span> We fix that in <span class="gradient-text">a few weeks</span>.',
+    "hero.line3": '<span style="color:#4A90E2">></span> <span class="gradient-text">Custom-built</span>, AI-powered.',
+    "hero.line4": '<span style="color:#4A90E2">></span> Simple: from first call to <span class="gradient-text">final product</span>.',
 
     // Team Duo
     "team.subtitle": "Who we are",
