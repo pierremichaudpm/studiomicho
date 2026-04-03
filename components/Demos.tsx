@@ -158,7 +158,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
           className="demos-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
+            gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
             gap: "1.5rem",
             margin: "0 auto",
           }}
@@ -191,16 +191,6 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
             ctaLabel={t("portfolio.cta.demo")}
             imageUrl="/images/compta-screenshot.jpg"
             mobileImageUrl="/images/m-compta-screenshot.jpg"
-            isMobile={isMobile}
-          />
-          <DemoCard
-            name={t("portfolio.demo4.name")}
-            sector={t("portfolio.demo4.sector")}
-            url="https://estimateurdemo.netlify.app/"
-            color="#E74C3C"
-            ctaLabel={t("portfolio.cta.demo")}
-            imageUrl="/images/estimateur-screenshot.jpg"
-            mobileImageUrl="/images/m-estimateur-screenshot.jpg"
             isMobile={isMobile}
           />
         </div>

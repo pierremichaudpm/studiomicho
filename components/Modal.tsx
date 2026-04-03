@@ -173,16 +173,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       url: "https://intexto.ca",
     },
     {
-      id: "estimateur",
-      name: t("portfolio.demo4.name"),
-      description: t("portfolio.demo4.desc"),
-      tags: [t("portfolio.demo4.sector"), "Estimateur"],
-      color: "#E74C3C",
-      imageUrl: "/images/estimateur-screenshot.jpg",
-      mobileImageUrl: "/images/m-estimateur-screenshot.jpg",
-      url: "https://estimateurdemo.netlify.app/",
-    },
-    {
       id: "gpc",
       name: "Grands Prix Cyclistes",
       description: t("modal.gpc.desc"),
