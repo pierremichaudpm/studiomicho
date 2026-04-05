@@ -149,6 +149,26 @@ const translations: Record<Locale, Record<string, string>> = {
     "compare.row6.freelance": "\"Rappelle-moi lundi\"",
     "compare.row6.studio": "On reste là",
 
+    // Testimonials
+    "testimonials.title": "Ce qu'ils",
+    "testimonials.titleHighlight": "en disent",
+    "testimonials.subtitle": "Des clients, des vrais. Pas des logos.",
+    "testimonials.catherine.quote": "Pierre s'est illustré par sa compréhension fine des enjeux numériques et sa capacité d'exécution. Il a livré des produits numériques innovants, performants, fiables et très aboutis.",
+    "testimonials.catherine.name": "Catherine Dupont",
+    "testimonials.catherine.role": "Groupe Tonic",
+    "testimonials.thierry.quote": "Un projet de site web livré dans les temps et le budget, grâce à une approche immersive et collaborative qui a vraiment fait la différence.",
+    "testimonials.thierry.name": "Thierry Bosom",
+    "testimonials.thierry.role": "OP2",
+    "testimonials.leesa.quote": "De la compréhension du mandat jusqu'à la mise en place des recommandations, Pierre a été présent dans l'accompagnement de l'équipe de façon soutenue et adaptée à notre réalité.",
+    "testimonials.leesa.name": "Leesa Hodgson",
+    "testimonials.leesa.role": "Excellence industrielle de Saint-Laurent",
+    "testimonials.said.quote": "Un profil atypique qui sait écouter, co-construire et saisir rapidement les besoins et les enjeux.",
+    "testimonials.said.name": "Said Khalil",
+    "testimonials.said.role": "CARI Saint-Laurent",
+    "testimonials.hugues.quote": "Il a conçu le site avec une qualité, une rigueur et une rapidité absolument remarquables. Sa capacité à transformer des idées en une plateforme claire et fonctionnelle a fait toute la différence.",
+    "testimonials.hugues.name": "Hugues Thibault",
+    "testimonials.hugues.role": "Auréa RH Conseil",
+
     // Method (4 steps)
     "method.title": "Notre",
     "method.titleHighlight": "méthode",
@@ -353,6 +373,26 @@ const translations: Record<Locale, Record<string, string>> = {
     "compare.row6.agency": "Support ticket",
     "compare.row6.freelance": "\"Call me Monday\"",
     "compare.row6.studio": "We're still here",
+
+    // Testimonials
+    "testimonials.title": "What they",
+    "testimonials.titleHighlight": "say",
+    "testimonials.subtitle": "Real clients. Not logos.",
+    "testimonials.catherine.quote": "Pierre stood out for his deep understanding of digital challenges and his ability to execute. He delivered innovative, high-performing, reliable and polished digital products.",
+    "testimonials.catherine.name": "Catherine Dupont",
+    "testimonials.catherine.role": "Groupe Tonic",
+    "testimonials.thierry.quote": "A web project delivered on time and on budget, thanks to an immersive and collaborative approach that truly made the difference.",
+    "testimonials.thierry.name": "Thierry Bosom",
+    "testimonials.thierry.role": "OP2",
+    "testimonials.leesa.quote": "From understanding the mandate to implementing recommendations, Pierre was present throughout, supporting the team in a sustained way adapted to our reality.",
+    "testimonials.leesa.name": "Leesa Hodgson",
+    "testimonials.leesa.role": "Excellence industrielle de Saint-Laurent",
+    "testimonials.said.quote": "An atypical profile who knows how to listen, co-build and quickly grasp needs and challenges.",
+    "testimonials.said.name": "Said Khalil",
+    "testimonials.said.role": "CARI Saint-Laurent",
+    "testimonials.hugues.quote": "He designed the site with remarkable quality, rigor and speed. His ability to transform ideas into a clear, functional platform made all the difference.",
+    "testimonials.hugues.name": "Hugues Thibault",
+    "testimonials.hugues.role": "Auréa RH Conseil",
 
     // Method (4 steps)
     "method.title": "Our",

@@ -11,6 +11,7 @@ import Services from "@/components/Services";
 import Demos from "@/components/Demos";
 import Modal from "@/components/Modal";
 import Advantage from "@/components/Advantage";
+import Testimonials from "@/components/Testimonials";
 import Comment from "@/components/Comment";
 import Pitch from "@/components/Pitch";
 
@@ -46,6 +47,9 @@ export default function Home() {
       </div>
       <div id="avantage">
         <Advantage />
+      </div>
+      <div id="temoignages">
+        <Testimonials onOpenModal={openModal} />
       </div>
       <div id="methode">
         <Comment />
