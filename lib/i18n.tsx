@@ -465,15 +465,19 @@ const translations: Record<Locale, Record<string, string>> = {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [locale, setLocaleState] = useState<Locale>("fr");
+export const I18nProvider: React.FC<{ children: React.ReactNode; initialLocale?: Locale }> = ({ children, initialLocale }) => {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale || "fr");
 
   useEffect(() => {
+    if (initialLocale) {
+      document.documentElement.lang = initialLocale;
+      return;
+    }
     const saved = localStorage.getItem("locale") as Locale;
     if (saved === "en" || saved === "fr") {
       setLocaleState(saved);
     }
-  }, []);
+  }, [initialLocale]);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
