@@ -184,18 +184,13 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.5.title": "Suivi",
     "method.5.desc": "Votre site est livré avec une documentation technique complète, un guide de continuité et un plan de suivi. Monitoring, ajustements, évolution — on reste dans le portrait.",
 
-    // Built to last
-    "lasting.title": "Construit pour durer",
-    "lasting.titleHighlight": "— pas juste pour lancer.",
-    "lasting.desc": "Chaque projet est livré avec sa documentation technique, son guide de continuité et un plan de maintenance. Votre site ne dépend pas d'une seule personne. Il est construit pour que n'importe quel développeur puisse le reprendre, le comprendre et le faire évoluer.",
-
     // Pitch
     "pitch.line1": "Nous concevons",
     "pitch.line2": "construisons",
     "pitch.line3": "lançons",
-    "pitch.line4": "et mesurons.",
+    "pitch.line4": "et accompagnons.",
     "pitch.cta": "On en jase?",
-    "pitch.subcta": "Dites-nous ce qui vous ralentit au quotidien.",
+    "pitch.subcta": "Chaque projet est livré avec sa documentation technique, son guide de continuité et un plan de maintenance solide.",
     "pitch.footer": "Studio Micho × JAXA Production · Montréal",
     "pitch.footerBy": "par",
     "pitch.pierre.role": "Consultant · Développeur",
@@ -416,18 +411,13 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.5.title": "Follow-up",
     "method.5.desc": "Your site ships with full technical documentation, a continuity guide and a follow-up plan. Monitoring, adjustments, evolution — we stay in the picture.",
 
-    // Built to last
-    "lasting.title": "Built to last",
-    "lasting.titleHighlight": "— not just to launch.",
-    "lasting.desc": "Every project ships with its technical documentation, continuity guide and maintenance plan. Your site doesn't depend on one person. It's built so any developer can pick it up, understand it and evolve it.",
-
     // Pitch
     "pitch.line1": "We design",
     "pitch.line2": "build",
     "pitch.line3": "launch",
-    "pitch.line4": "and measure.",
+    "pitch.line4": "and support.",
     "pitch.cta": "Let's chat?",
-    "pitch.subcta": "Tell us what's slowing you down.",
+    "pitch.subcta": "Every project ships with full technical documentation, a continuity guide and a solid maintenance plan.",
     "pitch.footer": "Studio Micho × JAXA Production · Montréal",
     "pitch.footerBy": "by",
     "pitch.pierre.role": "Consultant · Developer",
