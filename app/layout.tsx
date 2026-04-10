@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Studio Micho",
     images: [
       {
-        url: "/studio-micho-og-fr.png",
+        url: "/og-fr-v3.png",
         width: 1200,
         height: 630,
         alt: "Studio Micho — Agence web Montréal",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Studio Micho — Agence web Montréal",
     description:
       "Sites, apps, dashboards et outils de gestion sur mesure. Livraison en 3-4 semaines à vélocité IA.",
-    images: ["/studio-micho-og-fr.png"],
+    images: ["/og-fr-v3.png"],
   },
   robots: {
     index: true,
