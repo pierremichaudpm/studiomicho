@@ -1,5 +1,87 @@
 # WORKING_LOG — Studio Micho React
 
+## Session 2026-04-10 — Route /eng, OG images, étape 5, SEO
+
+### Objectif
+Ajouter une URL directe pour la version anglaise, créer des images Open Graph pour les partages sociaux, ajouter une 5e étape "Suivi" à la méthode, et corriger le SEO pour l'indexation Google.
+
+### Changements effectués
+
+#### 1. Route /eng — URL anglaise directe
+- Nouveau `app/eng/page.tsx` : même contenu que `/`, avec `I18nProvider initialLocale="en"`
+- Nouveau `app/eng/layout.tsx` : metadata SEO complètes en anglais
+- `I18nProvider` modifié pour accepter prop `initialLocale` (skip localStorage quand défini)
+- URL : `studiomicho.com/eng`
+
+#### 2. Images Open Graph — FR et EN séparées
+- Générées avec ImageMagick (2400x1260 → Lanczos downscale 1200x630)
+- Logo Studio Micho + texte terminal monospace + curseur block rose
+- FR (`og-fr-v5.png`) : "On règle ça en quelques semaines. / Du sur-mesure propulsé par l'IA."
+- EN (`og-en-v5.png`) : "We build your product in a few weeks. / Custom, robust, AI-powered."
+- Plusieurs itérations de cache-busting (v1→v5) — Facebook cache agressivement les images OG
+
+#### 3. Section méthode — 5e étape "Suivi"
+- Ajout étape 05 (vert `#2ECC71`) dans `Comment.tsx`
+- Grille passée de 4 à 5 colonnes, responsive ajusté
+- Texte : "Produit livré avec une documentation technique complète, un guide de continuité et un plan de suivi solide."
+
+#### 4. Tableau comparatif — Ligne "Après livraison" mise à jour
+- FR : "On reste là" → "Documentation complète + plan de suivi actif"
+- EN : "We're still here" → "Full documentation + active follow-up plan"
+
+#### 5. Section CTA finale — Copywriting révisé
+- "et mesurons" → "et accompagnons" (plus confiant, moins défensif)
+- Sous-texte : "Quelque chose vous ralentit, vous empêche d'avancer? On en parle?"
+- Bouton : "Contactez-nous" / "Contact us"
+- Bloc callout "Construit pour durer" créé puis supprimé (incohérent avec le design)
+
+#### 6. SEO — Corrections pour indexation Google
+- Meta description mise à jour (mentionne ~5K et documentation)
+- Sitemap : ajout `/eng`, mise à jour lastmod, hreflang corrigé
+- Heading hierarchy : Hero `div` → `h1`, Pitch `h1` → `h2`, Demos `h3` → `h2`
+- Alternates hreflang : EN pointe vers `/eng` au lieu de `/`
+
+### Décisions techniques
+| Décision | Raison |
+|----------|--------|
+| Route `/eng` plutôt que `/en` | Demande explicite du client |
+| OG images générées à 2x puis downscale Lanczos | Rendu plus net qu'à 1x natif |
+| Nouveau filename à chaque update OG | Facebook cache agressivement, "Scrape Again" ne suffit pas |
+| Curseur block rose sur OG images | Cohérent avec le thème magenta du site |
+| "et accompagnons" plutôt que "et nous assurons que ça tienne" | Trop défensif, sonnerait comme une justification |
+| Suppression du callout "Construit pour durer" | Redondant avec l'étape 5, incohérent visuellement |
+
+### Problèmes rencontrés
+- Facebook cache OG images de manière agressive — "Scrape Again" dans le debugger ne force pas le refresh. Solution : renommer le fichier image à chaque mise à jour (og-en-v2 → v3 → v4 → v5)
+- Response code 206 dans Facebook debugger pendant les déploiements Netlify — transitoire, se résout après deploy complet
+- Le curseur block devait être positionné manuellement (rectangle ImageMagick) — plusieurs itérations pour aligner correctement après le texte
+- `next build` échouait sans `node_modules` — résolu avec `npm install`
+
+### Commits
+1. `11524d0` — Add /eng route for direct English URL
+2. `ab189c5` — Add Open Graph image for social sharing previews
+3. `4bc2df5` — Update OG image: shorter bilingual taglines + bigger logo
+4. `ac6e71b` — Add English metadata for /eng route, rename OG image to bust FB cache
+5. `94cdaeb` — Separate OG images: French for /, English for /eng
+6. `69086c6` — Bigger terminal text + left-aligned logo on OG images
+7. `5f01566` — Update OG images: new EN copy + terminal cursor
+8. `341fb17` — Rename EN OG image to bust Facebook cache
+9. `7c9334c` — OG images v3: block cursor, new EN copy, new filenames
+10. `e3b86fb` — OG images v5: 30% bigger logo, pink cursor
+11. `9414cef` — Add step 5 (Suivi), update comparison table, add Built to Last callout
+12. `2889faa` — SEO: fix heading hierarchy, update sitemap, meta description, hreflang
+13. `a30b460` — Replace Lasting callout with cleaner CTA: "et accompagnons"
+14. `a5bdd52` — Shorten step 5 copy, update CTA sub-text and button label
+
+### Prochaines étapes
+- [ ] Google Search Console : ajouter propriété, soumettre sitemap, demander indexation
+- [ ] Vérifier rendu OG image sur LinkedIn (pas juste Facebook)
+- [ ] Traduire `public/dashboards/index.html` (page statique, hors React)
+- [ ] Nettoyer les anciens fichiers OG inutilisés (studio-micho-og.png, og-en-v2.png, og-en-v3.png, etc.)
+- [ ] Tester responsive mobile de la grille 5 colonnes (section méthode)
+
+---
+
 ## Session 2026-03-10
 
 ### Objectif

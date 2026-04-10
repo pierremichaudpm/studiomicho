@@ -12,35 +12,43 @@ Site portfolio de Studio Micho (studiomicho.com). Next.js 16, déployé sur Netl
 ## Structure
 ```
 app/
-  page.tsx            # Page principale — orchestre toutes les sections + I18nProvider
-  layout.tsx          # Layout racine (server component, metadata SEO "nous")
+  page.tsx            # Page principale FR — orchestre toutes les sections + I18nProvider
+  layout.tsx          # Layout racine (server component, metadata SEO FR)
+  eng/
+    page.tsx          # Page EN — même contenu, I18nProvider initialLocale="en"
+    layout.tsx        # Layout EN (metadata SEO anglaises, og:image EN)
   globals.css         # Styles globaux (section padding, responsive)
 lib/
-  i18n.tsx            # Système i18n — Context, Provider, hook, traductions FR/EN (~150 clés)
+  i18n.tsx            # Système i18n — Context, Provider, hook, traductions FR/EN (~160 clés)
 components/
   LanguageToggle.tsx  # Bouton toggle FR/EN (fixé top-right desktop, intégré dans header mobile)
   Navigation.tsx      # Header mobile (hamburger | titre+logo | toggle) + menu fullscreen
   VerticalBrand.tsx   # Branding latéral desktop (logo + titre vertical + nav)
-  Hero.tsx            # Section héros (typewriter)
+  Hero.tsx            # Section héros (typewriter, h1 pour SEO)
   TeamDuo.tsx         # Section duo Pierre + Virginie (photos, rôles, stats promesse)
   Services.tsx        # Section services (liste verticale, 4 services)
   Portfolio.tsx       # 3 projets vedettes (Browser) + démos interactives + bouton "Plus"
   Modal.tsx           # Modal avec projets additionnels (grille 2 colonnes)
   Advantage.tsx       # Tableau comparatif Agence vs Freelance vs Studio Micho
-  Comment.tsx         # Section méthode 4 étapes
-  Pitch.tsx           # Section contact
+  Comment.tsx         # Section méthode 5 étapes (Écoute → Prototype → Construction → Livraison → Suivi)
+  Pitch.tsx           # Section CTA + contacts
 public/
   images/             # Screenshots projets (desktop + mobile m-*), photos équipe
   dashboards/         # Page statique dashboards (index.html + PNGs)
+  og-fr-v5.png        # Image Open Graph FR (1200x630)
+  og-en-v5.png        # Image Open Graph EN (1200x630)
+  sitemap.xml         # Sitemap avec / et /eng + hreflang
+  robots.txt          # Allow all + sitemap
 ```
 
 ## i18n (internationalisation)
 - Système maison léger : React Context dans `lib/i18n.tsx`
-- ~150 strings traduites (FR + EN), clés organisées par section (nav.*, hero.*, team.*, services.*, etc.)
+- ~160 strings traduites (FR + EN), clés organisées par section (nav.*, hero.*, team.*, services.*, etc.)
 - Hook `useTranslation()` retourne `{ t, locale, setLocale }`
 - Langue par défaut : FR, sauvée dans `localStorage`
 - Le `<html lang>` est mis à jour dynamiquement via `document.documentElement.lang`
-- Meta SEO (layout.tsx) : description au "nous", FR statique (server component)
+- `I18nProvider` accepte `initialLocale` prop pour forcer la langue (utilisé par `/eng`)
+- Meta SEO : FR dans `app/layout.tsx`, EN dans `app/eng/layout.tsx`
 - La page `public/dashboards/index.html` n'est **pas** traduite (page statique indépendante)
 - Pour ajouter une string : ajouter la clé dans les objets `fr` et `en` de `lib/i18n.tsx`
 
