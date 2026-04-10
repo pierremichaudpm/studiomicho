@@ -128,7 +128,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
       />
 
       {/* Terminal */}
-      <div
+      <h1
         className="terminal"
         style={{
           maxWidth: "900px",
@@ -141,6 +141,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           opacity: showMosaic ? 0 : 1,
           transition: "opacity 0.8s ease",
           pointerEvents: showMosaic ? "none" : "auto",
+          fontWeight: 400,
+          margin: 0,
         }}
       >
         <div
@@ -173,7 +175,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           style={{ minHeight: "2.7rem" }}
           dangerouslySetInnerHTML={{ __html: line4.displayedText }}
         />
-      </div>
+      </h1>
 
       {/* Mosaic */}
       {showMosaic && (

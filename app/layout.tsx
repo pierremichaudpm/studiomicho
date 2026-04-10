@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Studio Micho — Agence web Montréal | Sites, apps et dashboards sur mesure",
   description:
-    "Agence web à Montréal. Développement de sites, applications web, dashboards et outils de gestion sur mesure pour PME, OBNL et organisations culturelles. Livraison en 3-4 semaines à vélocité IA. Studio Micho par JAXA Production.",
+    "Studio Micho livre des sites web, applications et dashboards sur mesure en 3-4 semaines à Montréal. Développement accéléré par IA. ~5K. Documentation complète et plan de suivi.",
   keywords: [
     "agence web Montréal",
     "développement web Montréal",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     canonical: "https://studiomicho.com",
     languages: {
       fr: "https://studiomicho.com",
-      en: "https://studiomicho.com",
+      en: "https://studiomicho.com/eng",
       "x-default": "https://studiomicho.com",
     },
   },

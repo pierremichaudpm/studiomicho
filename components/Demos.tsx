@@ -127,7 +127,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
       }}
     >
       <div style={{ maxWidth: "1200px", width: "100%", zIndex: 10 }}>
-        <h3
+        <h2
           style={{
             fontSize: "clamp(2.5rem, 5vw, 5rem)",
             fontWeight: 900,
@@ -141,7 +141,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
               {" "}
             </span>
           ))}
-        </h3>
+        </h2>
         <p
           style={{
             fontSize: "clamp(1rem, 1.5vw, 1.3rem)",

@@ -53,7 +53,7 @@ const Pitch: React.FC = () => {
           zIndex: 10,
         }}
       >
-        <h1
+        <h2
           className="pitch-statement"
           style={{
             fontSize: "clamp(1.8rem, 4vw, 4rem)",
@@ -67,7 +67,7 @@ const Pitch: React.FC = () => {
           <span className="gradient-text">{t("pitch.line2")}</span>,{" "}
           <span className="gradient-text">{t("pitch.line3")}</span>{" "}
           {t("pitch.line4")}
-        </h1>
+        </h2>
 
         <p
           style={{
