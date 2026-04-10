@@ -11,6 +11,7 @@ const Comment: React.FC = () => {
     { number: "02", title: t("method.2.title"), desc: t("method.2.desc"), color: "#9B59B6" },
     { number: "03", title: t("method.3.title"), desc: t("method.3.desc"), color: "#F39C12" },
     { number: "04", title: t("method.4.title"), desc: t("method.4.desc"), color: "#E74C3C" },
+    { number: "05", title: t("method.5.title"), desc: t("method.5.desc"), color: "#2ECC71" },
   ];
 
   return (
@@ -93,7 +94,7 @@ const Comment: React.FC = () => {
           className="method-steps"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(5, 1fr)",
             gap: "clamp(1.5rem, 2.5vw, 2.5rem)",
           }}
         >
@@ -152,7 +153,12 @@ const Comment: React.FC = () => {
 
       {/* Responsive */}
       <style jsx>{`
-        @media (max-width: 968px) {
+        @media (max-width: 1100px) {
+          .method-steps {
+            grid-template-columns: repeat(3, 1fr) !important;
+          }
+        }
+        @media (max-width: 768px) {
           .method-steps {
             grid-template-columns: 1fr 1fr !important;
           }

@@ -13,6 +13,7 @@ import Modal from "@/components/Modal";
 import Advantage from "@/components/Advantage";
 import Testimonials from "@/components/Testimonials";
 import Comment from "@/components/Comment";
+import Lasting from "@/components/Lasting";
 import Pitch from "@/components/Pitch";
 
 export default function HomeEng() {
@@ -54,6 +55,7 @@ export default function HomeEng() {
       <div id="methode">
         <Comment />
       </div>
+      <Lasting />
       <div id="contact">
         <Pitch />
       </div>

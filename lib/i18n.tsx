@@ -147,7 +147,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "compare.row6.label": "Après livraison",
     "compare.row6.agency": "Ticket de support",
     "compare.row6.freelance": "\"Rappelle-moi lundi\"",
-    "compare.row6.studio": "On reste là",
+    "compare.row6.studio": "Documentation complète + plan de suivi actif",
 
     // Testimonials
     "testimonials.title": "Ce qu'ils",
@@ -181,6 +181,13 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.3.desc": "Développement avec l'IA comme copilote. La même personne qui a écouté est celle qui construit. Zéro perte en traduction.",
     "method.4.title": "Livraison",
     "method.4.desc": "Déploiement, formation, ajustements. Vous êtes autonomes. On reste disponibles.",
+    "method.5.title": "Suivi",
+    "method.5.desc": "Votre site est livré avec une documentation technique complète, un guide de continuité et un plan de suivi. Monitoring, ajustements, évolution — on reste dans le portrait.",
+
+    // Built to last
+    "lasting.title": "Construit pour durer",
+    "lasting.titleHighlight": "— pas juste pour lancer.",
+    "lasting.desc": "Chaque projet est livré avec sa documentation technique, son guide de continuité et un plan de maintenance. Votre site ne dépend pas d'une seule personne. Il est construit pour que n'importe quel développeur puisse le reprendre, le comprendre et le faire évoluer.",
 
     // Pitch
     "pitch.line1": "Nous concevons",
@@ -372,7 +379,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "compare.row6.label": "After delivery",
     "compare.row6.agency": "Support ticket",
     "compare.row6.freelance": "\"Call me Monday\"",
-    "compare.row6.studio": "We're still here",
+    "compare.row6.studio": "Full documentation + active follow-up plan",
 
     // Testimonials
     "testimonials.title": "What they",
@@ -406,6 +413,13 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.3.desc": "Development with AI as copilot. The same person who listened is the one who builds. Zero lost in translation.",
     "method.4.title": "Deliver",
     "method.4.desc": "Deployment, training, adjustments. You're autonomous. We stay available.",
+    "method.5.title": "Follow-up",
+    "method.5.desc": "Your site ships with full technical documentation, a continuity guide and a follow-up plan. Monitoring, adjustments, evolution — we stay in the picture.",
+
+    // Built to last
+    "lasting.title": "Built to last",
+    "lasting.titleHighlight": "— not just to launch.",
+    "lasting.desc": "Every project ships with its technical documentation, continuity guide and maintenance plan. Your site doesn't depend on one person. It's built so any developer can pick it up, understand it and evolve it.",
 
     // Pitch
     "pitch.line1": "We design",
