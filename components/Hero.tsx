@@ -31,6 +31,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   const { t } = useTranslation();
   const [showMosaic, setShowMosaic] = useState(false);
+  const [colorizedCount, setColorizedCount] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -82,6 +83,18 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
       return () => clearTimeout(timer);
     }
   }, [line4.isComplete]);
+
+  // Staggered B&W → color reveal
+  useEffect(() => {
+    if (!showMosaic) return;
+    const totalTiles = isMobile ? MOBILE_IDS.length : PROJECTS.length;
+    const delay = 4000 / totalTiles;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    for (let i = 0; i < totalTiles; i++) {
+      timers.push(setTimeout(() => setColorizedCount(i + 1), 800 + i * delay));
+    }
+    return () => timers.forEach(clearTimeout);
+  }, [showMosaic, isMobile]);
 
   const visibleProjects = isMobile
     ? PROJECTS.filter((p) => MOBILE_IDS.includes(p.id))
@@ -205,7 +218,15 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                   cursor: "pointer",
                 }}
               >
-                <div className="mosaic-item">
+                <div
+                  className="mosaic-item"
+                  style={{
+                    filter: index < colorizedCount
+                      ? "grayscale(0%) brightness(1)"
+                      : "grayscale(100%) brightness(0.7)",
+                    transition: "filter 0.8s ease",
+                  }}
+                >
                   <div className="mosaic-bar">
                     <div className="mosaic-dot" style={{ background: "#FF5F56" }} />
                     <div className="mosaic-dot" style={{ background: "#FFBD2E" }} />
