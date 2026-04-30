@@ -33,7 +33,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "team.titleHighlight": "Une seule équipe.",
     "team.pierre.name": "Pierre Michaud",
     "team.pierre.role": "Consultant numérique · Développeur IA",
-    "team.pierre.point1": "25 ans d'expérience — Radio-Canada, Olympiques",
+    "team.pierre.point1": "25 ans d'expérience : Radio-Canada, Olympiques",
     "team.pierre.point2": "Spécialiste vibe coding (Claude Code)",
     "team.pierre.point3": "Conception, construction et déploiement",
     "team.pierre.point4": "Sites web, applications, dashboards sur mesure",
@@ -41,7 +41,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "team.virginie.role": "Stratégie opérationnelle · Gestion de comptes",
     "team.virginie.point1": "Comprend vos processus avant qu'on code quoi que ce soit",
     "team.virginie.point2": "Administration, facturation, suivi de projets",
-    "team.virginie.point3": "Interface client principale — votre point de contact",
+    "team.virginie.point3": "Interface client principale, votre point de contact",
     "team.virginie.point4": "Expérience en production numérique et XR",
     "team.stat1.value": "3–4",
     "team.stat1.label": "semaines de livraison",
@@ -54,13 +54,13 @@ const translations: Record<Locale, Record<string, string>> = {
     "services.title": "Ce que nous",
     "services.titleHighlight": "faisons",
     "services.1.title": "Sites & Applis",
-    "services.1.desc": "Votre vieux WordPress vous donne des maux de tête. Nous construisons des sites vitrines ou plus complexes, applications, prototypes — en ligne en 3 semaines. Optimisés, rapides, construits avec l'IA.",
+    "services.1.desc": "Votre vieux WordPress vous donne des maux de tête. Nous construisons des sites vitrines ou plus complexes, applications, prototypes, en ligne en 3 semaines. Optimisés, rapides, construits avec l'IA.",
     "services.2.title": "Contenu & Marketing",
-    "services.2.desc": "Personne ne vous trouve sur Google? Vos pubs coûtent cher sans résultat clair. On prend le relais — SEO, contenu, pubs, conversions.",
+    "services.2.desc": "Personne ne vous trouve sur Google? Vos pubs coûtent cher sans résultat clair. On prend le relais : SEO, contenu, pubs, conversions.",
     "services.3.title": "Outils de gestion",
-    "services.3.desc": "Vos données sont dans 4 fichiers Excel et la tête de quelqu'un. On vous construit un dashboard sur mesure — vos KPIs, en temps réel, exportables.",
+    "services.3.desc": "Vos données sont dans 4 fichiers Excel et la tête de quelqu'un. On vous construit un dashboard sur mesure : vos KPIs, en temps réel, exportables.",
     "services.4.title": "Transformation",
-    "services.4.desc": "Vous savez que ça pourrait être mieux mais vous savez pas par où commencer. Audit, plan, CRM, exécution — on vous accompagne.",
+    "services.4.desc": "Vous savez que ça pourrait être mieux mais vous savez pas par où commencer. Audit, plan, CRM, exécution. On vous accompagne.",
 
     // Portfolio
     "portfolio.title": "Projets",
@@ -97,7 +97,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Demos section
     "portfolio.demos.title": "Essayez nos démos",
     "portfolio.demos.subtitle": "Trois outils livrés, trois réalités différentes.",
-    "portfolio.demos.disclaimer": "Données fictives — Démos interactives en ligne",
+    "portfolio.demos.disclaimer": "Données fictives · Démos interactives en ligne",
     "portfolio.demo1.name": "Dashboard Accueil",
     "portfolio.demo1.sector": "Secteur communautaire",
     "portfolio.demo1.desc": "Suivi opérationnel en temps réel. Données terrain et visualisation. KPIs, tendances, répartition des ressources.",
@@ -174,7 +174,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.titleHighlight": "méthode",
     "method.subtitle": "Du brief au produit. Sans détour.",
     "method.1.title": "Écoute",
-    "method.1.desc": "On s'assoit avec vous. On comprend vos irritants, vos processus, vos vrais besoins. Pas un cahier de charges — une conversation.",
+    "method.1.desc": "On s'assoit avec vous. On comprend vos irritants, vos processus, vos vrais besoins. Pas un cahier de charges. Une conversation.",
     "method.2.title": "Prototype",
     "method.2.desc": "En quelques jours, un premier prototype fonctionnel avec vos données. Vous voyez, vous touchez, vous validez.",
     "method.3.title": "Construction",
@@ -236,7 +236,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Metadata
     "meta.title": "Studio Micho - Produits numériques à vélocité IA",
-    "meta.description": "Produits numériques à vélocité IA. Sites, apps, dashboards et marketing — livrés en 3-4 semaines par une équipe de deux. Studio Micho × JAXA Production, Montréal.",
+    "meta.description": "Produits numériques à vélocité IA. Sites, apps, dashboards et marketing, livrés en 3-4 semaines par une équipe de deux. Studio Micho × JAXA Production, Montréal.",
   },
   en: {
     // Navigation
@@ -260,7 +260,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "team.titleHighlight": "One team.",
     "team.pierre.name": "Pierre Michaud",
     "team.pierre.role": "Digital Consultant · AI Developer",
-    "team.pierre.point1": "25 years experience — CBC/Radio-Canada, Olympics",
+    "team.pierre.point1": "25 years experience: CBC/Radio-Canada, Olympics",
     "team.pierre.point2": "Vibe coding specialist (Claude Code)",
     "team.pierre.point3": "Design, build and deploy",
     "team.pierre.point4": "Websites, applications, custom dashboards",
@@ -268,7 +268,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "team.virginie.role": "Operations Strategy · Account Management",
     "team.virginie.point1": "Understands your processes before we code anything",
     "team.virginie.point2": "Administration, invoicing, project tracking",
-    "team.virginie.point3": "Main client interface — your point of contact",
+    "team.virginie.point3": "Main client interface, your point of contact",
     "team.virginie.point4": "Experience in digital and XR production",
     "team.stat1.value": "3–4",
     "team.stat1.label": "weeks to delivery",
@@ -281,13 +281,13 @@ const translations: Record<Locale, Record<string, string>> = {
     "services.title": "What we",
     "services.titleHighlight": "do",
     "services.1.title": "Sites & Apps",
-    "services.1.desc": "Your old WordPress is giving you headaches. We build showcase or complex sites, applications, prototypes — online in 3 weeks. Optimized, fast, AI-built.",
+    "services.1.desc": "Your old WordPress is giving you headaches. We build showcase or complex sites, applications, prototypes, online in 3 weeks. Optimized, fast, AI-built.",
     "services.2.title": "Content & Marketing",
-    "services.2.desc": "Nobody finds you on Google. Your ads cost a fortune with no clear results. We take over — SEO, content, ads, conversions.",
+    "services.2.desc": "Nobody finds you on Google. Your ads cost a fortune with no clear results. We take over: SEO, content, ads, conversions.",
     "services.3.title": "Management Tools",
-    "services.3.desc": "Your data lives in 4 Excel files and someone's head. We build you a custom dashboard — your KPIs, real-time, exportable.",
+    "services.3.desc": "Your data lives in 4 Excel files and someone's head. We build you a custom dashboard: your KPIs, real-time, exportable.",
     "services.4.title": "Transformation",
-    "services.4.desc": "You know it could be better but don't know where to start. Audit, plan, CRM, execution — we walk you through it.",
+    "services.4.desc": "You know it could be better but don't know where to start. Audit, plan, CRM, execution. We walk you through it.",
 
     // Portfolio
     "portfolio.title": "Delivered",
@@ -324,7 +324,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Demos section
     "portfolio.demos.title": "Try our demos",
     "portfolio.demos.subtitle": "Three tools delivered, three different realities.",
-    "portfolio.demos.disclaimer": "Fictional data — Interactive online demos",
+    "portfolio.demos.disclaimer": "Fictional data · Interactive online demos",
     "portfolio.demo1.name": "Reception Dashboard",
     "portfolio.demo1.sector": "Community sector",
     "portfolio.demo1.desc": "Real-time operational tracking. Field data and visualization. KPIs, trends, resource allocation.",
@@ -401,7 +401,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "method.titleHighlight": "method",
     "method.subtitle": "From brief to product. No detours.",
     "method.1.title": "Listen",
-    "method.1.desc": "We sit down with you. We understand your pain points, your processes, your real needs. Not a spec doc — a conversation.",
+    "method.1.desc": "We sit down with you. We understand your pain points, your processes, your real needs. Not a spec doc. A conversation.",
     "method.2.title": "Prototype",
     "method.2.desc": "In a few days, a first working prototype with your data. You see it, you touch it, you validate it.",
     "method.3.title": "Build",
@@ -463,7 +463,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Metadata
     "meta.title": "Studio Micho - Digital products at AI velocity",
-    "meta.description": "Digital products at AI velocity. Sites, apps, dashboards and marketing — delivered in 3-4 weeks by a team of two. Studio Micho × JAXA Production, Montréal.",
+    "meta.description": "Digital products at AI velocity. Sites, apps, dashboards and marketing, delivered in 3-4 weeks by a team of two. Studio Micho × JAXA Production, Montréal.",
   },
 };
 

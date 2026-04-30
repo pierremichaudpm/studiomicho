@@ -96,7 +96,7 @@ const DemoCard: React.FC<DemoCardProps> = ({ name, sector, url, color, ctaLabel,
             color: color,
           }}
         >
-          {sector} — {ctaLabel} →
+          {sector} · {ctaLabel} →
         </div>
       </div>
     </a>
