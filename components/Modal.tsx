@@ -190,7 +190,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       color: "#4A90E2",
       imageUrl: "/images/aide-screenshot.jpg",
       mobileImageUrl: "/images/m-aide-screenshot.jpg",
-      url: "https://aideanonyme.netlify.app/",
+      url: "https://protoaide.netlify.app/",
     },
     {
       id: "cathfrancois",
@@ -234,7 +234,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       color: "#9B59B6",
       imageUrl: "/images/finance-screenshot.jpg",
       mobileImageUrl: "/images/m-finance-screenshot.jpg",
-      url: "https://demodashboardfinance.netlify.app/",
+      url: "https://tableaufinances.netlify.app/",
     },
     {
       id: "dashboard-comptable",
@@ -244,7 +244,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       color: "#F39C12",
       imageUrl: "/images/compta-screenshot.jpg",
       mobileImageUrl: "/images/m-compta-screenshot.jpg",
-      url: "https://comptablepro.netlify.app/",
+      url: "https://procompta.netlify.app/",
     },
   ];
 

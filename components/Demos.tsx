@@ -166,7 +166,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
           <DemoCard
             name={t("portfolio.demo1.name")}
             sector={t("portfolio.demo1.sector")}
-            url="https://accueildemo.netlify.app/"
+            url="https://demoaccueil.netlify.app/"
             color="#4A90E2"
             ctaLabel={t("portfolio.cta.demo")}
             imageUrl="/images/gestion-screenshot.jpg"
@@ -176,7 +176,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
           <DemoCard
             name={t("portfolio.demo2.name")}
             sector={t("portfolio.demo2.sector")}
-            url="https://demodashboardfinance.netlify.app/"
+            url="https://tableaufinances.netlify.app/"
             color="#9B59B6"
             ctaLabel={t("portfolio.cta.demo")}
             imageUrl="/images/finance-screenshot.jpg"
@@ -186,7 +186,7 @@ const Demos: React.FC<DemosProps> = ({ onOpenModal }) => {
           <DemoCard
             name={t("portfolio.demo3.name")}
             sector={t("portfolio.demo3.sector")}
-            url="https://comptablepro.netlify.app/"
+            url="https://procompta.netlify.app/"
             color="#F39C12"
             ctaLabel={t("portfolio.cta.demo")}
             imageUrl="/images/compta-screenshot.jpg"
