@@ -149,7 +149,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       color: "#F39C12",
       imageUrl: "/images/gestion-screenshot.jpg",
       mobileImageUrl: "/images/m-gestion-screenshot.jpg",
-      url: "/dashboards/",
+      url: "https://demoaccueil.netlify.app/",
     },
     // Additional projects
     {

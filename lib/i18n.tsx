@@ -111,8 +111,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo4.sector": "Galerie Nomade",
     "portfolio.demo4.desc": "Budgétisation rapide pour la location et l'installation d'œuvres d'art en itinérance.",
     // Gestion (legacy kept for modal)
-    "portfolio.gestion.name": "OUTILS DE GESTION",
-    "portfolio.gestion.desc": "Ce que votre ERP devrait faire mais ne fait pas. Dashboards opérationnels et financiers, construits sur mesure en quelques semaines.",
+    "portfolio.gestion.name": "COMPLÉMENT DE CRM",
+    "portfolio.gestion.desc": "Votre CRM est trop rigide pour votre réalité. Nous construisons des outils personnalisés branchés directement sur vos outils existants.",
     "portfolio.gestion.tag1": "Prototype",
     "portfolio.gestion.tag2": "Dashboards",
     "portfolio.gestion.tag3": "Sur mesure",
@@ -338,8 +338,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo4.sector": "Galerie Nomade",
     "portfolio.demo4.desc": "Quick budgeting for touring art exhibitions. Select a work, destination and season for a detailed cost estimate.",
     // Gestion (legacy)
-    "portfolio.gestion.name": "MANAGEMENT TOOLS",
-    "portfolio.gestion.desc": "What your ERP should do but doesn't. Operational and financial dashboards, custom-built in a few weeks.",
+    "portfolio.gestion.name": "CRM COMPLEMENT",
+    "portfolio.gestion.desc": "Your CRM is too rigid for how you actually work. We build custom tools that plug directly into your existing systems.",
     "portfolio.gestion.tag1": "Prototype",
     "portfolio.gestion.tag2": "Dashboards",
     "portfolio.gestion.tag3": "Custom",
