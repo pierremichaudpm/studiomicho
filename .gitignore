@@ -46,3 +46,7 @@ nohup.out
 
 # local netlify
 .netlify
+
+# cloudflare
+.wrangler/
+.open-next/
