@@ -73,7 +73,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.screenshot": "SCREENSHOT ICI",
     // CARI
     "portfolio.cari.name": "CARI SAINT-LAURENT",
-    "portfolio.cari.desc": "Site multilingue 12 langues, chatbot IA, système de rendez-vous, calendrier d'activités.",
+    "portfolio.cari.desc": "Refonte du site du CARI Saint-Laurent, organisme d'accueil et d'intégration des personnes immigrantes. Plateforme multilingue conçue autour de l'usager, avec chatbot IA et test de français en ligne.",
     "portfolio.cari.tag1": "Communautaire",
     "portfolio.cari.tag2": "12 langues",
     "portfolio.cari.tag3": "4 semaines",
@@ -110,6 +110,12 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo4.name": "Estimateur de tournée",
     "portfolio.demo4.sector": "Galerie Nomade",
     "portfolio.demo4.desc": "Budgétisation rapide pour la location et l'installation d'œuvres d'art en itinérance.",
+    // Lili Mallette
+    "portfolio.lilimallette.name": "LILI MALLETTE",
+    "portfolio.lilimallette.desc": "Site vitrine pour un projet de balados pour enfants. Lecture audio d'albums jeunesse, conçu autour de l'expérience d'écoute des tout-petits.",
+    "portfolio.lilimallette.tag1": "Jeunesse",
+    "portfolio.lilimallette.tag2": "Audio",
+    "portfolio.lilimallette.tag3": "Éducation",
     // Gestion (legacy kept for modal)
     "portfolio.gestion.name": "COMPLÉMENT DE CRM",
     "portfolio.gestion.desc": "Votre CRM est trop rigide pour votre réalité. Nous construisons des outils personnalisés branchés directement sur vos outils existants.",
@@ -300,7 +306,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.screenshot": "SCREENSHOT HERE",
     // CARI
     "portfolio.cari.name": "CARI SAINT-LAURENT",
-    "portfolio.cari.desc": "Multilingual site in 12 languages, AI chatbot, appointment system, activity calendar.",
+    "portfolio.cari.desc": "Redesign of the CARI Saint-Laurent website, an organization welcoming and integrating immigrants. User-centred multilingual platform with AI chatbot and online French language test.",
     "portfolio.cari.tag1": "Community",
     "portfolio.cari.tag2": "12 languages",
     "portfolio.cari.tag3": "4 weeks",
@@ -337,6 +343,12 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo4.name": "Tour Cost Estimator",
     "portfolio.demo4.sector": "Galerie Nomade",
     "portfolio.demo4.desc": "Quick budgeting for touring art exhibitions. Select a work, destination and season for a detailed cost estimate.",
+    // Lili Mallette
+    "portfolio.lilimallette.name": "LILI MALLETTE",
+    "portfolio.lilimallette.desc": "Showcase site for a children's podcast project. Audio reading of picture books, designed around the listening experience of young children.",
+    "portfolio.lilimallette.tag1": "Children",
+    "portfolio.lilimallette.tag2": "Audio",
+    "portfolio.lilimallette.tag3": "Education",
     // Gestion (legacy)
     "portfolio.gestion.name": "CRM COMPLEMENT",
     "portfolio.gestion.desc": "Your CRM is too rigid for how you actually work. We build custom tools that plug directly into your existing systems.",

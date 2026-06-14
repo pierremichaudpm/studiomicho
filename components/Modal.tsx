@@ -122,6 +122,26 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
   const projects: Project[] = [
     // Featured projects (from Portfolio)
     {
+      id: "cari",
+      name: t("portfolio.cari.name"),
+      description: t("portfolio.cari.desc"),
+      tags: [t("portfolio.cari.tag1"), t("portfolio.cari.tag2"), t("portfolio.cari.tag3")],
+      color: "#4A90E2",
+      imageUrl: "/images/cari-screenshot.png",
+      mobileImageUrl: "/images/m-cari-screenshot.png",
+      url: "https://cari-app-nttnm.ondigitalocean.app/",
+    },
+    {
+      id: "lilimallette",
+      name: t("portfolio.lilimallette.name"),
+      description: t("portfolio.lilimallette.desc"),
+      tags: [t("portfolio.lilimallette.tag1"), t("portfolio.lilimallette.tag2"), t("portfolio.lilimallette.tag3")],
+      color: "#9B59B6",
+      imageUrl: "/images/lilimallette-screenshot.png",
+      mobileImageUrl: "/images/m-lilimallette-screenshot.png",
+      url: "https://lilimallette.education/",
+    },
+    {
       id: "op2",
       name: "OP2",
       description: t("portfolio.op2.desc"),

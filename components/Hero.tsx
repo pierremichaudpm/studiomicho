@@ -13,8 +13,8 @@ interface MosaicProject {
 }
 
 const PROJECTS: MosaicProject[] = [
-  { id: "op2", name: "OP2", imageUrl: "/images/op2-screenshot.jpg", mobileImageUrl: "/images/m-op2-screenshot.jpg" },
-  { id: "tonic", name: "Groupe Tonic", imageUrl: "/images/tonic-screenshot.jpg", mobileImageUrl: "/images/m-tonic-screenshot.jpg" },
+  { id: "cari", name: "CARI St-Laurent", mobileName: "CARI", imageUrl: "/images/cari-screenshot.png", mobileImageUrl: "/images/m-cari-screenshot.png" },
+  { id: "lilimallette", name: "Lili Mallette", imageUrl: "/images/lilimallette-screenshot.png", mobileImageUrl: "/images/m-lilimallette-screenshot.png" },
   { id: "aurea", name: "Auréa RH Conseil", imageUrl: "/images/aurea-screenshot.jpg", mobileImageUrl: "/images/m-aurea-screenshot.jpg" },
   { id: "intexto", name: "InTexto", imageUrl: "/images/intexto-screenshot.jpg", mobileImageUrl: "/images/m-intexto-screenshot.jpg" },
   { id: "dashboard-finance", name: "Dashboard Financier", mobileName: "Finance", imageUrl: "/images/finance-screenshot.jpg", mobileImageUrl: "/images/m-finance-screenshot.jpg" },
@@ -22,7 +22,7 @@ const PROJECTS: MosaicProject[] = [
 ];
 
 // Desktop: all 6, Mobile: 4 with real mobile screenshots
-const MOBILE_IDS = ["op2", "tonic", "dashboard-finance", "dashboard-comptable"];
+const MOBILE_IDS = ["cari", "lilimallette", "dashboard-finance", "dashboard-comptable"];
 
 interface HeroProps {
   onOpenModal: (projectId: string) => void;
