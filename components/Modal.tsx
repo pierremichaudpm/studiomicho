@@ -127,8 +127,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       description: t("portfolio.cari.desc"),
       tags: [t("portfolio.cari.tag1"), t("portfolio.cari.tag2"), t("portfolio.cari.tag3")],
       color: "#4A90E2",
-      imageUrl: "/images/cari-screenshot.png",
-      mobileImageUrl: "/images/m-cari-screenshot.png",
+      imageUrl: "/images/cari-screenshot.jpg",
+      mobileImageUrl: "/images/m-cari-screenshot.jpg",
       url: "https://cari-app-nttnm.ondigitalocean.app/",
     },
     {
@@ -137,8 +137,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       description: t("portfolio.lilimallette.desc"),
       tags: [t("portfolio.lilimallette.tag1"), t("portfolio.lilimallette.tag2"), t("portfolio.lilimallette.tag3")],
       color: "#9B59B6",
-      imageUrl: "/images/lilimallette-screenshot.png",
-      mobileImageUrl: "/images/m-lilimallette-screenshot.png",
+      imageUrl: "/images/lilimallette-screenshot.jpg",
+      mobileImageUrl: "/images/m-lilimallette-screenshot.jpg",
       url: "https://lilimallette.education/",
     },
     {

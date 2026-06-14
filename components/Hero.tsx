@@ -13,8 +13,8 @@ interface MosaicProject {
 }
 
 const PROJECTS: MosaicProject[] = [
-  { id: "cari", name: "CARI St-Laurent", mobileName: "CARI", imageUrl: "/images/cari-screenshot.png", mobileImageUrl: "/images/m-cari-screenshot.png" },
-  { id: "lilimallette", name: "Lili Mallette", imageUrl: "/images/lilimallette-screenshot.png", mobileImageUrl: "/images/m-lilimallette-screenshot.png" },
+  { id: "cari", name: "CARI St-Laurent", mobileName: "CARI", imageUrl: "/images/cari-screenshot.jpg", mobileImageUrl: "/images/m-cari-screenshot.jpg" },
+  { id: "lilimallette", name: "Lili Mallette", imageUrl: "/images/lilimallette-screenshot.jpg", mobileImageUrl: "/images/m-lilimallette-screenshot.jpg" },
   { id: "aurea", name: "Auréa RH Conseil", imageUrl: "/images/aurea-screenshot.jpg", mobileImageUrl: "/images/m-aurea-screenshot.jpg" },
   { id: "intexto", name: "InTexto", imageUrl: "/images/intexto-screenshot.jpg", mobileImageUrl: "/images/m-intexto-screenshot.jpg" },
   { id: "dashboard-finance", name: "Dashboard Financier", mobileName: "Finance", imageUrl: "/images/finance-screenshot.jpg", mobileImageUrl: "/images/m-finance-screenshot.jpg" },
