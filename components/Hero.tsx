@@ -204,7 +204,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             alignItems: "center",
             justifyContent: "center",
             zIndex: 10,
-            padding: isMobile ? "calc(4.5rem + 35px) 1.5rem 5rem" : "calc(4rem + 40px) 4rem 4rem",
+            padding: isMobile ? "calc(70px + env(safe-area-inset-top, 44px) + 20px) 1.5rem 5rem" : "calc(4rem + 40px) 4rem 4rem",
           }}
         >
           <div className="mosaic-grid">
