@@ -127,7 +127,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, initialProjectId }) => {
       description: t("portfolio.cari.desc"),
       tags: [t("portfolio.cari.tag1"), t("portfolio.cari.tag2"), t("portfolio.cari.tag3")],
       color: "#4A90E2",
-      imageUrl: "/images/cari-screenshot.jpg",
+      imageUrl: "/images/cari-screenshot-v2.jpg",
       mobileImageUrl: "/images/m-cari-screenshot.jpg",
       url: "https://cari-app-nttnm.ondigitalocean.app/",
     },
