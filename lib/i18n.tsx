@@ -75,9 +75,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cari.name": "CARI SAINT-LAURENT",
     "portfolio.cari.desc": "Refonte du site du CARI Saint-Laurent, organisme d'accueil et d'intégration des personnes immigrantes. Plateforme multilingue conçue autour de l'usager, avec chatbot IA et test de français en ligne.",
     "portfolio.cari.tag1": "Communautaire",
-    "portfolio.cari.tag2": "12 langues",
-    "portfolio.cari.tag3": "4 semaines",
-    "portfolio.cari.stat": "12 langues · Chatbot · Calendrier · 4 semaines",
+    "portfolio.cari.tag2": "Chatbot",
+    "portfolio.cari.tag3": "Multilingue",
+    "portfolio.cari.stat": "Chatbot · Multilingue · Calendrier",
     // OP2
     "portfolio.op2.desc": "Firme d'ingénierie internationale. Nouveau site bilingue pour le marché nord-américain, livré en 5 semaines.",
     "portfolio.op2.tag1": "Ingénierie",
@@ -112,7 +112,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo4.desc": "Budgétisation rapide pour la location et l'installation d'œuvres d'art en itinérance.",
     // Lili Mallette
     "portfolio.lilimallette.name": "LILI MALLETTE",
-    "portfolio.lilimallette.desc": "Site vitrine pour un projet de balados pour enfants. Lecture audio d'albums jeunesse, conçu autour de l'expérience d'écoute des tout-petits.",
+    "portfolio.lilimallette.desc": "Jeanne, 4 ans, rend visite à sa voisine Lili Mallette, conteuse aux mille et une voix, dans son atelier, un lieu doux et magique où les valises cachent des mondes merveilleux.",
     "portfolio.lilimallette.tag1": "Jeunesse",
     "portfolio.lilimallette.tag2": "Audio",
     "portfolio.lilimallette.tag3": "Éducation",
@@ -308,9 +308,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cari.name": "CARI SAINT-LAURENT",
     "portfolio.cari.desc": "Redesign of the CARI Saint-Laurent website, an organization welcoming and integrating immigrants. User-centred multilingual platform with AI chatbot and online French language test.",
     "portfolio.cari.tag1": "Community",
-    "portfolio.cari.tag2": "12 languages",
-    "portfolio.cari.tag3": "4 weeks",
-    "portfolio.cari.stat": "12 languages · Chatbot · Calendar · 4 weeks",
+    "portfolio.cari.tag2": "Chatbot",
+    "portfolio.cari.tag3": "Multilingual",
+    "portfolio.cari.stat": "Chatbot · Multilingual · Calendar",
     // OP2
     "portfolio.op2.desc": "International engineering firm. New bilingual site for the North American market, delivered in 5 weeks.",
     "portfolio.op2.tag1": "Engineering",
@@ -345,7 +345,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.demo4.desc": "Quick budgeting for touring art exhibitions. Select a work, destination and season for a detailed cost estimate.",
     // Lili Mallette
     "portfolio.lilimallette.name": "LILI MALLETTE",
-    "portfolio.lilimallette.desc": "Showcase site for a children's podcast project. Audio reading of picture books, designed around the listening experience of young children.",
+    "portfolio.lilimallette.desc": "Jeanne, age 4, visits her neighbour Lili Mallette, a storyteller with a thousand voices, in her atelier — a soft, magical place where suitcases hide wonderful worlds.",
     "portfolio.lilimallette.tag1": "Children",
     "portfolio.lilimallette.tag2": "Audio",
     "portfolio.lilimallette.tag3": "Education",
