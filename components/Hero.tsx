@@ -271,6 +271,45 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           >
             {t("portfolio.more")}
           </button>
+
+          {/* IA Tourisme badge */}
+          <a
+            href="https://iatourisme.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              marginTop: isMobile ? "1.5rem" : "2rem",
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+              gap: isMobile ? "0.5rem" : "0.75rem",
+              textDecoration: "none",
+              animation: `mosaicFadeIn 0.6s ease-out ${(visibleProjects.length + 2) * 100}ms both`,
+              opacity: 0.65,
+              transition: "opacity 0.3s ease",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.65"; }}
+          >
+            <span style={{
+              color: "rgba(255,255,255,0.75)",
+              fontSize: isMobile ? "0.55rem" : "0.65rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              fontFamily: "'DM Sans', sans-serif",
+              textAlign: "center",
+            }}>
+              {t("hero.iatourisme")}
+            </span>
+            <img
+              src="/images/iatourisme-logo.png"
+              alt="IA Tourisme"
+              style={{
+                height: isMobile ? "14px" : "18px",
+                width: "auto",
+              }}
+            />
+          </a>
         </div>
       )}
 

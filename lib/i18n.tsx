@@ -70,6 +70,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cta.projects": "Voir les projets",
     "portfolio.cta.demo": "Essayer la démo",
     "portfolio.more": "Tous nos projets",
+    "hero.iatourisme": "Sélectionné au Répertoire des firmes d'accompagnement en IA du",
     "portfolio.screenshot": "SCREENSHOT ICI",
     // CARI
     "portfolio.cari.name": "CARI SAINT-LAURENT",
@@ -303,6 +304,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cta.projects": "View projects",
     "portfolio.cta.demo": "Try the demo",
     "portfolio.more": "All our projects",
+    "hero.iatourisme": "Selected in the AI Accompaniment Firms Directory by",
     "portfolio.screenshot": "SCREENSHOT HERE",
     // CARI
     "portfolio.cari.name": "CARI SAINT-LAURENT",
