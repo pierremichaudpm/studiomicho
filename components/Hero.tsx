@@ -285,14 +285,14 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               gap: isMobile ? "0.5rem" : "0.75rem",
               textDecoration: "none",
               animation: `mosaicFadeIn 0.6s ease-out ${(visibleProjects.length + 2) * 100}ms both`,
-              opacity: 0.65,
+              opacity: 0.85,
               transition: "opacity 0.3s ease",
             }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.65"; }}
           >
             <span style={{
-              color: "rgba(255,255,255,0.75)",
+              color: "rgba(255,255,255,0.95)",
               fontSize: isMobile ? "0.55rem" : "0.65rem",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
