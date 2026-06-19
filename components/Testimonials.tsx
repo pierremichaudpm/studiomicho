@@ -5,7 +5,7 @@ import { useTranslation } from "@/lib/i18n";
 
 const testimonials = [
   { key: "catherine", color: "#4A90E2", projectId: "tonic" },
-  { key: "thierry", color: "#9B59B6", projectId: "op2" },
+  { key: "noah", color: "#9B59B6" },
   { key: "leesa", color: "#F39C12" },
   { key: "said", color: "#4A90E2" },
   { key: "hugues", color: "#9B59B6", projectId: "aurea" },
