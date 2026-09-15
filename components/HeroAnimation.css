@@ -15,7 +15,7 @@
 .micho-hero-bubble-violet { width: 270px; height: 270px; right: 8%; top: 10%; background: #9B59B6; opacity: .035; animation: float 22s ease-in-out infinite reverse; }
 .micho-hero[data-paused="true"] .micho-hero-bubble { animation-play-state: paused; }
 .micho-hero button { font: inherit; cursor: pointer; }
-.micho-hero button:focus-visible, .micho-scroll-arrow:focus-visible, .micho-webgl:focus-visible { outline: 2px solid var(--cyan); outline-offset: 5px; }
+.micho-hero button:focus-visible, .micho-scroll-arrow:focus-visible, .micho-iatourisme-badge:focus-visible, .micho-webgl:focus-visible { outline: 2px solid var(--cyan); outline-offset: 5px; }
 .micho-hero button:disabled { cursor: default; opacity: .3; }
 .micho-assembly-stage { position: relative; width: 100%; height: clamp(590px, 69vh, 740px); }
 .micho-terminal { position: absolute; left: 0; top: 49%; width: 44%; max-width: 570px; transform: translateY(-50%); z-index: 2; }
@@ -35,7 +35,11 @@
 .micho-scene-loading { position: absolute; inset: 0; display: grid; place-content: center; padding: 70px; text-align: center; color: #8399b9; font: 12px/1.8 "JetBrains Mono", monospace; pointer-events: none; }
 .micho-rotate-hint { position: absolute; left: 50%; bottom: 3px; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; color: #879bbc; font: 11px "JetBrains Mono", monospace; pointer-events: none; white-space: nowrap; transition: opacity 1.5s ease; }
 .micho-rotate-hint > span { color: #a9c1e7; font-size: 19px; }
-.micho-hero-bottom { display: flex; justify-content: center; align-items: center; width: 100%; padding: 12px 0 16px; }
+.micho-hero-bottom { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 14px; width: 100%; padding: 12px 0 16px; }
+.micho-iatourisme-badge { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 12px; max-width: 100%; color: var(--white); text-decoration: none; opacity: .85; transition: opacity .3s ease; }
+.micho-iatourisme-badge:hover, .micho-iatourisme-badge:focus-visible { opacity: 1; }
+.micho-iatourisme-badge > span { font-size: .65rem; line-height: 1.8; letter-spacing: .08em; text-transform: uppercase; text-align: center; }
+.micho-iatourisme-badge img { display: block; height: 18px; width: auto; flex-shrink: 0; }
 .micho-scroll-arrow { display: grid; place-items: center; width: 52px; height: 52px; color: #4A90E2; border-radius: 5px; }
 .micho-scroll-arrow svg { width: 32px; height: 32px; animation: micho-arrow-flash 2.4s ease-in-out infinite; }
 .micho-scroll-arrow:hover { color: var(--cyan); }
@@ -78,6 +82,9 @@
   .micho-terminal { position: relative; order: 0; top: auto; left: auto; width: 100%; max-width: none; transform: none; margin-top: 31px; }
   .micho-terminal-copy { font-size: 18px; line-height: 1.7; gap: 16px; }
   .micho-hero-bottom { margin-top: 12px; padding-bottom: 12px; }
+  .micho-iatourisme-badge { flex-direction: column; gap: 8px; }
+  .micho-iatourisme-badge > span { max-width: 36em; font-size: .6rem; }
+  .micho-iatourisme-badge img { height: 16px; }
   .micho-playback-bar { gap: 10px; }
   .micho-playback-controls { gap: 5px; }
   .micho-playback-controls button { min-width: 40px; min-height: 44px; font-size: 10px; }

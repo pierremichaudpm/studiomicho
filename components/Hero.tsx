@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from "react";
+import Image from "next/image";
 import { useTranslation } from "@/lib/i18n";
+import iaTourismeLogo from "@/public/images/iatourisme-logo.png";
 import type { AssemblyController, AssemblyFrame } from "@/lib/hero-assembly";
 import { CHARACTER_MS, READING_PAUSE_MS, createHeroStory, type HeroStory, type StoryLine } from "@/lib/hero-story";
 import "./HeroAnimation.css";
@@ -132,6 +134,10 @@ export default function Hero() {
     </div>
     <div className="micho-hero-bottom">
       <a className="micho-scroll-arrow" href="#projets" aria-label={english ? "Discover the projects" : "Découvrir les projets"}><ControlIcon name="down" /></a>
+      <a className="micho-iatourisme-badge" href="https://iatourisme.com/" target="_blank" rel="noopener noreferrer">
+        <span>{t("hero.iatourisme")}</span>
+        <Image src={iaTourismeLogo} alt="IA Tourisme" />
+      </a>
     </div>
     <div className="micho-playback-bar">
       <div className="micho-playback-controls"><button onClick={replay} disabled={!ready} aria-label={english ? "Replay animation" : "Rejouer l’animation"}><ControlIcon name="replay" /><span>{english ? "Replay" : "Rejouer"}</span></button><button onClick={togglePause} disabled={!ready} aria-label={paused ? (english ? "Resume 3D animation" : "Reprendre l’animation 3D") : (english ? "Pause 3D animation" : "Mettre l’animation 3D en pause")} aria-pressed={paused}><ControlIcon name={paused ? "play" : "pause"} /></button></div>
