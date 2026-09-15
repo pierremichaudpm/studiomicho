@@ -21,11 +21,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.method": "Méthode",
     "nav.contact": "Contact",
 
-    // Hero (unchanged)
-    "hero.line1": '<span style="color:#4A90E2">></span> Votre site date, vos <span class="gradient-text">outils</span> ne suivent plus.',
-    "hero.line2": '<span style="color:#4A90E2">></span> On règle ça en <span class="gradient-text">quelques semaines</span>.',
-    "hero.line3": '<span style="color:#4A90E2">></span> Du <span class="gradient-text">sur-mesure</span> propulsé par l\'IA.',
-    "hero.line4": '<span style="color:#4A90E2">></span> Simple, du premier appel au <span class="gradient-text">produit final</span>.',
+    // Hero
+    "hero.line1": '<span style="color:#4A90E2">></span> Votre site date, vos <span class="gradient-text">outils de gestion</span> ne suivent plus.',
+    "hero.line2": '<span style="color:#4A90E2">></span> On règle ça avec du sur-mesure en <span class="gradient-text">quelques semaines</span>.',
+    "hero.line3": '<span style="color:#4A90E2">></span> Simple, du premier appel au <span class="gradient-text">produit final</span>.',
 
     // Team Duo
     "team.subtitle": "Qui nous sommes",
@@ -69,7 +68,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cta.default": "Voir le projet",
     "portfolio.cta.projects": "Voir les projets",
     "portfolio.cta.demo": "Essayer la démo",
-    "portfolio.more": "Tous nos projets",
+    "portfolio.more": "Tous les projets",
     "hero.iatourisme": "Sélectionné au Répertoire des firmes d'accompagnement en IA du Groupe",
     "portfolio.screenshot": "SCREENSHOT ICI",
     // CARI
@@ -256,10 +255,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.line1": '<span style="color:#4A90E2">></span> Your site is dated, your <span class="gradient-text">tools</span> can\'t keep up.',
-    "hero.line2": '<span style="color:#4A90E2">></span> We fix that in <span class="gradient-text">a few weeks</span>.',
-    "hero.line3": '<span style="color:#4A90E2">></span> <span class="gradient-text">Custom-built</span>, AI-powered.',
-    "hero.line4": '<span style="color:#4A90E2">></span> Simple: from first call to <span class="gradient-text">final product</span>.',
+    "hero.line1": '<span style="color:#4A90E2">></span> Your site is dated, your <span class="gradient-text">management tools</span> can\'t keep up.',
+    "hero.line2": '<span style="color:#4A90E2">></span> We fix that with a custom solution in <span class="gradient-text">a few weeks</span>.',
+    "hero.line3": '<span style="color:#4A90E2">></span> Simple: from first call to <span class="gradient-text">final product</span>.',
 
     // Team Duo
     "team.subtitle": "Who we are",
@@ -303,7 +301,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "portfolio.cta.default": "View project",
     "portfolio.cta.projects": "View projects",
     "portfolio.cta.demo": "Try the demo",
-    "portfolio.more": "All our projects",
+    "portfolio.more": "All projects",
     "hero.iatourisme": "Selected in the AI Accompaniment Firms Directory by the Group",
     "portfolio.screenshot": "SCREENSHOT HERE",
     // CARI

@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import VerticalBrand from "@/components/VerticalBrand";
 import LanguageToggle from "@/components/LanguageToggle";
 import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 import TeamDuo from "@/components/TeamDuo";
 import Services from "@/components/Services";
 import Demos from "@/components/Demos";
@@ -33,9 +34,8 @@ export default function Home() {
       <Navigation />
       <VerticalBrand onNavigate={closeModal} />
       <LanguageToggle />
-      <div id="projets">
-        <Hero onOpenModal={openModal} />
-      </div>
+      <Hero />
+      <Projects onOpenModal={openModal} />
       <div id="services">
         <Services />
       </div>

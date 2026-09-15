@@ -8,7 +8,7 @@ const SECTION_COLORS: Record<string, string> = {
   equipe: "#0c1626",
   services: "#0a1222",
   demos: "#081020",
-  projets: "#081020",
+  projets: "#0c1626",
   avantage: "#060e1c",
   methode: "#050c18",
   contact: "#030712",
@@ -17,13 +17,13 @@ const SECTION_COLORS: Record<string, string> = {
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [headerBg, setHeaderBg] = useState("rgba(3, 7, 18, 0.98)");
+  const [atTop, setAtTop] = useState(true);
   const headerRef = useRef<HTMLElement>(null);
   const { t, locale, setLocale } = useTranslation();
 
   useEffect(() => {
-    if (typeof window === "undefined" || window.innerWidth >= 968) return;
-
     const update = () => {
+      setAtTop(window.scrollY < 12);
       const sections = document.querySelectorAll("section[id], .hero");
       const headerBottom = 70;
       let current = "#030712";
@@ -40,8 +40,12 @@ const Navigation: React.FC = () => {
     };
 
     window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
     update();
-    return () => window.removeEventListener("scroll", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   const menuItems = [
@@ -74,8 +78,8 @@ const Navigation: React.FC = () => {
           left: 0,
           width: "100%",
           height: "70px",
-          background: isOpen ? "rgba(3, 7, 18, 0.98)" : headerBg,
-          backdropFilter: "blur(10px)",
+          background: isOpen ? "rgba(3, 7, 18, 0.98)" : atTop ? "transparent" : headerBg,
+          backdropFilter: atTop && !isOpen ? "none" : "blur(10px)",
           zIndex: 2001,
           display: "none",
           alignItems: "center",

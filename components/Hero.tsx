@@ -1,320 +1,140 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useTypewriter } from "@/hooks/useTypewriter";
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import { useTranslation } from "@/lib/i18n";
+import type { AssemblyController, AssemblyFrame } from "@/lib/hero-assembly";
+import { CHARACTER_MS, READING_PAUSE_MS, createHeroStory, type HeroStory, type StoryLine } from "@/lib/hero-story";
+import "./HeroAnimation.css";
 
-interface MosaicProject {
-  id: string;
-  name: string;
-  mobileName?: string;
-  imageUrl: string;
-  mobileImageUrl?: string;
-}
-
-const PROJECTS: MosaicProject[] = [
-  { id: "cari", name: "CARI St-Laurent", mobileName: "CARI", imageUrl: "/images/cari-screenshot-v2.jpg", mobileImageUrl: "/images/m-cari-screenshot.jpg" },
-  { id: "lilimallette", name: "Lili Mallette", imageUrl: "/images/lilimallette-screenshot.jpg", mobileImageUrl: "/images/m-lilimallette-screenshot.jpg" },
-  { id: "aurea", name: "Auréa RH Conseil", imageUrl: "/images/aurea-screenshot.jpg", mobileImageUrl: "/images/m-aurea-screenshot.jpg" },
-  { id: "intexto", name: "InTexto", imageUrl: "/images/intexto-screenshot.jpg", mobileImageUrl: "/images/m-intexto-screenshot.jpg" },
-  { id: "dashboard-finance", name: "Dashboard Financier", mobileName: "Finance", imageUrl: "/images/finance-screenshot.jpg", mobileImageUrl: "/images/m-finance-screenshot.jpg" },
-  { id: "dashboard-comptable", name: "Dashboard Comptabilité", mobileName: "Comptabilité", imageUrl: "/images/compta-screenshot.jpg", mobileImageUrl: "/images/m-compta-screenshot.jpg" },
-];
-
-// Desktop: all 6, Mobile: 4 with real mobile screenshots
-const MOBILE_IDS = ["cari", "lilimallette", "dashboard-finance", "dashboard-comptable"];
-
-interface HeroProps {
-  onOpenModal: (projectId: string) => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
-  const { t } = useTranslation();
-  const [showMosaic, setShowMosaic] = useState(false);
-  const [colorizedCount, setColorizedCount] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
+function useTerminalClock(story: HeroStory, replay: number, root: RefObject<HTMLElement | null>) {
+  const [time, setTime] = useState(0);
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 968);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+    let previous = 0;
+    let elapsed = 0;
+    let visible = true;
+    let bucket = -1;
+    function tick(now: number) {
+      if (media.matches) elapsed = story.copyEnd + 1;
+      else if (previous) elapsed += Math.min(now - previous, 80);
+      previous = now;
+      const current = Math.min(elapsed, story.copyEnd + 1);
+      const next = Math.floor(current / CHARACTER_MS);
+      if (next !== bucket || current === story.copyEnd + 1) { bucket = next; setTime(current); }
+      if (current < story.copyEnd + 1 && visible && !document.hidden) frame = requestAnimationFrame(tick);
+    }
+    function resume() {
+      cancelAnimationFrame(frame);
+      previous = 0;
+      if (visible && !document.hidden) frame = requestAnimationFrame(tick);
+    }
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; resume(); });
+    if (root.current) observer.observe(root.current);
+    document.addEventListener("visibilitychange", resume);
+    media.addEventListener("change", resume);
+    resume();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", resume);
+      media.removeEventListener("change", resume);
+    };
+  }, [story, replay, root]);
+  return time;
+}
+
+function TypedLine({ line, time, last }: { line: StoryLine; time: number; last: boolean }) {
+  const count = Math.max(0, Math.floor((time - line.start) / CHARACTER_MS));
+  const active = time >= line.start && (time < line.end + READING_PAUSE_MS || last);
+  return <div className="micho-terminal-line">
+    <span className="micho-prompt" style={{ opacity: time >= line.start ? 1 : 0.2 }}>{">"}</span>
+    <div className="micho-line-content"><span className="micho-line-reserve">{line.segments.map((segment, index) => <span className={segment.accent ? "gradient-text" : undefined} key={index}>{segment.text}</span>)}</span><span className="micho-line-typed">
+      {line.segments.map((segment, index) => <span className={segment.accent ? "gradient-text" : undefined} key={index}>{segment.text.slice(0, Math.max(0, count - segment.offset))}</span>)}
+      {active && <span className="micho-caret" />}
+    </span></div>
+  </div>;
+}
+
+function ControlIcon({ name }: { name: "replay" | "pause" | "play" | "down" }) {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {name === "replay" && <path d="M3 10a9 9 0 1 1 2 8M3 4v6h6" />}
+    {name === "pause" && <path d="M8 5v14M16 5v14" />}
+    {name === "play" && <path d="m8 4 12 8-12 8Z" />}
+    {name === "down" && <path d="M12 4v16m-7-7 7 7 7-7" />}
+  </svg>;
+}
+
+export default function Hero() {
+  const { t, locale } = useTranslation();
+  const english = locale === "en";
+  const root = useRef<HTMLElement>(null);
+  const canvasHost = useRef<HTMLDivElement>(null);
+  const controller = useRef<AssemblyController | null>(null);
+  const pausedRef = useRef(false);
+  const [paused, setPaused] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [textReplay, setTextReplay] = useState(0);
+  const [reduced, setReduced] = useState(false);
+  const copyKey = [1, 2, 3].map((index) => t(`hero.line${index}`)).join("\n");
+  const story = useMemo(() => createHeroStory(copyKey.split("\n")), [copyKey]);
+  const { lines } = story;
+  const time = useTerminalClock(story, textReplay, root);
+  const onFrame = useCallback(({ reduced }: AssemblyFrame) => {
+    setReduced(reduced);
   }, []);
 
-  const line1 = useTypewriter({
-    text: t("hero.line1"),
-    speed: 25,
-    delay: 500,
-    showCursor: true,
-    permanentCursor: false,
-  });
-
-  const line2 = useTypewriter({
-    text: t("hero.line2"),
-    speed: 25,
-    delay: 500,
-    showCursor: true,
-    permanentCursor: false,
-    enabled: line1.isComplete,
-  });
-
-  const line3 = useTypewriter({
-    text: t("hero.line3"),
-    speed: 23,
-    delay: 400,
-    showCursor: true,
-    permanentCursor: false,
-    enabled: line2.isComplete,
-  });
-
-  const line4 = useTypewriter({
-    text: t("hero.line4"),
-    speed: 23,
-    delay: 200,
-    showCursor: true,
-    permanentCursor: true,
-    enabled: line3.isComplete,
-  });
-
-  // Trigger mosaic after typewriter finishes
   useEffect(() => {
-    if (line4.isComplete) {
-      const timer = setTimeout(() => setShowMosaic(true), 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [line4.isComplete]);
+    let cancelled = false;
+    let instance: AssemblyController | undefined;
+    import("@/lib/hero-assembly").then(({ mountAssembly }) => {
+      if (cancelled || !canvasHost.current) return;
+      instance = mountAssembly(canvasHost.current, onFrame);
+      controller.current = instance;
+      instance.pause(pausedRef.current);
+      setReady(true);
+    }).catch((error: unknown) => {
+      if (cancelled) return;
+      console.error("Hero 3D could not initialize", error);
+      setFailed(true);
+    });
+    return () => { cancelled = true; instance?.dispose(); controller.current = null; };
+  }, [onFrame]);
 
-  // Staggered B&W → color reveal
-  useEffect(() => {
-    if (!showMosaic) return;
-    const totalTiles = isMobile ? MOBILE_IDS.length : PROJECTS.length;
-    const delay = 4000 / totalTiles;
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    for (let i = 0; i < totalTiles; i++) {
-      timers.push(setTimeout(() => setColorizedCount(i + 1), 800 + i * delay));
-    }
-    return () => timers.forEach(clearTimeout);
-  }, [showMosaic, isMobile]);
+  function togglePause() {
+    pausedRef.current = !pausedRef.current;
+    setPaused(pausedRef.current);
+    controller.current?.pause(pausedRef.current);
+  }
+  function replay() {
+    setTextReplay((value) => value + 1);
+    pausedRef.current = false;
+    setPaused(false);
+    controller.current?.replay();
+  }
 
-  const visibleProjects = isMobile
-    ? PROJECTS.filter((p) => MOBILE_IDS.includes(p.id))
-    : PROJECTS;
-
-  return (
-    <section
-      className="hero"
-      style={{
-        background:
-          "linear-gradient(135deg, #0f1a2e 0%, #162544 100%)",
-        position: "relative",
-        flexDirection: "column",
-      }}
-    >
-      {/* Floating shapes */}
-      <div
-        style={{
-          position: "absolute",
-          width: "350px",
-          height: "350px",
-          borderRadius: "50%",
-          background: "#4A90E2",
-          opacity: 0.12,
-          left: "-5%",
-          bottom: "10%",
-          animation: "float 12s ease-in-out infinite",
-          zIndex: 1,
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          width: "250px",
-          height: "250px",
-          borderRadius: "50%",
-          background: "#9B59B6",
-          opacity: 0.1,
-          right: "5%",
-          top: "15%",
-          animation: "float 10s ease-in-out infinite reverse",
-          zIndex: 1,
-        }}
-      />
-
-      {/* Terminal */}
-      <h1
-        className="terminal"
-        style={{
-          maxWidth: "900px",
-          width: "100%",
-          fontFamily: "'JetBrains Mono', monospace",
-          fontSize: "1.8rem",
-          lineHeight: "1.8",
-          position: "relative",
-          zIndex: 10,
-          opacity: showMosaic ? 0 : 1,
-          transition: "opacity 0.8s ease",
-          pointerEvents: showMosaic ? "none" : "auto",
-          fontWeight: 400,
-          margin: 0,
-        }}
-      >
-        <div
-          style={{
-            fontSize: "0.75rem",
-            color: "rgba(255,255,255,0.25)",
-            marginBottom: "1.5rem",
-            letterSpacing: "0.05em",
-          }}
-        >
-          ~/studio-micho $
-        </div>
-        <div
-          className="terminal-line"
-          style={{ minHeight: "2.7rem", marginBottom: "1.2rem" }}
-          dangerouslySetInnerHTML={{ __html: line1.displayedText }}
-        />
-        <div
-          className="terminal-line"
-          style={{ minHeight: "2.7rem", marginBottom: "1.2rem" }}
-          dangerouslySetInnerHTML={{ __html: line2.displayedText }}
-        />
-        <div
-          className="terminal-line"
-          style={{ minHeight: "2.7rem" }}
-          dangerouslySetInnerHTML={{ __html: line3.displayedText }}
-        />
-        <div
-          className="terminal-line"
-          style={{ minHeight: "2.7rem" }}
-          dangerouslySetInnerHTML={{ __html: line4.displayedText }}
-        />
-      </h1>
-
-      {/* Mosaic */}
-      {showMosaic && (
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: isMobile ? "flex-start" : "center",
-            zIndex: 10,
-            padding: isMobile ? "110px 1.5rem 5rem" : "calc(4rem + 40px) 4rem 4rem",
-          }}
-        >
-          <div className="mosaic-grid">
-            {visibleProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className="mosaic-cell"
-                onClick={() => onOpenModal(project.id)}
-                style={{
-                  animation: `mosaicFadeIn 0.6s ease-out ${index * 100}ms both`,
-                  cursor: "pointer",
-                }}
-              >
-                <div
-                  className="mosaic-item"
-                  style={{
-                    filter: index < colorizedCount
-                      ? "grayscale(0%) brightness(1)"
-                      : "grayscale(100%) brightness(0.7)",
-                    transition: "filter 0.8s ease",
-                  }}
-                >
-                  <div className="mosaic-bar">
-                    <div className="mosaic-dot" style={{ background: "#FF5F56" }} />
-                    <div className="mosaic-dot" style={{ background: "#FFBD2E" }} />
-                    <div className="mosaic-dot" style={{ background: "#27C93F" }} />
-                  </div>
-                  <img
-                    src={isMobile && project.mobileImageUrl ? project.mobileImageUrl : project.imageUrl}
-                    alt={project.name}
-                    loading="eager"
-                    style={{ paddingTop: "20px" }}
-                  />
-                </div>
-                <div className="mosaic-label">{isMobile && project.mobileName ? project.mobileName : project.name}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Plus de projets button */}
-          <button
-            onClick={() => onOpenModal("")}
-            style={{
-              marginTop: isMobile ? "calc(0.8rem + 12px)" : "2.5rem",
-              padding: isMobile ? "0.5rem 1.5rem" : "1rem 3rem",
-              background: "transparent",
-              border: isMobile ? "1px solid #4A90E2" : "2px solid #4A90E2",
-              color: "#4A90E2",
-              fontSize: isMobile ? "0.65rem" : "1rem",
-              fontWeight: 700,
-              letterSpacing: "1px",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              animation: `mosaicFadeIn 0.6s ease-out ${visibleProjects.length * 100}ms both`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#4A90E2";
-              e.currentTarget.style.color = "#4A90E2";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.25)";
-              e.currentTarget.style.color = "rgba(255, 255, 255, 0.7)";
-            }}
-          >
-            {t("portfolio.more")}
-          </button>
-
-          {/* IA Tourisme badge */}
-          <a
-            href="https://iatourisme.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              marginTop: isMobile ? "1.5rem" : "2rem",
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              alignItems: "center",
-              gap: isMobile ? "0.5rem" : "0.75rem",
-              textDecoration: "none",
-              animation: `mosaicFadeIn 0.6s ease-out ${(visibleProjects.length + 2) * 100}ms both`,
-              opacity: 0.85,
-              transition: "opacity 0.3s ease",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.65"; }}
-          >
-            <span style={{
-              color: "rgba(255,255,255,0.95)",
-              fontSize: isMobile ? "0.55rem" : "0.65rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              fontFamily: "'DM Sans', sans-serif",
-              textAlign: "center",
-            }}>
-              {t("hero.iatourisme")}
-            </span>
-            <img
-              src="/images/iatourisme-logo.png"
-              alt="IA Tourisme"
-              style={{
-                height: isMobile ? "14px" : "18px",
-                width: "auto",
-              }}
-            />
-          </a>
-        </div>
-      )}
-
-    </section>
-  );
-};
-
-export default Hero;
+  return <section id="hero" className="hero micho-hero" ref={root} data-paused={paused} data-reduced={reduced}>
+    <div className="micho-hero-bubbles" aria-hidden="true">
+      <span className="micho-hero-bubble micho-hero-bubble-blue" />
+      <span className="micho-hero-bubble micho-hero-bubble-violet" />
+    </div>
+    <div className="micho-assembly-stage">
+      <div className="micho-terminal">
+        <h1 className="micho-sr-only">{lines.map((line) => line.text).join(" ")}</h1>
+        <div className="micho-terminal-copy" aria-hidden="true">{lines.map((line, index) => <TypedLine key={index} line={line} time={time} last={index === lines.length - 1} />)}</div>
+      </div>
+      <div className="micho-assembly-viewport">
+        <div className="micho-webgl" ref={canvasHost} tabIndex={ready ? 0 : -1} role="region" aria-roledescription={english ? "Interactive 3D model" : "Modèle 3D interactif"} aria-label={english ? "Five interlocking pieces. The front shows interfaces; the back reveals a detailed backend diagram. Drag or use the arrow keys to rotate through 360 degrees. Home resets the view." : "Cinq pièces imbriquées. La façade montre des interfaces ; le dos révèle un schéma détaillé du backend. Glissez ou utilisez les flèches pour tourner à 360 degrés. La touche Début recentre la vue."} />
+        {!ready && <div className="micho-scene-loading" role="status">{failed ? (english ? "The 3D scene could not load. Reload with WebGL enabled." : "La scène 3D n’a pas pu charger. Rechargez avec WebGL activé.") : (english ? "Preparing the scene…" : "La scène prend forme…")}</div>}
+        {ready && <div className="micho-rotate-hint"><span>↔</span>{english ? "Drag to explore" : "Glissez pour explorer"}</div>}
+      </div>
+    </div>
+    <div className="micho-hero-bottom">
+      <a className="micho-scroll-arrow" href="#projets" aria-label={english ? "Discover the projects" : "Découvrir les projets"}><ControlIcon name="down" /></a>
+    </div>
+    <div className="micho-playback-bar">
+      <div className="micho-playback-controls"><button onClick={replay} disabled={!ready} aria-label={english ? "Replay animation" : "Rejouer l’animation"}><ControlIcon name="replay" /><span>{english ? "Replay" : "Rejouer"}</span></button><button onClick={togglePause} disabled={!ready} aria-label={paused ? (english ? "Resume 3D animation" : "Reprendre l’animation 3D") : (english ? "Pause 3D animation" : "Mettre l’animation 3D en pause")} aria-pressed={paused}><ControlIcon name={paused ? "play" : "pause"} /></button></div>
+    </div>
+  </section>;
+}
