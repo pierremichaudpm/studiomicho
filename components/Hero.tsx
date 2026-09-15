@@ -79,7 +79,7 @@ export default function Hero() {
   const [failed, setFailed] = useState(false);
   const [textReplay, setTextReplay] = useState(0);
   const [reduced, setReduced] = useState(false);
-  const copyKey = [1, 2, 3].map((index) => t(`hero.line${index}`)).join("\n");
+  const copyKey = [1, 2].map((index) => t(`hero.line${index}`)).join("\n");
   const story = useMemo(() => createHeroStory(copyKey.split("\n")), [copyKey]);
   const { lines } = story;
   const time = useTerminalClock(story, textReplay, root);

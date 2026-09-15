@@ -24,7 +24,6 @@ const translations: Record<Locale, Record<string, string>> = {
     // Hero
     "hero.line1": '<span style="color:#4A90E2">></span> Votre site date, vos <span class="gradient-text">outils de gestion</span> ne suivent plus.',
     "hero.line2": '<span style="color:#4A90E2">></span> On règle ça avec du sur-mesure en <span class="gradient-text">quelques semaines</span>.',
-    "hero.line3": '<span style="color:#4A90E2">></span> Simple, du premier appel au <span class="gradient-text">produit final</span>.',
 
     // Team Duo
     "team.subtitle": "Qui nous sommes",
@@ -257,7 +256,6 @@ const translations: Record<Locale, Record<string, string>> = {
     // Hero
     "hero.line1": '<span style="color:#4A90E2">></span> Your site is dated, your <span class="gradient-text">management tools</span> can\'t keep up.',
     "hero.line2": '<span style="color:#4A90E2">></span> We fix that with a custom solution in <span class="gradient-text">a few weeks</span>.',
-    "hero.line3": '<span style="color:#4A90E2">></span> Simple: from first call to <span class="gradient-text">final product</span>.',
 
     // Team Duo
     "team.subtitle": "Who we are",

@@ -8,7 +8,7 @@ Le hero validé dans le dossier voisin `animation hero` est intégré au site pr
 
 L’ordre des premières sections est désormais :
 
-1. Hero avec les trois phrases et le modèle 3D, sur deux bulles bleue et violette très discrètes (4,5 % et 3,5 % d’opacité) ; la flèche lumineuse descend vers `#projets`.
+1. Hero avec deux phrases et le modèle 3D, sur deux bulles bleue et violette très discrètes (4,5 % et 3,5 % d’opacité). La typographie s’adapte de 18–24 px sur mobile à 30–34 px sur grand écran, avec un curseur proportionnel ; la flèche lumineuse descend vers `#projets`.
 2. **Projets** : les six vignettes de la mosaïque originale, sur trois colonnes sur ordinateur et deux sur mobile. Le fond bleu nuit alterne avec les sections voisines, avec les bulles flottantes bleues, violettes et ambrées du site et son dégradé cyan–magenta–jaune sur le titre. Chaque vignette ouvre sa fiche ; **Tous les projets**, en bas, ouvre le portfolio complet.
 3. **Ce que nous faisons**, puis les autres sections existantes.
 
