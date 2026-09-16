@@ -4,7 +4,7 @@ Site Studio Micho en React et Next.js.
 
 ## Hero 3D et projets — intégration de l’essai 08
 
-Le hero validé dans le dossier voisin `animation hero` est intégré au site principal, en français et en anglais. Les cinq pièces s’assemblent avec un aperçu furtif du backend, puis restent de face, orientées vers le typewriter : vers la gauche sur ordinateur et légèrement vers le haut sur mobile. Le typewriter garde son rythme indépendant ; la rotation manuelle, la pause et la relecture restent disponibles.
+Le hero validé dans le dossier voisin `animation hero` est intégré au site principal, en français et en anglais. Les cinq pièces s’assemblent avec un aperçu furtif du backend, puis restent de face, orientées vers le typewriter : vers la gauche sur ordinateur et légèrement vers le haut sur mobile. Le typewriter garde son rythme indépendant. Quatre flèches permettent de tourner le modèle dans toutes les directions, comme le glissement à la souris ou au toucher et les touches fléchées ; la touche Début recentre la vue. La pièce bleue présente un site pour ordinateur, la jaune un site mobile et l’orange un graphique circulaire ; le graphique rose est conservé. Les commandes de lecture et le texte d’aide ont été retirés.
 
 L’ordre des premières sections est désormais :
 

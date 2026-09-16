@@ -3,10 +3,11 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 import { ASSEMBLY_END, createHeroModules } from "./hero-modules";
 
-export type AssemblyFrame = { reduced: boolean };
+const RESTING_POSE = { tilt: 0.16, turn: -0.32, roll: 0.01 };
+
+export type RotationDirection = "left" | "right" | "up" | "down";
 export type AssemblyController = {
-  pause: (value: boolean) => void;
-  replay: () => void;
+  rotate: (direction: RotationDirection) => void;
   dispose: () => void;
 };
 
@@ -18,7 +19,7 @@ export function assemblyPeek(seconds: number) {
 }
 
 /** A real lit 3D assembly. All pieces dock in one coordinate system, with physical depth. */
-export function mountAssembly(host: HTMLElement, onFrame: (frame: AssemblyFrame) => void): AssemblyController {
+export function mountAssembly(host: HTMLElement): AssemblyController {
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
   renderer.setClearColor(0x000000, 0);
@@ -108,20 +109,20 @@ export function mountAssembly(host: HTMLElement, onFrame: (frame: AssemblyFrame)
   ground.receiveShadow = true;
   scene.add(ground);
 
-  let stopped = false;
   let disposed = false;
   let contextLost = false;
   let visible = true;
   let elapsed = 0;
   let previous = 0;
   let frame = 0;
-  let reportedReduced: boolean | undefined;
   let mobile = false;
-  let drag = false;
+  let activePointer: number | null = null;
   let pointerX = 0;
-  let userRotation = 0;
-  let smoothRotation = 0;
-  let previewOffset = 0;
+  let pointerY = 0;
+  const userRotation = new THREE.Quaternion();
+  const smoothRotation = new THREE.Quaternion();
+  const rotationStep = new THREE.Quaternion();
+  const rotationAxis = new THREE.Vector3();
   let inspected = false;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   const stacked = window.matchMedia("(max-width: 700px)");
@@ -145,23 +146,25 @@ export function mountAssembly(host: HTMLElement, onFrame: (frame: AssemblyFrame)
     if (disposed || contextLost) return;
     const delta = previous ? Math.min((now - previous) / 1000, 0.05) : 0;
     previous = now;
-    if (!stopped && visible && !document.hidden && !reduced.matches) elapsed = Math.min(ASSEMBLY_END,elapsed+delta);
+    if (visible && !document.hidden && !reduced.matches) elapsed = Math.min(ASSEMBLY_END,elapsed+delta);
     const seconds = reduced.matches ? ASSEMBLY_END : elapsed;
     assembly.update(seconds);
-    smoothRotation = THREE.MathUtils.damp(smoothRotation, userRotation, 6, delta || 1 / 60);
     // Face the copy on the left, or tilt upward toward it in the stacked layout.
-    const sway = Math.sin(seconds/32*Math.PI*2)*(1-THREE.MathUtils.smootherstep(seconds,11.5,ASSEMBLY_END));
-    previewOffset = inspected ? 0 : -assemblyPeek(seconds);
-    rig.rotation.set((stacked.matches ? -1 : 1) * (0.27 + sway * 0.065),
-      -0.5 - sway * 0.14 + smoothRotation + previewOffset, 0.04);
+    // Ease into the resting pose as the last pieces dock, without a separate hold.
+    const settled = THREE.MathUtils.smootherstep(seconds, 6.3, ASSEMBLY_END);
+    const sway = Math.sin(seconds/32*Math.PI*2)*(1-settled);
+    if (inspected) {
+      smoothRotation.slerp(userRotation, reduced.matches ? 1 : 1 - Math.exp(-6 * (delta || 1 / 60)));
+      rig.quaternion.copy(smoothRotation);
+    } else {
+      rig.rotation.set((stacked.matches ? -1 : 1) * (THREE.MathUtils.lerp(0.27, RESTING_POSE.tilt, settled) + sway * 0.065),
+        THREE.MathUtils.lerp(-0.5, RESTING_POSE.turn, settled) - sway * 0.14 - assemblyPeek(seconds),
+        THREE.MathUtils.lerp(0.04, RESTING_POSE.roll, settled));
+    }
     world.position.set(0,sway*0.07,0);
     frameAssembly(delta);
     renderer.render(scene, camera);
-    if (reportedReduced !== reduced.matches) {
-      reportedReduced = reduced.matches;
-      onFrame({ reduced: reduced.matches });
-    }
-    if (visible && !document.hidden && ((!stopped && !reduced.matches && elapsed<ASSEMBLY_END) || Math.abs(smoothRotation - userRotation) > 0.001 || !framingSettled)) frame = requestAnimationFrame(render);
+    if (visible && !document.hidden && ((!reduced.matches && elapsed<ASSEMBLY_END) || (inspected && smoothRotation.angleTo(userRotation) > 0.001) || !framingSettled)) frame = requestAnimationFrame(render);
   }
 
   function schedule() {
@@ -177,32 +180,57 @@ export function mountAssembly(host: HTMLElement, onFrame: (frame: AssemblyFrame)
   }
   function takeControl() {
     if (inspected) return;
-    // Transfer the current preview angle to the user's rotation without a jump.
-    userRotation += previewOffset;
-    smoothRotation += previewOffset;
-    previewOffset = 0;
+    // Keep the current pose when taking over, including during the opening turn.
+    userRotation.copy(rig.quaternion);
+    smoothRotation.copy(rig.quaternion);
     inspected = true;
   }
-  function pointerDown(event: PointerEvent) {
+  function turn(horizontal: number, vertical: number) {
+    const angle = Math.hypot(horizontal, vertical);
+    if (!angle) return;
     takeControl();
-    drag = true;
+    // Rotate around screen axes, even when the object is upside down or sideways.
+    rotationAxis.set(vertical, horizontal, 0).normalize();
+    rotationStep.setFromAxisAngle(rotationAxis, angle);
+    userRotation.premultiply(rotationStep).normalize();
+    if (!frame) schedule();
+  }
+  function rotate(direction: RotationDirection) {
+    const step = 0.35;
+    turn(direction === "left" ? -step : direction === "right" ? step : 0,
+      direction === "up" ? -step : direction === "down" ? step : 0);
+  }
+  function pointerDown(event: PointerEvent) {
+    if (!event.isPrimary || event.button !== 0 || activePointer !== null) return;
+    takeControl();
+    activePointer = event.pointerId;
     pointerX = event.clientX;
+    pointerY = event.clientY;
     host.setPointerCapture(event.pointerId);
+    host.focus({ preventScroll: true });
     host.dataset.dragging = "true";
   }
   function pointerMove(event: PointerEvent) {
-    if (!drag) return;
-    userRotation += (event.clientX - pointerX) * 0.007;
+    if (event.pointerId !== activePointer) return;
+    turn((event.clientX - pointerX) * 0.007, (event.clientY - pointerY) * 0.007);
     pointerX = event.clientX;
-    if (!frame) schedule();
+    pointerY = event.clientY;
   }
-  function pointerUp() { drag = false; host.dataset.dragging = "false"; }
+  function pointerUp(event: PointerEvent) {
+    if (event.pointerId !== activePointer) return;
+    activePointer = null;
+    if (host.hasPointerCapture(event.pointerId)) host.releasePointerCapture(event.pointerId);
+    host.dataset.dragging = "false";
+  }
   function keyboard(event: KeyboardEvent) {
-    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight" && event.key !== "Home") return;
+    const directions: Record<string, RotationDirection> = { ArrowLeft: "left", ArrowRight: "right", ArrowUp: "up", ArrowDown: "down" };
+    if (!directions[event.key] && event.key !== "Home") return;
     event.preventDefault();
-    takeControl();
-    userRotation = event.key === "Home" ? 0 : userRotation + (event.key === "ArrowLeft" ? -0.25 : 0.25);
-    schedule();
+    if (event.key === "Home") {
+      takeControl();
+      userRotation.setFromEuler(new THREE.Euler((stacked.matches ? -1 : 1) * RESTING_POSE.tilt, RESTING_POSE.turn, RESTING_POSE.roll));
+      schedule();
+    } else rotate(directions[event.key]);
   }
   function lost(event: Event) {
     event.preventDefault();
@@ -225,14 +253,14 @@ export function mountAssembly(host: HTMLElement, onFrame: (frame: AssemblyFrame)
   host.addEventListener("pointermove", pointerMove);
   host.addEventListener("pointerup", pointerUp);
   host.addEventListener("pointercancel", pointerUp);
+  host.addEventListener("lostpointercapture", pointerUp);
   host.addEventListener("keydown", keyboard);
   renderer.domElement.addEventListener("webglcontextlost", lost);
   renderer.domElement.addEventListener("webglcontextrestored", restored);
   resize();
 
   return {
-    pause(value) { stopped = value; schedule(); },
-    replay() { elapsed = 0; previous = 0; reportedReduced = undefined; userRotation = 0; previewOffset = 0; inspected = false; stopped = false; schedule(); },
+    rotate,
     dispose() {
       disposed = true;
       cancelAnimationFrame(frame);
@@ -244,6 +272,7 @@ export function mountAssembly(host: HTMLElement, onFrame: (frame: AssemblyFrame)
       host.removeEventListener("pointermove", pointerMove);
       host.removeEventListener("pointerup", pointerUp);
       host.removeEventListener("pointercancel", pointerUp);
+      host.removeEventListener("lostpointercapture", pointerUp);
       host.removeEventListener("keydown", keyboard);
       renderer.domElement.removeEventListener("webglcontextlost", lost);
       renderer.domElement.removeEventListener("webglcontextrestored", restored);
