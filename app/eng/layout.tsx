@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Studio Micho | Montreal Web Agency | Custom Sites, Apps & Dashboards",
+    "Studio Micho | Montreal Digital Partner | Custom Sites, Apps & Dashboards",
   description:
-    "Montreal web agency. Custom websites, web apps, dashboards and management tools for SMBs, nonprofits and cultural organizations. Delivered in 3-4 weeks with AI velocity. Studio Micho by JAXA Production.",
+    "Your digital partner in Montreal. Custom websites, web apps, dashboards and management tools for SMBs, nonprofits and cultural organizations. Delivered in 3-4 weeks with AI velocity. Studio Micho by JAXA Production.",
   keywords: [
+    "digital partner Montreal",
     "web agency Montreal",
     "custom web development Montreal",
     "web application Montreal",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Studio Micho | Montreal Web Agency | Custom Sites, Apps & Dashboards",
+      "Studio Micho | Montreal Digital Partner | Custom Sites, Apps & Dashboards",
     description:
       "Custom web development for SMBs and nonprofits in Montreal. Sites, apps, dashboards and AI integrations delivered in 3-4 weeks by a team of two.",
     type: "website",
@@ -40,13 +41,13 @@ export const metadata: Metadata = {
         url: "/og-en-v5.png",
         width: 1200,
         height: 630,
-        alt: "Studio Micho, Montreal web agency",
+        alt: "Studio Micho, Montreal digital partner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Micho | Montreal Web Agency",
+    title: "Studio Micho | Montreal Digital Partner",
     description:
       "Custom sites, apps, dashboards and management tools. Delivered in 3-4 weeks with AI velocity.",
     images: ["/og-en-v5.png"],

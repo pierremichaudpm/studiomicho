@@ -4,10 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://studiomicho.com"),
   title:
-    "Studio Micho | Agence web Montréal | Sites, apps et dashboards sur mesure",
+    "Studio Micho | Accompagnement numérique Montréal | Sites, apps et dashboards sur mesure",
   description:
     "Studio Micho livre des sites web, applications et dashboards sur mesure en 3-4 semaines à Montréal. Développement accéléré par IA. ~5K. Documentation complète et plan de suivi.",
   keywords: [
+    "accompagnement numérique Montréal",
     "agence web Montréal",
     "développement web Montréal",
     "application web sur mesure Montréal",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Studio Micho | Agence web Montréal | Sites, apps et dashboards sur mesure",
+      "Studio Micho | Accompagnement numérique Montréal | Sites, apps et dashboards sur mesure",
     description:
       "Développement web sur mesure pour PME et OBNL à Montréal. Sites, applications, dashboards et intégrations IA livrés en 3-4 semaines par une équipe de deux.",
     type: "website",
@@ -42,13 +43,13 @@ export const metadata: Metadata = {
         url: "/og-fr-v5.png",
         width: 1200,
         height: 630,
-        alt: "Studio Micho, agence web Montréal",
+        alt: "Studio Micho, accompagnement numérique Montréal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Micho | Agence web Montréal",
+    title: "Studio Micho | Accompagnement numérique Montréal",
     description:
       "Sites, apps, dashboards et outils de gestion sur mesure. Livraison en 3-4 semaines à vélocité IA.",
     images: ["/og-fr-v5.png"],
@@ -84,7 +85,7 @@ const jsonLd = {
   telephone: "+15149159370",
   email: "pierre@studiomicho.com",
   description:
-    "Agence web à Montréal spécialisée en développement de sites, applications web, dashboards et outils de gestion sur mesure pour PME, OBNL et organisations culturelles.",
+    "Accompagnement numérique à Montréal : développement de sites, applications web, dashboards et outils de gestion sur mesure pour PME, OBNL et organisations culturelles.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Montréal",
